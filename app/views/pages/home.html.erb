@@ -1,2 +1,29 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="mb-3 mt-3">
+  <%= render "shared/buttons/active_green",
+             text: "active-green", link: "/"%>
+</div>
+
+<div class="mb-3">
+  <%= render "shared/buttons/active_red",
+             text: "active-red", link: "/"%>
+</div>
+
+<div class="mb-3">
+  <%= render "shared/buttons/inactive",
+             text: "inactive", link: "/"%>
+</div>
+
+<div class="mb-3">
+  <%= render "shared/buttons/cross",
+             link: "/"%>
+</div>
+
+<div class="mb-3">
+  <%= render "shared/buttons/check",
+             link: "/"%>
+</div>
+
+<div class="mb-3">
+  <%= render "shared/buttons/cart",
+             link: "/", counter:"2"%>
+</div>

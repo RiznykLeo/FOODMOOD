@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" style="font-size: 16px">
   <head>
     <title>FOODMOOD</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -10,9 +10,9 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
-
-    <%= yield %>
+  <body>
+    <div class="main-container">
+      <%= yield %>
+    </div>
   </body>
 </html>

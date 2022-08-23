@@ -1,11 +1,14 @@
 .main-container{
     width: 90%;
-    margin: 0 auto;
+    margin: auto;
 
     display: grid;
     grid-template-rows: 85vh 15vh;
 }
 .navbar-container{
     width: 100%;
+}
 
+.vertical{
+    margin: auto;
 }

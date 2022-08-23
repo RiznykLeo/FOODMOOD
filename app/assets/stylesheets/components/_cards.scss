@@ -1,0 +1,35 @@
+$size:350px;
+
+.dish-container{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+}
+.dish{
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+}
+.dish-image{
+  width: $size;
+  height: $size;
+  object-fit: cover;
+}
+.dish-description{
+  padding: 0.5rem 0.5rem 1rem;
+}
+.dish-name{
+    font-size: 2rem;
+}
+.dish-cuisine{
+  font-size: 1.25rem;
+}
+.dish-time{
+  font-size: 1.25rem;
+}
+
+.controls{
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+}

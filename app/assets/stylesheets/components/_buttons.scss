@@ -1,8 +1,9 @@
 @import "utilities/variables";
-
+$width:40%;
+$height:1rem;
 .button{
-    width: 33.33%;
-    padding: 0.5rem;
+    width: $width;
+    padding: $height 0.5rem $height 0.5rem;
     border-radius: 0.5rem;
     display: flex;
     justify-content: center;

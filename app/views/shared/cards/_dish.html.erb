@@ -1,0 +1,23 @@
+<div class="vertical">
+  <div class="dish-container">
+    <div class="dish">
+      <img class="dish-image" src="https://picsum.photos/320/320" alt="dish picture">
+      <div class="dish-description">
+        <div class="dish-name">
+          <span><%=name %></span>
+        </div>
+        <div class="dish-cuisine">
+          <span><%=cuisine %></span>
+        </div>
+        <div class="dish-time">
+          <span><%=time %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="controls">
+    <%=render "shared/buttons/active_red", link:"/", text:"Don't like" %>
+    <%=render "shared/buttons/active_green", link:"/", text:"Like" %>
+  </div>
+</div>

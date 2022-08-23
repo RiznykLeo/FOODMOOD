@@ -5,4 +5,16 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :recipes, only: [:index, :show] do
+    resources :user_recipes, only: [:create]
+  end
+  resources :user_recipes, only: [:update]
+
+  resources :shopping_list, only: [:show] do
+    resources :shopping_recipes, only: [:create]
+  end
+
+  get "/cart", to: "user_recipes#cart", as: :cart
+  get "/cookbook", to: "user_recipes#cookbook", as: :cookbook
+  get "/search", to: "recipes#search", as: :cookbook
 end

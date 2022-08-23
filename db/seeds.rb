@@ -14,21 +14,21 @@ puts "Creating 50 dinner Recipes..."
 
 dinner_recipes = GetRecipesService.new('dinner').call["hits"][0..50]
 
-dinner_recipes["hits"].each do |recipe|
+dinner_recipes.each do |recipe|
   rec = Recipe.create!(
     name: recipe["recipe"]["label"],
     cooking_time: recipe["recipe"]["totalTime"],
-    calories: recipe["calories"],
-    ingredients: recipe["ingredients"],
-    source: recipe["source"],
-    url: recipe["url"],
-    yield: recipe["yield"],
-    cuisineType: recipe["cuisineType"],
-    mealType: recipe["mealType"],
-    dishType: recipe["dishType"]
+    calories: recipe["recipe"]["calories"],
+    ingredients: recipe["recipe"]["ingredients"],
+    source: recipe["recipe"]["source"],
+    url: recipe["recipe"]["url"],
+    yield: recipe["recipe"]["yield"],
+    cuisine_type: recipe["recipe"]["cuisineType"].first,
+    meal_type: recipe["recipe"]["mealType"].first,
+    dish_type: recipe["recipe"]["dishType"].first
   )
-  url = recipe["images"]["REGULAR"]["url"]
-  file = URL.open(url)
+  url = recipe["recipe"]["images"]["REGULAR"]["url"]
+  file = URI.open(url)
   rec.photo.attach(io: file, filename: "#{rec.name}.jpg", content_type: "image/jpg")
   rec.save
 end

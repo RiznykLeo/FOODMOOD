@@ -10,5 +10,11 @@ Rails.application.routes.draw do
   end
   resources :user_recipes, only: [:update]
 
-  resources :shopping_list, only: [:show]
+  resources :shopping_list, only: [:show] do
+    resources :shopping_recipes, only: [:create]
+  end
+
+  get "/cart", to: "user_recipes#cart", as: :cart
+  get "/cookbook", to: "user_recipes#cookbook", as: :cookbook
+  get "/search", to: "recipes#search", as: :cookbook
 end

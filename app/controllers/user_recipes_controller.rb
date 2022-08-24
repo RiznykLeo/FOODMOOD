@@ -4,9 +4,21 @@ class UserRecipesController < ApplicationController
     @user_recipe = UserRecipe.new(recipe: recipe, user: current_user)
     authorize @user_recipe
     if @user_recipe.save
-      redirect_to root_path
+      redirect_to cart_path
     else
       render :recipes
     end
+  end
+
+  def cart
+    @user_recipes = UserRecipe.where(user: current_user)
+    authorize @user_recipes
+  end
+
+  def destroy
+    @user_recipe = UserRecipe.find(params[:id])
+    authorize @user_recipe
+    @user_recipe.destroy
+    redirect_to cart_path, status: :see_other
   end
 end

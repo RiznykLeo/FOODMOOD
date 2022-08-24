@@ -30,10 +30,10 @@ class ShoppingListsController < ApplicationController
     redirect_to :show
   end
 
-  # def completed
-  #   @shopping_list = ShoppingList.find(params(:id))
-  #   @shopping_list.completed = true
-  #   @shopping_list.save
-  #   redirect_to :show
-  # end
+  def completed
+    @shopping_list = ShoppingList.find(params(:id))
+    @shopping_list.completed = true
+    @shopping_list.save
+    redirect_to :show
+  end
 end

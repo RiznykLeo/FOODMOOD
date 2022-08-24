@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_23_084648) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_24_051000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -93,8 +93,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_23_084648) do
   end
 
   create_table "user_recipes", force: :cascade do |t|
-    t.boolean "saved"
-    t.integer "cooked_status"
+    t.boolean "saved", default: false
+    t.integer "cooked_status", default: 0
     t.bigint "recipe_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false

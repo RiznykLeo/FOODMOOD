@@ -1,29 +1,26 @@
+
+<% @recipes.each do |recipe| %>
 <div class="vertical">
   <div class="dish-container">
-    <%=link_to "/" do%>
-      <div class="dish">
-        <img class="dish-image"
-             src= <%="#{image}"%> "" alt="dish picture">
-        <div class="dish-description">
-          <div class="dish-name">
-            <span><%=name %></span>
-          </div>
-          <div class="dish-cuisine">
-            <span><%=cuisine %></span>
-          </div>
-          <div class="dish-time">
-            <span><%=time %></span>
-          </div>
+    <div class="dish">
+      <img class="dish-image"
+           src= <%="#{image}"%> "" alt="dish picture">
+      <div class="dish-description">
+        <div class="dish-name">
+          <span><%=recipe.name %></span>
         </div>
-        <div class="cart-button">
-          <%= render "shared/buttons/cart", link:"/", counter:"0" %>
+        <div class="dish-cuisine">
+          <span><%=recipe.cuisine_type %></span>
+        </div>
+        <div class="dish-time">
+          <span><%=recipe.cooking_time %> mins</span>
         </div>
       </div>
     <%end %>
   </div>
-
   <div class="controls">
     <%=render "shared/buttons/active_red", link:"/", text:"Don't like" %>
-    <%=render "shared/buttons/active_green", link:"/", text:"Like" %>
+    <%=render "shared/buttons/like_button", recipe: recipe, user_recipe: @user_recipe %>
   </div>
 </div>
+<% end %>

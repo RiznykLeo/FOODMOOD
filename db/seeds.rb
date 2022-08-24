@@ -50,3 +50,9 @@ dinner_recipes.each do |recipe|
 end
 
 puts "Done!"
+
+puts "Creating User"
+
+User.create!(email: "daniel.hamm@gmx.de", name: "Daniel Hamm", password: "123456")
+
+puts "Done!"

@@ -14,4 +14,11 @@ class UserRecipesController < ApplicationController
     @user_recipes = UserRecipe.where(user: current_user)
     authorize @user_recipes
   end
+
+  def destroy
+    @user_recipe = UserRecipe.find(params[:id])
+    authorize @user_recipe
+    @user_recipe.destroy
+    redirect_to cart_path, status: :see_other
+  end
 end

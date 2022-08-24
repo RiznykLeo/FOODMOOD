@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resources :user_recipes, only: [:create]
   end
 
-  resources :user_recipes, only: [:update]
+  resources :user_recipes, only: [:update, :destroy]
 
   resources :shopping_list, only: [:show] do
     resources :shopping_recipes, only: [:create]

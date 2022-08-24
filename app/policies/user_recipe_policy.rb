@@ -13,4 +13,8 @@ class UserRecipePolicy < ApplicationPolicy
   def cart?
     true
   end
+
+  def destroy?
+    true
+  end
 end

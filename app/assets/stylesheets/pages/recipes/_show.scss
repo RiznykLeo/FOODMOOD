@@ -1,0 +1,15 @@
+@import "components/utilities/variables";
+.recipe-container{
+  margin-top: 1rem;
+  max-width: 75vh;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+}
+.recipe-img-container{
+  padding-bottom: 1rem;
+  border-bottom: 3px solid $gray;
+}
+.recipe-img{
+  width: 100%;
+}

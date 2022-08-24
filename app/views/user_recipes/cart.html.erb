@@ -1,3 +1,5 @@
-<% @user_recipes.each do |recipe|  %>
-<%= recipe %>
+<% @user_recipes.each do |recipe| %>
+<%= recipe.recipe.name %>
+<%= cl_image_tag recipe.recipe.photo.key,
+                 :cloud_name => "diq0zfsun", class: "recipe-img" %>
 <% end %>

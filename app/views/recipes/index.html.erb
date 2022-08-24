@@ -1,10 +1,12 @@
-<div class="tinder-cards">
+<ul>
   <%@recipes.each do|recipe| %>
+    <li>
     <%=render "shared/cards/dish",
               name: recipe.name,
               cuisine:recipe.cuisine_type,
               time: recipe.cooking_time,
               image: recipe.photo.key,
               recipe: recipe %>
+    </li>
   <%end %>
-</div>
+</ul>

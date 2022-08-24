@@ -6,6 +6,7 @@ $size:350px;
   justify-content: center;
   margin: auto;
   width: $size;
+  overflow-y: scroll;
 }
 .dish-container a{
   text-decoration: none;
@@ -45,3 +46,4 @@ $size:350px;
   display: flex;
   justify-content: space-between;
 }
+

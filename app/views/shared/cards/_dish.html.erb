@@ -15,12 +15,10 @@
         </div>
       </div>
       <%=render "shared/buttons/active_red",
-                link:"/", text:"Don't like" %>
+                link:"/", text:"Don't like", id:"nope" %>
 
       <%=render "shared/buttons/like_button",
-                recipe: recipe, user_recipe: @user_recipe %>
+                recipe: recipe, user_recipe: @user_recipe, id:"love" %>
     </div>
-
   </div>
-
 </div>

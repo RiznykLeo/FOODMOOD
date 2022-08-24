@@ -1,6 +1,7 @@
 <div class="vertical">
   <div class="dish-container">
-    <div class="dish">
+    <%=link_to "/" do%>
+      <div class="dish">
       <img class="dish-image"
            src= <%="#{image}"%> "" alt="dish picture">
       <div class="dish-description">
@@ -14,7 +15,11 @@
           <span><%=time %></span>
         </div>
       </div>
+      <div class="cart-button">
+        <%= render "shared/buttons/cart", link:"/", counter:"0" %>
+      </div>
     </div>
+    <%end %>
   </div>
 
   <div class="controls">

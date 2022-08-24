@@ -12,10 +12,8 @@ Rails.application.routes.draw do
 
   resources :user_recipes, only: [:update, :destroy]
 
-  resources :shopping_list, only: [:show, :update]
-
   get "/cart", to: "user_recipes#cart", as: :cart
   get "/cookbook", to: "user_recipes#cookbook", as: :cookbook
+  get "/list", to: "shopping_recipes#list", as: :list
   get "/search", to: "recipes#search", as: :search
-  patch "/shopping_list/:id", to: "shopping_lists#completed"
 end

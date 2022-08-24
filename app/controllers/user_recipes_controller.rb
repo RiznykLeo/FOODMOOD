@@ -11,7 +11,7 @@ class UserRecipesController < ApplicationController
   end
 
   def cart
-    @user_recipes = UserRecipe.where(user: current_user)
+    @user_recipes = UserRecipe.where(saved: false, user: current_user)
     authorize @user_recipes
   end
 
@@ -20,5 +20,10 @@ class UserRecipesController < ApplicationController
     authorize @user_recipe
     @user_recipe.destroy
     redirect_to cart_path, status: :see_other
+  end
+
+  def cookbook
+    @user_recipes = UserRecipe.where(saved: true, user: current_user)
+    authorize @user_recipes
   end
 end

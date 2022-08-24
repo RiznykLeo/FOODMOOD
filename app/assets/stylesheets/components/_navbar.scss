@@ -3,6 +3,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 3px solid $gray;
+  margin-top: 0.5rem;
 }
 .navbar-item{
   margin: 0 auto;

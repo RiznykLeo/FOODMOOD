@@ -1,7 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.new
-    authorize @recipes
+    @user_recipe = UserRecipe.new
     @recipes = policy_scope(Recipe)
   end
 end

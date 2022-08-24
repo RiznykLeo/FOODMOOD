@@ -20,7 +20,7 @@
   </div>
   <div class="controls">
     <%=render "shared/buttons/active_red", link:"/", text:"Don't like" %>
-    <%=render "shared/buttons/active_green", link:"/", text:"Like" %>
+    <%=render "shared/buttons/like_button", recipe: recipe, user_recipe: @user_recipe %>
   </div>
 </div>
 <% end %>

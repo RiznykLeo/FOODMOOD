@@ -8,7 +8,7 @@
 require "open-uri"
 
 puts "Destroying all the Recipes..."
-Recipe.destroy_all
+# Recipe.destroy_all
 
 puts "Creating 50 dinner Recipes..."
 

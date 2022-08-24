@@ -14,10 +14,13 @@
           <span><%=time%> mins</span>
         </div>
       </div>
-    </div>
-  <div class="controls">
-    <%=render "shared/buttons/active_red", link:"/", text:"Don't like" %>
-    <%=render "shared/buttons/like_button", recipe: recipe, user_recipe: @user_recipe %>
-  </div>
-</div>
+      <%=render "shared/buttons/active_red",
+                link:"/", text:"Don't like" %>
 
+      <%=render "shared/buttons/like_button",
+                recipe: recipe, user_recipe: @user_recipe %>
+    </div>
+
+  </div>
+
+</div>

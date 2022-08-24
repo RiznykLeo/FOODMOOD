@@ -1,3 +1,4 @@
+@import "utilities/variables";
 $size:350px;
 
 .dish-container{
@@ -5,10 +6,15 @@ $size:350px;
   justify-content: center;
   margin: auto;
 }
+.dish-container a{
+  text-decoration: none;
+  color: $black;
+}
 .dish{
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 0 1rem rgba(0,0,0,0.2);
+  position: relative;
 }
 .dish-image{
   width: $size;
@@ -26,6 +32,11 @@ $size:350px;
 }
 .dish-time{
   font-size: 1.25rem;
+}
+.cart-button{
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
 }
 
 .controls{

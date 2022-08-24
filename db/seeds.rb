@@ -8,7 +8,7 @@
 require "open-uri"
 
 puts "Destroying all the Recipes..."
-Recipe.destroy_all
+# Recipe.destroy_all
 
 puts "Creating 50 dinner Recipes..."
 
@@ -48,5 +48,11 @@ dinner_recipes.each do |recipe|
   rec.photo.attach(io: file, filename: "#{rec.name}.jpg", content_type: "image/jpg")
   rec.save
 end
+
+puts "Done!"
+
+puts "Creating User"
+
+User.create!(email: "daniel.hamm@gmx.de", name: "Daniel Hamm", password: "123456")
 
 puts "Done!"

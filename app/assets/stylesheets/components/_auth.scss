@@ -1,0 +1,28 @@
+@import "utilities/variables";
+
+.auth-container{
+  box-shadow: 0 0 1rem rgba(0,0,0,0.1);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.auth-header{
+  margin-bottom: 1rem;
+}
+.auth-control{
+  display: flex;
+}
+.auth-control a{
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+}
+.auth-control-item{
+  flex-grow: 1;
+}
+.auth-button{
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  color: $white;
+  background: $soft-green;
+  margin-bottom: 1rem;
+}

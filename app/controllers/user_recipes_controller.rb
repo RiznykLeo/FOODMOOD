@@ -9,4 +9,9 @@ class UserRecipesController < ApplicationController
       render :recipes
     end
   end
+
+  def cart
+    @user_recipes = UserRecipe.where(user: current_user)
+    authorize @user_recipes
+  end
 end

@@ -1,0 +1,26 @@
+@import "components/utilities/variables";
+.recipe-container{
+  margin-top: 1rem;
+  max-height: 80vh;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+}
+.recipe-img-container{
+  padding-bottom: 1rem;
+}
+.recipe-img{
+  width: 90vw;
+}
+.ingredients{
+  border-top: 3px solid $gray;
+  margin-top: 1rem;
+}
+.ingredients-list ul{
+  margin-top: 0.5rem;
+  list-style: none;
+  padding: 0;
+}
+.ingredient{
+  font-weight: bold;
+}

@@ -1,0 +1,33 @@
+<div class="recipe-container">
+  <div class="flex-container">
+    <div class="recipe-img-container">
+      <%= cl_image_tag @recipe.photo.key,
+                       :cloud_name => "dxpqczcfs", class:"recipe-img"%>
+    </div>
+    <div class="recipe-info">
+      <h1 class="recipe-name"><%=@recipe.name %></h1>
+      <p><%="#{@recipe.cooking_time} min." %></p>
+      <p><%="#{@recipe.calories.to_i} cal." %></p>
+      <p><%="#{@recipe.yield} yield"%></p>
+      <div class="ingredients">
+        <h2>Ingredients</h2>
+        <div class="ingredients-list">
+          <ul>
+            <%@recipe.foods.each do |food|%>
+              <li>
+                <%ingredient = @recipe.ingredients.find_by(id:food.id)%>
+                <span class="ingredient"><%="#{food.name.capitalize}:"%></span>
+                <span><%=" #{ingredient.quantity}"%></span>
+                <span><%=" #{ingredient.measure}"%></span>
+              </li>
+            <%end %>
+          </ul>
+        </div>
+      </div>
+      <div class="recipe-source">
+        <%=link_to "Recipe", @recipe.url %>
+
+      </div>
+    </div>
+  </div>
+</div>

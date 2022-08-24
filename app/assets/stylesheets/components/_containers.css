@@ -4,6 +4,8 @@
 
     display: grid;
     grid-template-rows: 85vh 15vh;
+
+    justify-content: center;
 }
 .navbar-container{
     width: 100%;

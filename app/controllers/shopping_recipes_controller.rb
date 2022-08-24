@@ -4,5 +4,8 @@ class ShoppingRecipesController < ApplicationController
     @recipe = Recipe.find(params[:recipe_id])
     @shopping_recipe.recipe = @recipe
     @shopping_list = current_user.current_shopping_list
+    redirect_to recipe_path(@recipe)
   end
+
+
 end

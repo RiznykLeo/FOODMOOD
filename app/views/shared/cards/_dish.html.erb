@@ -1,26 +1,20 @@
-
-<% @recipes.each do |recipe| %>
 <div class="vertical">
   <div class="dish-container">
     <div class="dish">
-      <img class="dish-image"
-           src= <%="#{image}"%> "" alt="dish picture">
+      <%= cl_image_tag image,
+                       :cloud_name => "dxpqczcfs", class:"dish-image"%>
       <div class="dish-description">
         <div class="dish-name">
-          <span><%=recipe.name %></span>
+          <span><%=name%></span>
         </div>
         <div class="dish-cuisine">
-          <span><%=recipe.cuisine_type %></span>
+          <span><%=cuisine%></span>
         </div>
         <div class="dish-time">
-          <span><%=recipe.cooking_time %> mins</span>
+          <span><%=time%> mins</span>
         </div>
       </div>
-    <%end %>
-  </div>
-  <div class="controls">
-    <%=render "shared/buttons/active_red", link:"/", text:"Don't like" %>
-    <%=render "shared/buttons/like_button", recipe: recipe, user_recipe: @user_recipe %>
+    </div>
   </div>
 </div>
-<% end %>
+

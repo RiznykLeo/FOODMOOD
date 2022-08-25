@@ -1,37 +1,32 @@
 @import "../../components/utilities/variables";
 
-.cart-link{
+.cookbook-link{
   color: $black;
   text-decoration: none;
 }
-.cart-recipes-container{
+.cookbook-recipes-container{
   overflow-y: scroll;
+  width: 90vw;
 }
-.cart-recipe{
+.cookbook-recipe{
   display: flex;
-  justify-content: space-between;
   margin: 1rem 0 1rem 0;
   background: $white;
   border-radius: 0.5rem;
   overflow: hidden;
+  width: 100%;
 }
-.cart-recipe-img{
+.cookbook-recipe-img{
   width: 150px;
   height: 150px;
 }
-.cart-controls{
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  padding:1rem 1rem 1rem ;
-}
-.cart-info{
+.cookbook-info{
   display: flex;
   justify-content: space-between;
 }
-.cart-recipe-name{
+.cookbook-recipe-name{
   font-size: 1.15rem;
-  width: 8rem;
+  width: 100%;
   max-height: 6.5rem;
   overflow: hidden;
   margin: 0.8rem 0.5rem 1rem 0.5rem;

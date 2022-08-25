@@ -1,7 +1,8 @@
 <div class="cookbook-recipes-container">
   <% @user_recipes.each do |user_recipe| %>
     <div class="cookbook-recipe">
-      <%= link_to "/recipes/#{user_recipe.recipe.id}", class: "cookbook-link" do %>
+    <%=link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class:"cookbook-link" do%>
+      <div class="cookbook-recipe">
         <%= cl_image_tag user_recipe.recipe.photo.key,
                          :cloud_name => "dxpqczcfs", class: "cookbook-recipe-img" %>
       <% end %>

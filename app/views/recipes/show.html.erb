@@ -24,12 +24,12 @@
           </ul>
         </div>
       </div>
-      <%= link_to "Back", recipes_path(recipe: params[:id]) %>
+      <%# <%= link_to "Back", recipes_path(recipe: params[:id]) if params[:back] == "index"%>
+      <%= link_to "Back", "javascript:history.back()" %>
       <div class="recipe-source">
         <%=link_to "Recipe", @recipe.url %>
-
       </div>
     </div>
-    <%= render "shared/buttons/add_recipe_button" %>
+    <%= render "shared/buttons/add_recipe_button" if params[:showbutton] == "show"%>
   </div>
 </div>

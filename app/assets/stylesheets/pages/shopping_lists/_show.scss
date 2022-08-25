@@ -1,0 +1,16 @@
+@import "../../components/utilities/variables";
+
+.list-vertical{
+  margin-top: 1rem;
+  width: 90vw;
+  overflow-y: scroll;
+}
+.list-list{
+  list-style: none;
+  padding: 0;
+}
+.list-item-name{
+  font-size: 1.25rem;
+  border-bottom: 3px solid $gray;
+  margin-bottom: 0.5rem;
+}

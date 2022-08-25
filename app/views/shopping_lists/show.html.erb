@@ -3,7 +3,7 @@
     <div class="list-item">
       <p class="list-item-name"><%= shopping_recipe.recipe.name %></p>
       <ul class="list-list">
-        <% shopping_recipe.recipe.ingredients.each do |ingredient| %>
+        <% shopping_recipe.recipe.ingredients.order(:created_at).each do |ingredient| %>
           <li class="list-ingredient"><span><%= ingredient.food.name.capitalize %>:</span>
             <div class="d-flex">
               <%= form_for ingredient do |f| %>

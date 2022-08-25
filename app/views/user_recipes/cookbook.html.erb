@@ -1,14 +1,13 @@
 <div class="cookbook-recipes-container">
-  <% @user_recipes.each do |recipe| %>
-    <%=link_to "/recipes/#{recipe.id}", class:"cookbook-link" do%>
+  <% @user_recipes.each do |user_recipe| %>
+    <%=link_to "/recipes/#{user_recipe.recipe.id}", class:"cookbook-link" do%>
       <div class="cookbook-recipe">
-        <%= cl_image_tag recipe.recipe.photo.key,
-                         :cloud_name => "dxpqczcfs", class: "cookbook-recipe-img" %>
+        <%= cl_image_tag user_recipe.recipe.photo.key,
+                         :cloud_name => "dngjlm1w0", class: "cookbook-recipe-img" %>
         <div class="cart-info">
-          <p class="cookbook-recipe-name"><%= recipe.recipe.name %></p>
+          <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
         </div>
       </div>
       <%end %>
   <% end %>
 </div>
-

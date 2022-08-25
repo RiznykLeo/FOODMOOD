@@ -1,11 +1,13 @@
-<% @user_recipes.each do |recipe| %>
-  <div class="container d-flex">
-    <div class="pic">
-      <%= cl_image_tag recipe.recipe.photo.key,
-                 :cloud_name => "diq0zfsun", class: "recipe-img" %>
-    </div>
-    <div class="detail">
-      <%= recipe.recipe.name %>
-    </div>
-  </div>
-<% end %>
+<div class="cookbook-recipes-container">
+  <% @user_recipes.each do |recipe| %>
+    <%=link_to "/recipes/#{recipe.id}", class:"cookbook-link" do%>
+      <div class="cookbook-recipe">
+        <%= cl_image_tag recipe.recipe.photo.key,
+                         :cloud_name => "dxpqczcfs", class: "cookbook-recipe-img" %>
+        <div class="cart-info">
+          <p class="cookbook-recipe-name"><%= recipe.recipe.name %></p>
+        </div>
+      </div>
+      <%end %>
+  <% end %>
+</div>

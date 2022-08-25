@@ -14,6 +14,6 @@ Rails.application.routes.draw do
 
   get "/cart", to: "user_recipes#cart", as: :cart
   get "/cookbook", to: "user_recipes#cookbook", as: :cookbook
-  get "/list", to: "shopping_recipes#list", as: :list
+  get "/list", to: "shopping_lists#show", as: :list
   get "/search", to: "recipes#search", as: :search
 end

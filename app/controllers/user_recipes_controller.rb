@@ -19,7 +19,8 @@ class UserRecipesController < ApplicationController
     @user_recipe = UserRecipe.find(params[:id])
     authorize @user_recipe
     if @user_recipe.update(cart_params)
-      redirect_to cart_path
+      # redirect_to cart_path
+      head :ok
     else
       render :edit
     end
@@ -40,6 +41,6 @@ class UserRecipesController < ApplicationController
   private
 
   def cart_params
-    params.require(:user_recipe).permit(:saved)
+    params.require(:user_recipe).permit(:saved, :cooked_status)
   end
 end

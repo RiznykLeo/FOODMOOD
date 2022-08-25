@@ -1,6 +1,7 @@
-<%= simple_form_for user_recipe, html: { class: "d-flex"} do |f| %>
+<%= simple_form_for user_recipe, html: { class: "d-flex", data: { card_actions_target: "form" } } do |f| %>
   <%= f.input :saved, as: :hidden, input_html: { value: "true" } %>
-  <button type="submit" class="button button-small check">
+  <button type="submit" class="button button-small check"
+          data-action="click->card-actions#submitRemove">
     <span class="button-text"><i class="fa-solid fa-check"></i></span>
   </button>
 <% end %>

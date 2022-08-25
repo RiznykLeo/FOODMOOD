@@ -3,15 +3,19 @@
     <div class="list-item">
       <p class="list-item-name"><%= shopping_recipe.recipe.name %></p>
       <ul class="list-list">
-        <% shopping_recipe.recipe.ingredients.each do |ingredient| %>
+        <% shopping_recipe.recipe.ingredients.order(:created_at).each do |ingredient| %>
           <li class="list-ingredient"><span><%= ingredient.food.name.capitalize %>:</span>
-            <span><%= ingredient.quantity.round(2) %></span>
-            <span><%= ingredient.measure if ingredient.measure != "<unit>"%></span>
+            <div class="d-flex">
+              <%= form_for ingredient do |f| %>
+                <%= f.check_box :bought, as: :boolean, onclick: "this.form.submit()" %>
+              <% end %>
+              <span><%= ingredient.quantity.round(2) %></span>
+              <span><%= ingredient.measure if ingredient.measure != "<unit>"%></span>
+            </div>
           </li>
         <% end %>
       </ul>
-      </div>
+    </div>
   <% end %>
   <%= render "shared/buttons/archive", current_list: @list%>
-
 </div>

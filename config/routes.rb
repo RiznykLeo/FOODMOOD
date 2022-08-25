@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   resources :shopping_lists, only: :update
 
+  resources :ingredients, only: :update
+
   get "/cart", to: "user_recipes#cart", as: :cart
   get "/cookbook", to: "user_recipes#cookbook", as: :cookbook
   get "/list", to: "shopping_lists#show", as: :list

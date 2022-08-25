@@ -1,21 +1,20 @@
 <div class="cart-recipes-container">
-  <% @user_recipes.each do |recipe| %>
+  <% @user_recipes.each do |user_recipe| %>
       <div class="cart-recipe">
-        <%=link_to "/recipes/#{recipe.id}", class:"cart-link"  do%>
-          <%= cl_image_tag recipe.recipe.photo.key,
-                           :cloud_name => "dxpqczcfs", class: "cart-recipe-img" %>
+        <%=link_to "/recipes/#{user_recipe.recipe.id}", class:"cart-link"  do%>
+          <%= cl_image_tag user_recipe.recipe.photo.key,
+                           :cloud_name => "dngjlm1w0", class: "cart-recipe-img" %>
         <% end %>
           <div class="cart-info">
-            <p class="cart-recipe-name"><%= recipe.recipe.name %></p>
+            <p class="cart-recipe-name"><%= user_recipe.recipe.name %></p>
             <div class="cart-controls">
-              <%= simple_form_for recipe do |f| %>
+              <%= simple_form_for user_recipe do |f| %>
                 <%= f.input :saved, as: :hidden, input_html: { value: "true" } %>
                 <%= f.submit "Accept", class: "btn btn-info" %>
               <% end %>
-              <%= link_to "Delete", user_recipe_path(recipe), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+              <%= link_to "Delete", user_recipe_path(user_recipe), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
             </div>
           </div>
       </div>
       <% end %>
 </div>
-

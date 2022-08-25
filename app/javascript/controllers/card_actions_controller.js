@@ -34,9 +34,11 @@ export default class extends Controller {
     }
 
     trigger(event) {
-        console.log("helllo")
-        this.buttonTargets.forEach((button) => {
-            button.classList.remove("status-active")
+        console.log(this.buttonTargets)
+        this.formTargets.forEach((form) => {
+            form.classList.remove("status-active")
+            console.log(form.classList)
+
         })
         console.log(event.currentTarget)
         event.currentTarget.classList.add("status-active")

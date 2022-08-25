@@ -48,5 +48,11 @@
 }
 
 .status-active {
+  background: $soft-green;
   color: $soft-green;
+}
+
+.cookbook-status button {
+  background: none;
+  border: none;
 }

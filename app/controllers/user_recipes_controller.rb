@@ -4,7 +4,7 @@ class UserRecipesController < ApplicationController
     @user_recipe = UserRecipe.new(recipe: recipe, user: current_user)
     authorize @user_recipe
     if @user_recipe.save
-      redirect_to cart_path
+      redirect_to recipes_path
     else
       render :recipes
     end
@@ -31,18 +31,15 @@ class UserRecipesController < ApplicationController
     @user_recipe.destroy
     redirect_to cart_path, status: :see_other
   end
-  
-   def cookbook
+
+  def cookbook
     @user_recipes = UserRecipe.where(saved: true, user: current_user)
     authorize @user_recipes
   end
-
 
   private
 
   def cart_params
     params.require(:user_recipe).permit(:saved)
   end
-
-
 end

@@ -13,9 +13,7 @@
           <%= f.input :saved, as: :hidden, input_html: { value: "true" } %>
           <%= f.submit "Accept", class: "btn btn-info" %>
         <% end %>
-        <h2>delete</h2>
         <%= link_to "Delete", user_recipe_path(recipe), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
       </div>
     </div>
   <% end %>
-

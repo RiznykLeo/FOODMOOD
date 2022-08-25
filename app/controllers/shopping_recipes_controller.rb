@@ -8,9 +8,4 @@ class ShoppingRecipesController < ApplicationController
     @shopping_recipe.save
     redirect_to recipe_path(@recipe)
   end
-
-  def list
-    @list = current_user.current_shopping_list
-    authorize @list
-  end
 end

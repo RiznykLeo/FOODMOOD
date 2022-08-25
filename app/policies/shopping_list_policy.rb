@@ -6,7 +6,7 @@ class ShoppingListPolicy < ApplicationPolicy
     # end
   end
 
-  def list?
+  def show?
     true
   end
 end

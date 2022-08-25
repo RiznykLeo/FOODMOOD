@@ -1,0 +1,6 @@
+<%= simple_form_for current_list, html: { class: "d-flex"} do |f| %>
+  <%= f.input :completed, as: :hidden, input_html: { value: "true" } %>
+  <button type="submit" class="button button-small check">
+    <span class="button-text"><i class="fa-solid fa-check"></i></span>
+  </button>
+<% end %>

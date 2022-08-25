@@ -1,5 +1,13 @@
-ul{
-  list-style: none;
+.parent{
   overflow-y: scroll;
   padding: 0;
+  width: 90vw;
+}
+
+.child {
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+
 }

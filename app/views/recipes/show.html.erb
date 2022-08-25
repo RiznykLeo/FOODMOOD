@@ -13,12 +13,11 @@
         <h2>Ingredients</h2>
         <div class="ingredients-list">
           <ul>
-            <%@recipe.foods.each do |food|%>
+            <%@recipe.ingredients.each do |ingredient|%>
               <li>
-                <%ingredient = @recipe.ingredients.find_by(id:food.id)%>
-                <span class="ingredient"><%="#{food.name.capitalize}:"%></span>
-                <%# <span><%=" #{ingredient.quantity}"%></span> %>
-                <%# <span><%=" #{ingredient.measure}"%></span> %>
+                <span class="ingredient"><%=ingredient.food.name%></span>
+                <span><%= ingredient.quantity %></span>
+                <span><%= ingredient.measure %></span>
               </li>
             <%end %>
           </ul>

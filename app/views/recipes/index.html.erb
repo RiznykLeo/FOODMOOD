@@ -1,12 +1,16 @@
-<ul>
+<div class="parent">
+
+  <%counter = 0 %>
   <%@recipes.each do|recipe| %>
-    <li>
+    <%counter +=1 %>
+    <div class="child" style="z-index: <%=counter %>">
     <%=render "shared/cards/dish",
               name: recipe.name,
               cuisine:recipe.cuisine_type,
               time: recipe.cooking_time,
               image: recipe.photo.key,
               recipe: recipe %>
-    </li>
+    </div>
   <%end %>
-</ul>
+
+</div>

@@ -1,5 +1,5 @@
-<%= simple_form_for [recipe, user_recipe] do |f| %>
-  <div class="button active-green">
-    <%= f.submit "Like", class: "button-link" %>
-  </div>
-<% end %>
+<div class="button-form">
+  <%= simple_form_for [recipe, user_recipe] do |f| %>
+    <%= f.submit "Like", class: "like" %>
+  <% end %>
+</div>

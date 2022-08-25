@@ -15,8 +15,8 @@ $size:350px;
 .dish{
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 0 1rem rgba(0,0,0,0.2);
   position: relative;
+  background: $white;
 }
 .dish-image{
   width: $size;
@@ -28,6 +28,7 @@ $size:350px;
 }
 .dish-name{
     font-size: 2rem;
+    height: 6rem;
 }
 .dish-cuisine{
   font-size: 1.25rem;

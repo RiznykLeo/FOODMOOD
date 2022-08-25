@@ -29,24 +29,32 @@ dinner_recipes_meta = GetRecipesService.new('dinner').call
         # dish_type: recipe["recipe"]["dishType"].first
       )
 
+      delete = 0
+
       recipe["recipe"]["ingredients"].each do |ingredient|
         food = Food.find_or_create_by!(
           name: ingredient["food"],
           category: ingredient["foodCategory"],
           edamam_id: ingredient["foodId"]
         )
-        Ingredient.create!(
-          recipe: rec,
-          food: food,
-          quantity: ingredient["quantity"],
-          measure: ingredient["measure"]
-        )
+        if ingredient["measure"] != "<unit>" && ingredient["quantity"] != 0
+          Ingredient.create!(
+            recipe: rec,
+            food: food,
+            quantity: ingredient["quantity"],
+            measure: ingredient["measure"]
+          )
+        else
+          delete += 1
+        end
       end
       url = recipe["recipe"]["images"]["REGULAR"]["url"]
       file = URI.open(url)
       rec.photo.attach(io: file, filename: "#{rec.name}.jpg", content_type: "image/jpg")
       rec.save
+      rec.destroy if delete != 0
     end
+
   end
   url = dinner_recipes_meta["_links"]["next"]["href"]
   dinner_recipes_meta = JSON.parse(URI.open(url).read)

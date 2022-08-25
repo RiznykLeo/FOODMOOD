@@ -8,13 +8,7 @@
           <div class="cart-info">
             <p class="cart-recipe-name"><%= user_recipe.recipe.name %></p>
             <div class="cart-controls">
-              <%#= simple_form_for user_recipe do |f| %>
-                <%#= f.input :saved, as: :hidden, input_html: { value: "true" } %>
-                <%#= f.submit "Accept", class: "btn btn-info" %>
-              <%# end %>
-
               <%=render "shared/buttons/check", user_recipe: user_recipe%>
-
               <%=render "shared/buttons/cross",
                         link: user_recipe_path(user_recipe),
                         data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }%>

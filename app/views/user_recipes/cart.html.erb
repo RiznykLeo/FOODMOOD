@@ -2,15 +2,19 @@
   <div class="container d-flex">
     <div class="pic">
       <%= cl_image_tag recipe.recipe.photo.key,
-                 :cloud_name => "diq0zfsun", class: "recipe-img" %>
+                       :cloud_name => "diq0zfsun", class: "recipe-img" %>
     </div>
     <div class="detail">
       <%= recipe.recipe.name %>
       <%= recipe.saved %>
       <h2>add to cookbook</h2>
-      <%= link_to "Change", user_recipe_path(recipe), data: {turbo_method: :update}%>
-      <h2>delete</h2>
-      <%= link_to "Delete", user_recipe_path(recipe), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
+      <div class="d-flex">
+        <%= simple_form_for recipe do |f| %>
+          <%= f.input :saved, as: :hidden, input_html: { value: "true" } %>
+          <%= f.submit "Accept", class: "btn btn-info" %>
+        <% end %>
+        <h2>delete</h2>
+        <%= link_to "Delete", user_recipe_path(recipe), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>

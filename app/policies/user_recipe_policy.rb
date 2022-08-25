@@ -10,6 +10,10 @@ class UserRecipePolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    true
+  end
+
   def cart?
     true
   end

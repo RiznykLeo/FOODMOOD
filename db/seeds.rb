@@ -10,45 +10,48 @@ require "open-uri"
 puts "Destroying all the Recipes..."
 # Recipe.destroy_all
 
-puts "Creating 50 dinner Recipes..."
+puts "Creating 100 dinner Recipes..."
 
-dinner_recipes = GetRecipesService.new('dinner').call["hits"][0..50]
+dinner_recipes_meta = GetRecipesService.new('dinner').call
+10.times do
+  dinner_recipes = dinner_recipes_meta["hits"]
+  dinner_recipes.each do |recipe|
+    if recipe["recipe"]["totalTime"] != 0 && recipe["recipe"]["calories"] != 0 && recipe["recipe"]["yield"] != 0
+      rec = Recipe.create!(
+        name: recipe["recipe"]["label"],
+        cooking_time: recipe["recipe"]["totalTime"],
+        calories: recipe["recipe"]["calories"],
+        source: recipe["recipe"]["source"],
+        url: recipe["recipe"]["url"],
+        yield: recipe["recipe"]["yield"],
+        cuisine_type: recipe["recipe"]["cuisineType"].first,
+        # meal_type: recipe["recipe"]["mealType"].first,
+        # dish_type: recipe["recipe"]["dishType"].first
+      )
 
-dinner_recipes.each do |recipe|
-
-  rec = Recipe.create!(
-    name: recipe["recipe"]["label"],
-    cooking_time: recipe["recipe"]["totalTime"],
-    calories: recipe["recipe"]["calories"],
-    source: recipe["recipe"]["source"],
-    url: recipe["recipe"]["url"],
-    yield: recipe["recipe"]["yield"],
-    cuisine_type: recipe["recipe"]["cuisineType"].first,
-    meal_type: recipe["recipe"]["mealType"].first,
-    dish_type: recipe["recipe"]["dishType"].first
-  )
-
-  recipe["recipe"]["ingredients"].each do |ingredient|
-    food = Food.find_or_create_by!(
-      name: ingredient["food"],
-      category: ingredient["foodCategory"],
-      edamam_id: ingredient["foodId"]
-    )
-    Ingredient.create!(
-      recipe: rec,
-      food: food,
-      quantity: ingredient["quantity"],
-      measure: ingredient["measure"]
-    )
+      recipe["recipe"]["ingredients"].each do |ingredient|
+        food = Food.find_or_create_by!(
+          name: ingredient["food"],
+          category: ingredient["foodCategory"],
+          edamam_id: ingredient["foodId"]
+        )
+        Ingredient.create!(
+          recipe: rec,
+          food: food,
+          quantity: ingredient["quantity"],
+          measure: ingredient["measure"]
+        )
+      end
+      url = recipe["recipe"]["images"]["REGULAR"]["url"]
+      file = URI.open(url)
+      rec.photo.attach(io: file, filename: "#{rec.name}.jpg", content_type: "image/jpg")
+      rec.save
+    end
   end
-
-
-  url = recipe["recipe"]["images"]["REGULAR"]["url"]
-  file = URI.open(url)
-  rec.photo.attach(io: file, filename: "#{rec.name}.jpg", content_type: "image/jpg")
-  rec.save
+  url = dinner_recipes_meta["_links"]["next"]["href"]
+  dinner_recipes_meta = JSON.parse(URI.open(url).read)
+  puts "Hop"
 end
-
 puts "Done!"
 
 puts "Creating User"

@@ -5,4 +5,8 @@ class ShoppingListPolicy < ApplicationPolicy
     #   scope.all
     # end
   end
+
+  def list?
+    true
+  end
 end

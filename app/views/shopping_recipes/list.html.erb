@@ -1,0 +1,10 @@
+<% @list.shopping_recipes.each do |shopping_recipe| %>
+  <div class="container d-flex">
+    <div class="detail">
+      <h2><%= shopping_recipe.recipe.name %></h2>
+        <% shopping_recipe.recipe.ingredients.each do |ingredient| %>
+          <h3><%= ingredient.food.name.capitalize %>: <%= ingredient.quantity %> <%= ingredient.measure if ingredient.measure != "<unit>"%>s</h3>
+        <% end %>
+    </div>
+  </div>
+<% end %>

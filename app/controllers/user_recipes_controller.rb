@@ -15,11 +15,6 @@ class UserRecipesController < ApplicationController
     authorize @user_recipes
   end
 
-  def cookbook
-    @user_recipes = UserRecipe.where(user: current_user)
-    authorize @user_recipes
-  end
-
   def update
     @user_recipe = UserRecipe.find(params[:id])
     authorize @user_recipe
@@ -36,10 +31,18 @@ class UserRecipesController < ApplicationController
     @user_recipe.destroy
     redirect_to cart_path, status: :see_other
   end
+  
+   def cookbook
+    @user_recipes = UserRecipe.where(saved: true, user: current_user)
+    authorize @user_recipes
+  end
+
 
   private
 
   def cart_params
     params.require(:user_recipe).permit(:saved)
   end
+
+
 end

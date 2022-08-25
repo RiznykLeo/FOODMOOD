@@ -14,8 +14,8 @@ $height:0.5rem;
     color: $white;
 }
 .button-small{
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.25rem;
+    height: 2.25rem;
 }
 .button-round{
     width: 3rem;
@@ -24,12 +24,24 @@ $height:0.5rem;
 }
 .button-text{
     font-size: 1rem;
+    color: $white;
 }
 .button-link{
     display: flex;
     justify-content: center;
 }
-
+.button-form{
+    width: 40%;
+}
+.like{
+    background: $soft-green;
+    color: white;
+    border: none;
+    font-size: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+}
 
 .active-green{
     background: $soft-green;

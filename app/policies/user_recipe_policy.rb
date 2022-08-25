@@ -25,4 +25,8 @@ class UserRecipePolicy < ApplicationPolicy
   def destroy?
     true
   end
+
+  def cookbook?
+    true
+  end
 end

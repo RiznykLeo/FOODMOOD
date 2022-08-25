@@ -17,8 +17,8 @@
               <li>
                 <%ingredient = @recipe.ingredients.find_by(id:food.id)%>
                 <span class="ingredient"><%="#{food.name.capitalize}:"%></span>
-                <span><%=" #{ingredient.quantity}"%></span>
-                <span><%=" #{ingredient.measure}"%></span>
+                <%# <span><%=" #{ingredient.quantity}"%></span> %>
+                <%# <span><%=" #{ingredient.measure}"%></span> %>
               </li>
             <%end %>
           </ul>
@@ -29,5 +29,6 @@
 
       </div>
     </div>
+    <%= render "shared/buttons/add_recipe_button" %>
   </div>
 </div>

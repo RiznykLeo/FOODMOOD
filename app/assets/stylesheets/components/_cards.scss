@@ -6,6 +6,7 @@ $size:350px;
   justify-content: center;
   margin: auto;
   width: $size;
+  overflow-y: scroll;
 }
 .dish-container a{
   text-decoration: none;
@@ -14,8 +15,8 @@ $size:350px;
 .dish{
   border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 0 1rem rgba(0,0,0,0.2);
   position: relative;
+  background: $white;
 }
 .dish-image{
   width: $size;
@@ -27,6 +28,7 @@ $size:350px;
 }
 .dish-name{
     font-size: 2rem;
+    height: 6rem;
 }
 .dish-cuisine{
   font-size: 1.25rem;
@@ -45,3 +47,4 @@ $size:350px;
   display: flex;
   justify-content: space-between;
 }
+

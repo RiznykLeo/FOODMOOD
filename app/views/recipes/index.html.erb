@@ -3,7 +3,7 @@
   <%counter = 0 %>
   <%@recipes.each do|recipe| %>
     <%counter +=1 %>
-    <div class="child" style="z-index: <%=counter %>">
+    <div class="child" style="z-index: <%=counter %>" data-controller="card-actions">
     <%=render "shared/cards/dish",
               name: recipe.name,
               cuisine:recipe.cuisine_type,

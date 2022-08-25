@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
 
   def index
     @user_recipe = UserRecipe.new
-    @recipes = policy_scope(Recipe)
+    @recipes = policy_scope(Recipe).where.not(id: current_user.recipes).shuffle
   end
 
   def show

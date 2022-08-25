@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :shopping_lists
   has_many :user_recipes
+  has_many :recipes, through: :user_recipes
 
   def current_shopping_list
     shopping_lists.find_by(completed: false) || ShoppingList.create(user: self, completed: false)

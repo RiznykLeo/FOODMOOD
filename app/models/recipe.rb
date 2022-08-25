@@ -4,4 +4,5 @@ class Recipe < ApplicationRecord
   has_many :foods, through: :ingredients
   has_many :shopping_recipes, dependent: :destroy
   has_many :shopping_lists, through: :shopping_recipes
+  has_many :user_recipes, dependent: :destroy
 end

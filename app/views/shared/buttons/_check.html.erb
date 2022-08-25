@@ -1,5 +1,12 @@
-<div class="button button-small check">
-  <%=link_to "#{link}", class: 'button-link'  do%>
-    <span class="button-text"><i class="fa-solid fa-check"></i></span>
-  <%end %>
-</div>
+<!--<div class="button button-small check">-->
+  <%#=link_to "#{link}", class: 'button-link'  do%>
+<!--    <span class="button-text"><i class="fa-solid fa-check"></i></span>-->
+  <%#end %>
+<!--</div>-->
+
+<%= simple_form_for user_recipe do |f| %>
+  <%= f.input :saved, as: :hidden, input_html: { value: "true" } %>
+    <button type="submit" class="button button-small check">
+      <span class="button-text"><i class="fa-solid fa-check"></i></span>
+    </button>
+<% end %>

@@ -29,6 +29,9 @@ $size:350px;
 .dish-name{
     font-size: 2rem;
     height: 6rem;
+    max-height: 6rem;
+    overflow: hidden;
+    font-size: 1.5rem;
 }
 .dish-cuisine{
   font-size: 1.25rem;
@@ -47,4 +50,3 @@ $size:350px;
   display: flex;
   justify-content: space-between;
 }
-

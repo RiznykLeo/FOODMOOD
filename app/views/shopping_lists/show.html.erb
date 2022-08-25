@@ -5,6 +5,10 @@
       <ul class="list-list">
         <% shopping_recipe.recipe.ingredients.each do |ingredient| %>
           <li class="list-ingredient"><span><%= ingredient.food.name.capitalize %>:</span>
+          <%= simple_form_for ingredient do |f| %>
+            <%= f.input :bought, as: :boolean, onclick: "this.form.submit()" %>
+          <% end %>
+
             <span><%= ingredient.quantity.round(2) %></span>
             <span><%= ingredient.measure if ingredient.measure != "<unit>"%></span>
           </li>

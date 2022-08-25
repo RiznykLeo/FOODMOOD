@@ -1,6 +1,5 @@
 class IngredientsController < ApplicationController
   def update
-    raise
     @ingredient = Ingredient.find(params[:id])
     authorize @ingredient
     if @ingredient.update(ingredient_params)

@@ -1,4 +1,5 @@
-<% @user_recipes.each do |recipe| %>
+
+<%= user_recipe.each do |recipe| %>
   <div class="container d-flex">
     <div class="pic">
       <%= cl_image_tag recipe.recipe.photo.key,
@@ -6,6 +7,10 @@
     </div>
     <div class="detail">
       <%= recipe.recipe.name %>
+      <%= recipe.saved %>
+      <h2>add to cookbook</h2>
+      <h2>delete</h2>
+      <%= link_to "Delete", user_recipe_path(recipe), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
     </div>
   </div>
 <% end %>

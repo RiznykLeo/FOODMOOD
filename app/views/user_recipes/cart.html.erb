@@ -1,14 +1,15 @@
-<% @user_recipes.each do |recipe| %>
-  <div class="container d-flex">
-    <div class="pic">
-      <%= cl_image_tag recipe.recipe.photo.key,
-                 :cloud_name => "diq0zfsun", class: "recipe-img" %>
+<div class="cart-recipes-container">
+  <% @user_recipes.each do |recipe| %>
+    <div class="cart-recipe">
+          <%= cl_image_tag recipe.recipe.photo.key,
+                     :cloud_name => "dxpqczcfs", class: "cart-recipe-img" %>
+        <div class="cart-info">
+          <p class="cart-recipe-name"><%= recipe.recipe.name %></p>
+          <div class="cart-controls">
+            <%=render "shared/buttons/check", link:"/"%>
+            <%=render "shared/buttons/cross", link:"/"%>
+          </div>
+        </div>
     </div>
-    <div class="detail">
-      <%= recipe.recipe.name %>
-      <h2>add to cookbook</h2>
-      <h2>delete</h2>
-      <%= link_to "Delete", user_recipe_path(recipe), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%>
-    </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

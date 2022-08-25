@@ -24,6 +24,7 @@
           </ul>
         </div>
       </div>
+      <%= link_to "Back", recipes_path(recipe: params[:id]) %>
       <div class="recipe-source">
         <%=link_to "Recipe", @recipe.url %>
 

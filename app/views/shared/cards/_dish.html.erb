@@ -1,7 +1,9 @@
 <div class="vertical">
   <div class="dish-container">
     <div class="dish">
-      <%= cl_image_tag image, class: "dish-image" %>
+      <%= link_to recipe_path(recipe) do %>
+        <%= cl_image_tag image, class: "dish-image" %>
+      <% end %>
       <div class="dish-description">
         <div class="dish-name">
           <%= link_to recipe.name, recipe_path(recipe) %>

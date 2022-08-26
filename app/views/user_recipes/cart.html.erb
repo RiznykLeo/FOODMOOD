@@ -1,9 +1,7 @@
 <div class="cart-recipes-container">
-
   <div class="page-name">
     <p>Add to Cookbook</p>
   </div>
-
   <% @user_recipes.each do |user_recipe| %>
     <div data-controller="card-actions" class="cart-recipe">
       <%= link_to "/recipes/#{user_recipe.recipe.id}", class: "cart-link" do %>

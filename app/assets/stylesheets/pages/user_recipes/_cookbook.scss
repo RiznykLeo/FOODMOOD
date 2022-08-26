@@ -20,39 +20,55 @@
 }
 
 .cookbook-recipe-img {
-  width: 10rem;
+  width: 8rem;
   height: 10rem;
+  object-fit: cover;
 }
 
 .cookbook-info {
-  max-height: 7rem;
+  height: 6.25rem;
   overflow: hidden;
 }
 
 .cookbook-recipe-name {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   margin: 0.5rem 0.5rem 0.5rem 0.5rem;
 }
 
 .cookbook-status {
   display: flex;
   justify-content: space-around;
-  font-size: 2rem;
+  font-size: 1.25rem;
   margin-bottom: 0.5rem;
+}
+
+.cookbook-status-labels {
+  font-size: 0.75rem;
 }
 
 .cookbook-vertical {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 100%;
 }
 
-.status-active {
-  background: $soft-green;
+.status-active i {
   color: $soft-green;
 }
 
 .cookbook-status button {
   background: none;
   border: none;
+}
+
+.status-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.additional-text {
+  font-size: 0.75rem;
 }

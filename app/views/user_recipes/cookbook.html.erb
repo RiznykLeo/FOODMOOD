@@ -1,4 +1,7 @@
 <div class="cookbook-recipes-container">
+  <div class="page-name">
+    <p>Cookbook</p>
+  </div>
   <% @user_recipes.each do |user_recipe| %>
     <div class="cookbook-recipe">
       <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
@@ -13,7 +16,6 @@
         <div class="status-info">
           <div class="cookbook-status"
                data-controller="card-actions">
-
             <div class="status-block">
               <%= simple_form_for user_recipe,
                                   html: { class: "d-flex",
@@ -21,15 +23,13 @@
                                                   action: "submit->card-actions#trigger" } } do |f| %>
                 <%= f.input :cooked_status, as: :hidden, input_html: { value: "not_cooked" } %>
                 <button type="submit" class="">
-                <span data-card-actions-target="button">
+                  <span data-card-actions-target="button">
                     <i class="fa-solid fa-clipboard-list"></i>
-                </span>
+                  </span>
                 </button>
               <% end %>
-
               <span class="cookbook-status-labels">not cooked</span>
             </div>
-
             <div class="status-block">
               <%= simple_form_for user_recipe,
                                   html: { class: "d-flex",
@@ -37,15 +37,13 @@
                                                   action: "submit->card-actions#trigger" } } do |f| %>
                 <%= f.input :cooked_status, as: :hidden, input_html: { value: "active" } %>
                 <button type="submit" class="">
-              <span data-card-actions-target="button">
-                  <i class="fa-solid fa-fire-burner"></i>
-              </span>
+                  <span data-card-actions-target="button">
+                    <i class="fa-solid fa-fire-burner"></i>
+                  </span>
                 </button>
               <% end %>
-
               <span class="cookbook-status-labels">cooking</span>
             </div>
-
             <div class="status-block">
               <%= simple_form_for user_recipe,
                                   html: { class: "d-flex",
@@ -53,12 +51,11 @@
                                                   action: "submit->card-actions#trigger" } } do |f| %>
                 <%= f.input :cooked_status, as: :hidden, input_html: { value: "cooked" } %>
                 <button type="submit" class="">
-              <span data-card-actions-target="button">
-                  <i class="fa-solid fa-bowl-rice"></i>
-              </span>
+                  <span data-card-actions-target="button">
+                    <i class="fa-solid fa-bowl-rice"></i>
+                  </span>
                 </button>
               <% end %>
-
               <span class="cookbook-status-labels">cooked</span>
             </div>
           </div>
@@ -67,4 +64,3 @@
     </div>
   <% end %>
 </div>
-

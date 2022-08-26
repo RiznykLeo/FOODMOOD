@@ -14,7 +14,7 @@
         </div>
       </div>
       <div class="cart-button">
-        <%= render "shared/buttons/cart", link: "/cart", counter: "0" %>
+        <%= render "shared/buttons/cart", link: "/cart", counter: UserRecipe.where(saved: false).count %>
       </div>
       <div class="d-flex justify-content-between px-2 mb-2">
         <%= render "shared/buttons/active_red",

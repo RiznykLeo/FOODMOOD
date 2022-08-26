@@ -14,9 +14,17 @@
           <ul>
             <% @recipe.ingredients.each do |ingredient| %>
               <li>
-                <span class="ingredient"><%= ingredient.food.name %></span>
+                <% ingredient_mod = ingredient.food.name.split %>
+                <% ingredient_mod.map do |word| %>
+                  <% word.capitalize! %>
+                <% end %>
+                <% ingredient_mod = ingredient_mod.join(" ") %>
+
+                <span class="ingredient"><%= ingredient_mod %></span>
                 <span><%= ingredient.quantity %></span>
-                <span><%= ingredient.measure if ingredient.measure != "<unit>"%></span>
+                <% if ingredient.measure != "<unit>" %>
+                   <span><%= ingredient.measure %>s</span>
+                <% end %>
               </li>
             <% end %>
           </ul>

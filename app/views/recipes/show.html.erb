@@ -1,34 +1,33 @@
 <div class="recipe-container">
   <div class="flex-container">
     <div class="recipe-img-container">
-      <%= cl_image_tag @recipe.photo.key,
-                       class:"recipe-img"%>
+      <%= cl_image_tag @recipe.photo.key, class: "recipe-img" %>
     </div>
     <div class="recipe-info">
-      <h1 class="recipe-name"><%=@recipe.name %></h1>
-      <p><%="#{@recipe.cooking_time} min." %></p>
-      <p><%="#{@recipe.calories.to_i} cal." %></p>
-      <p><%="#{@recipe.yield} yield"%></p>
+      <h1 class="recipe-name"><%= @recipe.name %></h1>
+      <p><%= "#{@recipe.cooking_time} min." %></p>
+      <p><%= "#{@recipe.calories.to_i} cal." %></p>
+      <p><%= "#{@recipe.yield} yield" %></p>
       <div class="ingredients">
         <h2>Ingredients</h2>
         <div class="ingredients-list">
           <ul>
-            <%@recipe.ingredients.each do |ingredient|%>
+            <% @recipe.ingredients.each do |ingredient| %>
               <li>
-                <span class="ingredient"><%=ingredient.food.name%></span>
+                <span class="ingredient"><%= ingredient.food.name %></span>
                 <span><%= ingredient.quantity %></span>
                 <span><%= ingredient.measure if ingredient.measure != "<unit>"%></span>
               </li>
-            <%end %>
+            <% end %>
           </ul>
         </div>
       </div>
       <%# <%= link_to "Back", recipes_path(recipe: params[:id]) if params[:back] == "index"%>
       <%= link_to "Back", "javascript:history.back()" %>
       <div class="recipe-source">
-        <%=link_to "Recipe", @recipe.url %>
+        <%= link_to "Recipe", @recipe.url %>
       </div>
     </div>
-    <%= render "shared/buttons/add_recipe_button" if params[:showbutton] == "show"%>
+    <%= render "shared/buttons/add_recipe_button" if params[:showbutton] == "show" %>
   </div>
 </div>

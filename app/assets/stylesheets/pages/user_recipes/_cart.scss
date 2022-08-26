@@ -28,7 +28,7 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 1rem 1rem 1rem;
+  padding: 1rem 1rem 1rem 0;
 }
 
 .cart-info {
@@ -39,7 +39,7 @@
 .cart-recipe-name {
   font-size: 1.15rem;
   width: 8rem;
-  max-height: 6.5rem;
+  max-height: 8.6rem;
   overflow: hidden;
-  margin: 0.8rem 0.5rem 1rem 0.5rem;
+  margin: 0.5rem 0 0.5rem 0.5rem;
 }

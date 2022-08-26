@@ -1,1 +1,35 @@
-// Specific CSS for your home-page
+@import "components/utilities/variables";
+
+.home-vertical {
+  width: 90vw;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+}
+
+.home-logo {
+  width: 50vw;
+  height: 50vw;
+  margin: auto;
+}
+
+.home-button-container {
+  display: flex;
+}
+
+.home-button {
+  flex-grow: 1;
+}
+
+.home-text {
+  font-size: 1.5rem;
+  background-color: $white;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.accent {
+  font-size: 1.75rem;
+  color: $soft-green;
+}

@@ -1,22 +1,28 @@
 <div class="list-vertical">
-  <% @list.shopping_recipes.each do |shopping_recipe| %>
-    <div class="list-item">
-      <p class="list-item-name"><%= shopping_recipe.recipe.name %></p>
-      <ul class="list-list">
-        <% shopping_recipe.recipe.ingredients.order(:created_at).each do |ingredient| %>
-          <li class="list-ingredient">
-            <div class="d-flex check-item">
-              <%= form_for ingredient do |f| %>
-                <%= f.check_box :bought, as: :boolean, onclick: "this.form.submit()", class: "checkbox" %>
-              <% end %>
-              <span><%= ingredient.food.name.capitalize %>:
-                <%= ingredient.quantity.round(2) %>
-                <%= ingredient.measure if ingredient.measure != "<unit>" %></span>
-            </div>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class="page-name">
+    <p>Shopping List</p>
+  </div>
+
+  <div class="show-spacing">
+    <% @list.shopping_recipes.each do |shopping_recipe| %>
+      <div class="list-item">
+        <p class="list-item-name"><%= shopping_recipe.recipe.name %></p>
+        <ul class="list-list">
+          <% shopping_recipe.recipe.ingredients.order(:created_at).each do |ingredient| %>
+            <li class="list-ingredient">
+              <div class="d-flex check-item">
+                <%= form_for ingredient do |f| %>
+                  <%= f.check_box :bought, as: :boolean, onclick: "this.form.submit()", class: "checkbox" %>
+                <% end %>
+                <span><%= ingredient.food.name.capitalize %>:
+                  <%= ingredient.quantity.round(2) %>
+                  <%= ingredient.measure if ingredient.measure != "<unit>" %></span>
+              </div>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  </div>
   <%= render "shared/buttons/archive", current_list: @list %>
 </div>

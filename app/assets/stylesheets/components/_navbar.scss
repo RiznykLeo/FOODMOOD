@@ -1,19 +1,27 @@
 @import "utilities/variables";
-.navbar-container{
+
+.navbar-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 3px solid $gray;
   margin-top: 0.5rem;
 }
-.navbar-item{
+
+.navbar-item {
   margin: 0 auto;
   font-size: 4rem;
   display: flex;
   align-items: center;
 }
-.navbar-item-link{
-color: $black;
+
+.navbar-item-link {
+  color: $black;
 }
-.navbar-item-icon{
+
+.navbar-item-link:hover {
+  color: $soft-green;
+}
+
+.navbar-item-icon {
 
 }

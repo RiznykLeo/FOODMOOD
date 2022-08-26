@@ -9,3 +9,5 @@
 //= require hammer-time.min
 
 //= require touch-emulator
+
+//= link manifest.json

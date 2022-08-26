@@ -1,0 +1,16 @@
+<div class="home-vertical">
+  <div class="home-logo home-grid-item">
+    <%= image_tag "logo.png", class: "home-logo" %>
+  </div>
+
+  <p class="home-grid-item home-text">
+    <span class="accent">FoodMood</span> is the place where
+    you say goodbye to the difficulty of choosing
+    a recipe for the food you want to cook
+    <i class="fa-solid fa-bowl-rice accent"></i>
+  </p>
+
+  <div class="home-button-container">
+    <%= render "shared/buttons/home_active_green", link: "/recipes", text: "Let's Begin" %>
+  </div>
+</div>

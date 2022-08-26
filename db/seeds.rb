@@ -37,7 +37,7 @@ dinner_recipes_meta = GetRecipesService.new('dinner').call
           category: ingredient["foodCategory"],
           edamam_id: ingredient["foodId"]
         )
-        if ingredient["measure"] != "<unit>" && ingredient["quantity"] != 0
+        if ingredient["quantity"] != 0 #&& ingredient["measure"] != "<unit>"
           Ingredient.create!(
             recipe: rec,
             food: food,

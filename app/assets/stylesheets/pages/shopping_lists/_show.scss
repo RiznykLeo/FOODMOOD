@@ -1,16 +1,28 @@
 @import "../../components/utilities/variables";
 
-.list-vertical{
+.list-vertical {
   margin-top: 1rem;
   width: 90vw;
   overflow-y: scroll;
 }
-.list-list{
+
+.list-list {
   list-style: none;
   padding: 0;
 }
-.list-item-name{
-  font-size: 1.25rem;
+
+.list-item-name {
+  font-size: 1.5rem;
   border-bottom: 3px solid $gray;
   margin-bottom: 0.5rem;
+}
+
+.checkbox {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.check-item {
+  font-size: 1.25rem;
 }

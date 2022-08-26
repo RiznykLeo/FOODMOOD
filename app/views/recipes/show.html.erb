@@ -17,7 +17,7 @@
               <li>
                 <span class="ingredient"><%=ingredient.food.name%></span>
                 <span><%= ingredient.quantity %></span>
-                <span><%= ingredient.measure %></span>
+                <span><%= ingredient.measure if ingredient.measure != "<unit>"%></span>
               </li>
             <%end %>
           </ul>

@@ -3,7 +3,7 @@
     <div data-controller="card-actions" class="cart-recipe">
       <%= link_to "/recipes/#{user_recipe.recipe.id}", class: "cart-link" do %>
         <%= cl_image_tag user_recipe.recipe.photo.key,
-                         :cloud_name => "dxpqczcfs", class: "cart-recipe-img" %>
+                         class: "cart-recipe-img" %>
       <% end %>
       <div class="cart-info">
         <p class="cart-recipe-name"><%= user_recipe.recipe.name %></p>

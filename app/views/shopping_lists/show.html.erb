@@ -4,18 +4,19 @@
       <p class="list-item-name"><%= shopping_recipe.recipe.name %></p>
       <ul class="list-list">
         <% shopping_recipe.recipe.ingredients.order(:created_at).each do |ingredient| %>
-          <li class="list-ingredient"><span><%= ingredient.food.name.capitalize %>:</span>
-            <div class="d-flex">
+          <li class="list-ingredient">
+            <div class="d-flex check-item">
               <%= form_for ingredient do |f| %>
-                <%= f.check_box :bought, as: :boolean, onclick: "this.form.submit()" %>
+                <%= f.check_box :bought, as: :boolean, onclick: "this.form.submit()", class: "checkbox" %>
               <% end %>
-              <span><%= ingredient.quantity.round(2) %></span>
-              <span><%= ingredient.measure if ingredient.measure != "<unit>"%></span>
+              <span><%= ingredient.food.name.capitalize %>:
+                <%= ingredient.quantity.round(2) %>
+                <%= ingredient.measure if ingredient.measure != "<unit>" %></span>
             </div>
           </li>
         <% end %>
       </ul>
     </div>
   <% end %>
-  <%= render "shared/buttons/archive", current_list: @list%>
+  <%= render "shared/buttons/archive", current_list: @list %>
 </div>

@@ -63,6 +63,10 @@ $height: 0.5rem;
   background: $gray;
 }
 
+.recipe-button {
+  flex-grow: 1;
+}
+
 .cross {
   background: $red;
 }
@@ -94,4 +98,27 @@ $height: 0.5rem;
   top: -0.25rem;
   left: -0.25rem;
   border: 2px solid $background;
+}
+
+.add-ingredients-form {
+  display: flex;
+}
+
+.add-ingredients {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: $soft-green;
+  color: $white;
+  flex-grow: 1;
+}
+
+.recipe-source {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.recipe-source a {
+  text-decoration: none;
+  color: $black;
 }

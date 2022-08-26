@@ -1,3 +1,4 @@
-<%= simple_form_for [@recipe, @shopping_recipe] do |f| %>
-    <%= f.submit "Add Ingredients", class: "button active-green" %>
+<%= simple_form_for [@recipe, @shopping_recipe],
+                    html: { class: "add-ingredients-form" } do |f| %>
+  <%= f.submit "Add Ingredients", class: "button add-ingredients" %>
 <% end %>

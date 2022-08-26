@@ -1,14 +1,19 @@
 <div class="cart-recipes-container">
+
+  <div class="page-name">
+    <p>Add to Cookbook</p>
+  </div>
+
   <% @user_recipes.each do |user_recipe| %>
     <div data-controller="card-actions" class="cart-recipe">
       <%= link_to "/recipes/#{user_recipe.recipe.id}", class: "cart-link" do %>
         <%= cl_image_tag user_recipe.recipe.photo.key, class: "cart-recipe-img" %>
       <% end %>
-      <div class="cart-info">
-        <%= link_to "/recipes/#{user_recipe.recipe.id}", class: "cart-link" do %>
+      <%= link_to "/recipes/#{user_recipe.recipe.id}", class: "cart-link" do %>
+        <div class="cart-info">
           <p class="cart-recipe-name"><%= user_recipe.recipe.name %></p>
-        <% end %>
-      </div>
+        </div>
+      <% end %>
       <div class="cart-controls">
         <%= render "shared/buttons/check", user_recipe: user_recipe %>
         <%= render "shared/buttons/cross",

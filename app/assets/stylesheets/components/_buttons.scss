@@ -1,87 +1,97 @@
 @import "utilities/variables";
-$width:40%;
-$height:0.5rem;
-.button{
-    width: $width;
-    padding: $height 0.5rem $height 0.5rem;
-    border-radius: 0.5rem;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-}
-.button a{
-    text-decoration: none;
-    color: $white;
-}
-.button-small{
-    width: 2.25rem;
-    height: 2.25rem;
-}
-.button-round{
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-}
-.button-text{
-    font-size: 1rem;
-    color: $white;
-}
-.button-link{
-    display: flex;
-    justify-content: center;
-}
-.button-form{
-    width: 40%;
-}
-.like{
-    background: $soft-green;
-    color: white;
-    border: none;
-    font-size: 1rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    width: 100%;
+
+$width: 40%;
+$height: 0.5rem;
+.button {
+  width: $width;
+  padding: $height 0.5rem $height 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.active-green{
-    background: $soft-green;
+.button a {
+  text-decoration: none;
+  color: $white;
 }
 
-.active-red{
-    background: $red;
+.button-small {
+  width: 2.25rem;
+  height: 2.25rem;
 }
 
-.inactive{
-    background: $gray;
+.button-round {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
 }
 
-.cross{
-    background: $red;
+.button-text {
+  font-size: 1rem;
+  color: $white;
 }
 
-.check{
-    background: $green;
-    border: none;
+.button-link {
+  display: flex;
+  justify-content: center;
 }
 
-.cart{
-    background-color: $gray;
-    opacity: 75%;
-    position: relative;
+.button-form {
+  width: 40%;
 }
-.cart a{
-    color: $black;
+
+.like {
+  background: $soft-green;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  width: 100%;
 }
-.cart-counter{
-    background-color: $green;
-    width: 1.25rem;
-    height: 1.25rem;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: -0.25rem;
-    left: -0.25rem;
-    border: 2px solid $background;
+
+.active-green {
+  background: $soft-green;
+}
+
+.active-red {
+  background: $red;
+}
+
+.inactive {
+  background: $gray;
+}
+
+.cross {
+  background: $red;
+}
+
+.check {
+  background: $green;
+  border: none;
+}
+
+.cart {
+  background-color: $gray;
+  opacity: 75%;
+  position: relative;
+}
+
+.cart a {
+  color: $black;
+}
+
+.cart-counter {
+  background-color: $green;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -0.25rem;
+  left: -0.25rem;
+  border: 2px solid $background;
 }

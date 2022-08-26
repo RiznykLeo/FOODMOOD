@@ -1,5 +1,11 @@
 @import "../../components/utilities/variables";
 
+.page-name {
+  margin-top: 1rem;
+  font-size: 2rem;
+  border-bottom: 3px solid $gray;
+}
+
 .cart-link {
   color: $black;
   text-decoration: none;

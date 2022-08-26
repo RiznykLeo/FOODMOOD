@@ -2,12 +2,28 @@
   <div class="flex-container">
     <div class="recipe-img-container">
       <%= cl_image_tag @recipe.photo.key, class: "recipe-img" %>
+      <div class="back-link">
+        <%= link_to "javascript:history.back()" do %>
+          <i class="fa-solid fa-angles-left"></i>
+        <% end %>
+      </div>
     </div>
     <div class="recipe-info">
       <h1 class="recipe-name"><%= @recipe.name %></h1>
-      <p><%= "#{@recipe.cooking_time} min." %></p>
-      <p><%= "#{@recipe.calories.to_i} cal." %></p>
-      <p><%= "#{@recipe.yield} yield" %></p>
+      <div class="recipe-categories">
+        <p>
+          <span><i class="fa-solid fa-clock"></i></span>
+          <%= "#{@recipe.cooking_time} mins" %>
+        </p>
+        <p>
+          <span><i class="fa-solid fa-fire"></i></span>
+          <%= "#{@recipe.calories.to_i} cals" %>
+        </p>
+        <p>
+          <span><i class="fa-solid fa-bowl-rice"></i></span>
+          <%= "#{@recipe.yield} portions" %>
+        </p>
+      </div>
       <div class="ingredients">
         <h2>Ingredients</h2>
         <div class="ingredients-list">
@@ -23,7 +39,7 @@
                 <span class="ingredient"><%= ingredient_mod %></span>
                 <span><%= ingredient.quantity %></span>
                 <% if ingredient.measure != "<unit>" %>
-                   <span><%= ingredient.measure %>s</span>
+                  <span><%= ingredient.measure %>s</span>
                 <% end %>
               </li>
             <% end %>
@@ -31,11 +47,12 @@
         </div>
       </div>
       <%# <%= link_to "Back", recipes_path(recipe: params[:id]) if params[:back] == "index"%>
-      <%= link_to "Back", "javascript:history.back()" %>
-      <div class="recipe-source">
-        <%= link_to "Recipe", @recipe.url %>
-      </div>
     </div>
     <%= render "shared/buttons/add_recipe_button" if params[:showbutton] == "show" %>
+
+    <div class="recipe-source">
+      <%= render "shared/buttons/inactive",
+                 link: @recipe.url, text: Recipe %>
+    </div>
   </div>
 </div>

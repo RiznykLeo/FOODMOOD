@@ -1,26 +1,65 @@
 @import "components/utilities/variables";
-.recipe-container{
+
+.recipe-container {
   margin-top: 1rem;
-  max-height: 80vh;
+  max-height: 85vh;
   overflow-y: scroll;
   display: flex;
   justify-content: center;
 }
-.recipe-img-container{
+
+.recipe-img-container {
   padding-bottom: 1rem;
+  position: relative;
 }
-.recipe-img{
+
+.recipe-img {
   width: 90vw;
 }
-.ingredients{
+
+.ingredients {
   border-top: 3px solid $gray;
   margin-top: 1rem;
 }
-.ingredients-list ul{
+
+.ingredients-list ul {
   margin-top: 0.5rem;
   list-style: none;
   padding: 0;
 }
-.ingredient{
+
+.ingredient {
   font-weight: bold;
+}
+
+.back-link {
+  position: absolute;
+  top: 0.35rem;
+  left: 0.35rem;
+  opacity: 50%;
+  font-size: 1.75rem;
+  background: $gray;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.back-link a {
+  color: $black;
+}
+
+.recipe-categories {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 800px) {
+  .recipe-img {
+    width: 16rem;
+    height: 16rem;
+  }
 }

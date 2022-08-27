@@ -9,14 +9,16 @@
           <%= link_to recipe.name, recipe_path(recipe) %>
         </div>
         <div class="dish-cuisine">
-          <span><%= cuisine.capitalize %></span>
+          <i class="fa-solid fa-earth-europe"> </i>
+          <span>Cuisine Type: <%= cuisine.capitalize %></span>
         </div>
         <div class="dish-time">
-          <span><%= time %> mins</span>
+          <i class="fa-solid fa-clock"> </i>
+          <span>Cooking Time: <%= time %> mins</span>
         </div>
       </div>
       <div class="cart-button">
-        <%= render "shared/buttons/cart", link: "/cart", counter: UserRecipe.where(saved: false).count %>
+        <%= render "shared/buttons/cart", link: "/cart", counter: UserRecipe.where(user: current_user, saved: false).count %>
       </div>
       <div class="d-flex justify-content-between px-2 mb-2">
         <%= render "shared/buttons/active_red",

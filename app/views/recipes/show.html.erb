@@ -17,7 +17,7 @@
         </p>
         <p>
           <span><i class="fa-solid fa-fire"></i></span>
-          <%= "#{@recipe.calories.to_i} cals" %>
+          <%= "#{@recipe.calories.to_i/@recipe.yield} cals/serving" %>
         </p>
         <p>
           <span><i class="fa-solid fa-bowl-rice"></i></span>

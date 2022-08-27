@@ -76,3 +76,17 @@
 .ckbk-icon {
   color: black;
 }
+
+.ckbk-icon-active {
+  color: $food-mood;
+}
+
+.show-spacing {
+  padding-top: 1rem;
+}
+
+.list-item-name {
+  font-size: 1.5rem;
+  border-bottom: 3px solid $gray;
+  margin-bottom: 0.5rem;
+}

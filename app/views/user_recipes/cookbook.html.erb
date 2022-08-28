@@ -6,7 +6,7 @@
   <div class="show-spacing">
 
     <div class="list-item-name">
-      <p>> Active</p>
+      <p>> Active <%= "(#{@user_recipes.where(cooked_status: "active").count})" %></p>
     </div>
 
     <% @user_recipes.where(cooked_status: "active").sort_by(&:updated_at).reverse.each do |user_recipe| %>
@@ -84,7 +84,7 @@
     <% end %>
 
     <div class="list-item-name">
-      <p>> Not Cooked</p>
+      <p>> Not Cooked <%= "(#{@user_recipes.where(cooked_status: "not_cooked").count})" %></p>
     </div>
 
     <% @user_recipes.where(cooked_status: "not_cooked").sort_by(&:updated_at).reverse.each do |user_recipe| %>
@@ -162,7 +162,7 @@
     <% end %>
 
     <div class="list-item-name">
-      <p>> Cooked</p>
+      <p>> Cooked <%= "(#{@user_recipes.where(cooked_status: "cooked").count})" %></p>
     </div>
 
     <% @user_recipes.where(cooked_status: "cooked").sort_by(&:updated_at).reverse.each do |user_recipe| %>

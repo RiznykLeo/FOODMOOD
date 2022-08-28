@@ -25,4 +25,5 @@
     <% end %>
   </div>
   <%= render "shared/buttons/archive", current_list: @list if current_user.current_shopping_list.shopping_recipes[0] != nil %>
+  <%= link_to "Back to your Cookbook", cookbook_path if @list.shopping_recipes.all.count == 0 %>
 </div>

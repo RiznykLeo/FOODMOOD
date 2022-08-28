@@ -20,4 +20,5 @@
       </div>
     </div>
   <% end %>
+  <%= link_to "Access your Cookbook", cookbook_path if @user_recipes.all.count == 0 %>
 </div>

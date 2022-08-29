@@ -6,6 +6,6 @@ class ShoppingRecipesController < ApplicationController
     @shopping_recipe.recipe = @recipe
     @shopping_recipe.shopping_list = current_user.current_shopping_list
     @shopping_recipe.save
-    redirect_to "/list", notice: "added to ingredients list"
+    redirect_to "/list", notice: "added ingredients to your shopping list!"
   end
 end

@@ -43,25 +43,24 @@
 }
 
 .accordion-content {
-
   transition: 800ms ease-in-out;
 }
 
 .accordion .content-bx .accordion-content {
-  position: relative;
-  max-height: 0;
-  overflow: hidden;
-  //transition: max-height 1000ms ease-in-out;
+  max-height: 120rem;
 }
 
 .accordion .content-bx .accordion-active {
-  max-height: 120rem;
+  position: relative;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .arrow {
   transition: 300ms;
+  transform: rotate(90deg);
 }
 
 .rotated {
-  transform: rotate(90deg);
+  transform: rotate(-0deg);
 }

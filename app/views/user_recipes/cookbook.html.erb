@@ -6,10 +6,10 @@
   <div class="show-spacing accordion">
 
     <div class="active-cook content-bx"
-         data-action="click->accordion#collapse"
          data-controller="accordion">
 
-      <div class="list-item-name accordion-label">
+      <div class="list-item-name accordion-label"
+           data-action="click->accordion#collapse">
         <p>
           <span><i class="fa-solid fa-chevron-right pe-2 arrow" data-accordion-target="arrow"></i></span>
           <span>Active <%= "(#{@user_recipes.where(cooked_status: "active").count})" %></span>
@@ -94,10 +94,10 @@
     </div>
 
     <div class="not-cooked content-bx"
-         data-action="click->accordion#collapse"
          data-controller="accordion">
 
-      <div class="list-item-name accordion-label">
+      <div class="list-item-name accordion-label"
+           data-action="click->accordion#collapse">
         <p>
           <span><i class="fa-solid fa-chevron-right pe-2 arrow" data-accordion-target="arrow"></i></span>
           <span>Not Cooked <%= "(#{@user_recipes.where(cooked_status: "not_cooked").count})" %></span>
@@ -182,10 +182,10 @@
     </div>
 
     <div class="cooked content-bx"
-         data-action="click->accordion#collapse"
          data-controller="accordion">
 
-      <div class="list-item-name accordion-label">
+      <div class="list-item-name accordion-label"
+           data-action="click->accordion#collapse">
         <p>
           <span><i class="fa-solid fa-chevron-right pe-2 arrow" data-accordion-target="arrow"></i></span>
           <span>Cooked <%= "(#{@user_recipes.where(cooked_status: "cooked").count})" %></span>

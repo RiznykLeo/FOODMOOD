@@ -3,6 +3,7 @@
 .recipe-container {
   margin-top: 1rem;
   max-height: 85vh;
+  width: 90vw;
   overflow-y: scroll;
   display: flex;
   justify-content: center;
@@ -55,6 +56,10 @@
   display: flex;
   justify-content: space-between;
   margin-top: 0.5rem;
+}
+
+.ingredients-title i {
+  font-size: 1.25rem;
 }
 
 @media screen and (min-width: 800px) {

@@ -6,9 +6,9 @@
   <div class="show-spacing accordion">
     <% @list.shopping_recipes.each do |shopping_recipe| %>
       <div class="list-item content-bx"
-           data-action="click->accordion#collapse"
            data-controller="accordion">
-        <p class="list-item-name accordion-label">
+        <p class="list-item-name accordion-label"
+           data-action="click->accordion#collapse">
           <span><i class="fa-solid fa-chevron-right pe-2 arrow" data-accordion-target="arrow"></i></span>
           <span><%= shopping_recipe.recipe.name %></span>
         </p>

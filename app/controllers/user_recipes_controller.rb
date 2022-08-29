@@ -39,8 +39,6 @@ class UserRecipesController < ApplicationController
       format.text { render partial: "shared/flashes", formats: [:html] }
   end
 
-  end
-
   def cookbook
     @user_recipes = UserRecipe.where(saved: true, user: current_user)
     authorize @user_recipes

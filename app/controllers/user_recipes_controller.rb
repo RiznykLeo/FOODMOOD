@@ -33,7 +33,7 @@ class UserRecipesController < ApplicationController
     @user_recipe = UserRecipe.find(params[:id])
     authorize @user_recipe
     @user_recipe.destroy
-    redirect_to cart_path, status: :see_other, notice: "Delete from your cart!"
+    redirect_to cookbook_path, status: :see_other, notice: "Delete from your Cookbook!"
   end
 
   def cookbook

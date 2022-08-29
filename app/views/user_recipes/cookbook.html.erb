@@ -88,6 +88,9 @@
                 </div>
               </div>
             </div>
+              <%= render "shared/buttons/cross",
+                   link: user_recipe_path(user_recipe),
+                   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
           </div>
         <% end %>
       </div>
@@ -176,6 +179,9 @@
                 </div>
               </div>
             </div>
+            <%= render "shared/buttons/cross",
+                   link: user_recipe_path(user_recipe),
+                   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
           </div>
         <% end %>
       </div>
@@ -264,6 +270,9 @@
                 </div>
               </div>
             </div>
+            <%= render "shared/buttons/cross",
+                   link: user_recipe_path(user_recipe),
+                   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
           </div>
         <% end %>
       </div>

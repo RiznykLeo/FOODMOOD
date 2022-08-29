@@ -20,7 +20,10 @@ class UserRecipesController < ApplicationController
     authorize @user_recipe
     if @user_recipe.update(cart_params)
       # redirect_to cart_path
-      head :ok
+      flash[:notice] = "recipe updated"
+      respond_to do |format|
+        format.text { render partial: "shared/flashes", formats: [:html] }
+    end
     else
       render :edit
     end

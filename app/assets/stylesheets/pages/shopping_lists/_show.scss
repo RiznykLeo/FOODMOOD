@@ -42,16 +42,26 @@
   cursor: pointer;
 }
 
-.accordion .content-bx .accordion-label:before {
+.accordion-content {
+
+  transition: 800ms ease-in-out;
 }
 
 .accordion .content-bx .accordion-content {
   position: relative;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1000ms ease-in-out;
+  //transition: max-height 1000ms ease-in-out;
 }
 
 .accordion .content-bx .accordion-active {
-  max-height: 50rem;
+  max-height: 120rem;
+}
+
+.arrow {
+  transition: 300ms;
+}
+
+.rotated {
+  transform: rotate(90deg);
 }

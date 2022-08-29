@@ -3,7 +3,7 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find(params[:id])
     authorize @ingredient
     if @ingredient.update(ingredient_params)
-      redirect_to list_path, notice: "added ingredients"
+      redirect_to list_path
     end
   end
 

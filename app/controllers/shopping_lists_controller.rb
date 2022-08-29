@@ -8,7 +8,7 @@ class ShoppingListsController < ApplicationController
     @shopping_list = ShoppingList.find(params[:id])
     authorize @shopping_list
     if @shopping_list.update(shopping_list_params)
-      redirect_to "/list"
+      redirect_to "/list", notice: "Emptied your shopping list!"
     else
       render :edit
     end

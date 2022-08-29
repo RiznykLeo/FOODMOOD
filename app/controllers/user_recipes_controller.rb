@@ -4,7 +4,7 @@ class UserRecipesController < ApplicationController
     @user_recipe = UserRecipe.new(recipe: recipe, user: current_user)
     authorize @user_recipe
     if @user_recipe.save
-      redirect_to recipes_path
+      redirect_to recipes_path, notice: ""
     else
       render :recipes
     end

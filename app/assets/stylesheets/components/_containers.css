@@ -1,4 +1,4 @@
-.main-container{
+.main-container {
     width: 90vw;
     margin: auto;
 
@@ -6,10 +6,14 @@
     grid-template-rows: 85vh 15vh;
 
     justify-content: center;
+
+    position: relative;
 }
-.navbar-container{
+
+.navbar-container {
     width: 100%;
 }
-.vertical{
+
+.vertical {
     margin: auto;
 }

@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" style="font-size: 16px">
-  <head>
-    <title>FOODMOOD</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
-    <%= render 'shared/ios_pwa_links' %>
-  </head>
-  <body>
-    <script>
-      0
-    </script>
-    <div class="main-container">
-      <%= yield %>
-    <%= render "shared/flashes" %>
-      <%= render "shared/navbar" %>
-    </div>
-  </body>
+<head>
+  <title>FOODMOOD</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+  <%= render 'shared/ios_pwa_links' %>
+</head>
+<body>
+<script>
+    0
+</script>
+<div class="main-container">
+  <%= yield %>
+  <%= render "shared/flashes" %>
+  <%= render "shared/navbar" %>
+</div>
+</body>
 </html>

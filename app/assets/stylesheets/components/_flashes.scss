@@ -1,6 +1,12 @@
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
+  position: relative;
   z-index: 1000;
+}
+
+.alert-container {
+  position: absolute;
+  bottom: 8rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90vw;
 }

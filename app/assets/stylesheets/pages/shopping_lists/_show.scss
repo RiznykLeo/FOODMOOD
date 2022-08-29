@@ -5,11 +5,6 @@
   overflow-y: scroll;
 }
 
-.list-list {
-  list-style: none;
-  padding: 0;
-}
-
 .show-spacing {
   padding-top: 1rem;
 }
@@ -20,6 +15,11 @@
   margin-bottom: 0.5rem;
 }
 
+.list-list {
+  list-style: none;
+  padding: 0;
+}
+
 .checkbox {
   width: 1.5rem;
   height: 1.5rem;
@@ -28,4 +28,30 @@
 
 .check-item {
   font-size: 1.25rem;
+}
+
+
+//Accordion
+
+.accordion .content-bx {
+  position: relative;
+}
+
+.accordion .content-bx .accordion-label {
+  position: relative;
+  cursor: pointer;
+}
+
+.accordion .content-bx .accordion-label:before {
+}
+
+.accordion .content-bx .accordion-content {
+  position: relative;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1000ms ease-in-out;
+}
+
+.accordion .content-bx .accordion-active {
+  max-height: 50rem;
 }

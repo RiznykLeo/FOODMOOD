@@ -3,11 +3,14 @@
     <p>Shopping List</p>
   </div>
 
-  <div class="show-spacing">
+  <div class="show-spacing accordion">
     <% @list.shopping_recipes.each do |shopping_recipe| %>
-      <div class="list-item">
-        <p class="list-item-name"><%= shopping_recipe.recipe.name %></p>
-        <ul class="list-list">
+      <div class="list-item content-bx"
+           data-action="click->accordion#collapse"
+           data-controller="accordion">
+        <p class="list-item-name accordion-label"><%= shopping_recipe.recipe.name %></p>
+        <ul class="list-list accordion-content"
+            data-accordion-target="content">
           <% shopping_recipe.recipe.ingredients.order(:created_at).each do |ingredient| %>
             <li class="list-ingredient">
               <div class="d-flex check-item">

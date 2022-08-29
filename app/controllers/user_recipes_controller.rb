@@ -36,6 +36,7 @@ class UserRecipesController < ApplicationController
     @user_recipe.destroy
     flash[:notice] = "Deleted"
     respond_to do |format|
+      format.html { redirect_to request.referrer }
       format.text { render partial: "shared/flashes", formats: [:html] }
     end
   end

@@ -12,7 +12,6 @@
           <span>Active <%= "(#{@user_recipes.where(cooked_status: "active").count})" %></span>
         </p>
       </div>
-
       <div class="accordion-content" data-accordion-target="content">
         <% @user_recipes.where(cooked_status: "active").sort_by(&:updated_at).reverse.each do |user_recipe| %>
           <div class="cookbook-recipe" data-controller="card-actions">
@@ -100,7 +99,6 @@
           <span>Not Cooked <%= "(#{@user_recipes.where(cooked_status: "not_cooked").count})" %></span>
         </p>
       </div>
-
       <div class="accordion-content" data-accordion-target="content">
         <% @user_recipes.where(cooked_status: "not_cooked").sort_by(&:updated_at).reverse.each do |user_recipe| %>
           <div class="cookbook-recipe" data-controller="card-actions">
@@ -185,10 +183,9 @@
            data-action="click->accordion#collapse">
         <p>
           <span><i class="fa-solid fa-chevron-right pe-2 arrow" data-accordion-target="arrow"></i></span>
-          <span>Cooked <%= "(#{@user_recipes.where(cooked_status: "cooked").count})" %></span>
+          <span>Cooked <%= "(#{@user_recipes.cooked.count})" %></span>
         </p>
       </div>
-
       <div class="accordion-content" data-accordion-target="content">
         <% @user_recipes.where(cooked_status: "cooked").sort_by(&:updated_at).reverse.each do |user_recipe| %>
           <div class="cookbook-recipe" data-controller="card-actions">

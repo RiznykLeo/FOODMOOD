@@ -8,7 +8,10 @@
       <div class="list-item content-bx"
            data-action="click->accordion#collapse"
            data-controller="accordion">
-        <p class="list-item-name accordion-label"><%= shopping_recipe.recipe.name %></p>
+        <p class="list-item-name accordion-label">
+          <span><i class="fa-solid fa-chevron-right pe-2 arrow" data-accordion-target="arrow"></i></span>
+          <span><%= shopping_recipe.recipe.name %></span>
+        </p>
         <ul class="list-list accordion-content"
             data-accordion-target="content">
           <% shopping_recipe.recipe.ingredients.order(:created_at).each do |ingredient| %>

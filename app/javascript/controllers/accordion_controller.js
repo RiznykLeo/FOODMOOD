@@ -2,7 +2,7 @@ import {Controller} from "@hotwired/stimulus"
 
 // Connects to data-controller="accordion"
 export default class extends Controller {
-    static targets = ["content"]
+    static targets = ["content", "arrow"]
 
     connect() {
         console.log("hello")
@@ -11,6 +11,8 @@ export default class extends Controller {
     collapse(event) {
         console.log(event)
         const element = this.contentTarget
+        const arrow = this.arrowTarget
         element.classList.toggle("accordion-active")
+        arrow.classList.toggle("rotated")
     }
 }

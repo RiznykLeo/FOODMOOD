@@ -18,12 +18,37 @@ export default class extends Controller {
     this.removeCard()
   }
 
+  submitDelete() {
+    console.log(this.formTarget)
+    this.deleteForm()
+    this.removeCard()
+  }
+
+
+
   submitForm() {
     const url = this.formTarget.action
     fetch(
       url,
       {
         method: 'PATCH',
+        headers: { Accept: 'text/plain' },
+        // headers: { Accept: 'application/json' },
+        body: new FormData(this.formTarget)
+      }
+    ).then(response => response.text())
+      .then(data => {
+        console.log(data)
+        document.querySelector('#alerts').outerHTML = data;
+      })
+  }
+
+  deleteForm() {
+    const url = this.formTarget.action
+    fetch(
+      url,
+      {
+        method: 'DELETE',
         headers: { Accept: 'text/plain' },
         // headers: { Accept: 'application/json' },
         body: new FormData(this.formTarget)

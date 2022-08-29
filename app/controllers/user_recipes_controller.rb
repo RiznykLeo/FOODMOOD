@@ -1,4 +1,5 @@
 class UserRecipesController < ApplicationController
+  protect_from_forgery with: :null_session
   def create
     recipe = Recipe.find(params[:recipe_id])
     @user_recipe = UserRecipe.new(recipe: recipe, user: current_user)
@@ -33,7 +34,11 @@ class UserRecipesController < ApplicationController
     @user_recipe = UserRecipe.find(params[:id])
     authorize @user_recipe
     @user_recipe.destroy
-    redirect_to cart_path, status: :see_other, notice: "Deleted from your cart!"
+    flash[:notice] = "Deleted"
+    respond_to do |format|
+      format.text { render partial: "shared/flashes", formats: [:html] }
+  end
+
   end
 
   def cookbook

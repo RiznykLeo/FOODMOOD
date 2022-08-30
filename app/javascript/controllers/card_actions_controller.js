@@ -5,7 +5,6 @@ export default class extends Controller {
     static targets = ["form", "button"]
 
     connect() {
-        console.log("connected")
     }
 
     removeCard() {
@@ -13,13 +12,11 @@ export default class extends Controller {
     }
 
     submitRemove() {
-        console.log(this.formTarget)
         this.submitForm()
         this.removeCard()
     }
 
     submitDelete() {
-        console.log(this.formTarget)
         this.deleteForm()
         this.removeCard()
     }

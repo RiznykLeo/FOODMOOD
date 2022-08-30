@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+.cookbook-link:hover {
+  color: $black;
+}
+
 .cookbook-recipes-container {
   overflow-y: scroll;
   width: 90vw;

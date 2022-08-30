@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_25_082739) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_29_101500) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -77,21 +77,22 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_082739) do
     t.text "ingredients", default: [], array: true
   end
 
+  create_table "shopping_ingredients", force: :cascade do |t|
+    t.bigint "shopping_list_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "ingredient_id", null: false
+    t.boolean "bought"
+    t.index ["ingredient_id"], name: "index_shopping_ingredients_on_ingredient_id"
+    t.index ["shopping_list_id"], name: "index_shopping_ingredients_on_shopping_list_id"
+  end
+
   create_table "shopping_lists", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "completed"
     t.index ["user_id"], name: "index_shopping_lists_on_user_id"
-  end
-
-  create_table "shopping_recipes", force: :cascade do |t|
-    t.bigint "recipe_id", null: false
-    t.bigint "shopping_list_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["recipe_id"], name: "index_shopping_recipes_on_recipe_id"
-    t.index ["shopping_list_id"], name: "index_shopping_recipes_on_shopping_list_id"
   end
 
   create_table "user_recipes", force: :cascade do |t|
@@ -124,9 +125,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_25_082739) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "ingredients", "foods"
   add_foreign_key "ingredients", "recipes"
+  add_foreign_key "shopping_ingredients", "ingredients"
+  add_foreign_key "shopping_ingredients", "shopping_lists"
   add_foreign_key "shopping_lists", "users"
-  add_foreign_key "shopping_recipes", "recipes"
-  add_foreign_key "shopping_recipes", "shopping_lists"
   add_foreign_key "user_recipes", "recipes"
   add_foreign_key "user_recipes", "users"
 end

@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
   resources :recipes, only: [:index, :show] do
     resources :user_recipes, only: [:create]
-    resources :shopping_recipes, only: [:create]
+    resources :shopping_ingredients, only: [:create]
   end
 
   resources :user_recipes, only: [:update, :destroy]
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :shopping_lists, only: :update
 
   resources :ingredients, only: :update
+
+  resources :shopping_ingredients, only: [:update]
 
   get "/cart", to: "user_recipes#cart", as: :cart
   get "/cookbook", to: "user_recipes#cookbook", as: :cookbook

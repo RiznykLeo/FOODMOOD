@@ -1,4 +1,4 @@
-class ShoppingRecipePolicy < ApplicationPolicy
+class ShoppingIngredientPolicy < ApplicationPolicy
   class Scope < Scope
     # NOTE: Be explicit about which records you allow access to!
     # def resolve
@@ -7,6 +7,10 @@ class ShoppingRecipePolicy < ApplicationPolicy
   end
 
   def create?
+    true
+  end
+
+  def update?
     true
   end
 end

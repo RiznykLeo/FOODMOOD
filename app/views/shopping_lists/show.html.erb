@@ -4,35 +4,30 @@
   </div>
 
   <div class="show-spacing accordion">
-    <% @list.shopping_recipes.each do |shopping_recipe| %>
-      <div class="list-item content-bx"
-           data-controller="accordion">
-        <p class="list-item-name accordion-label"
-           data-action="click->accordion#collapse">
-          <span><i class="fa-solid fa-chevron-right pe-2 arrow" data-accordion-target="arrow"></i></span>
-          <span><%= shopping_recipe.recipe.name %></span>
-        </p>
-        <ul class="list-list accordion-content"
-            data-accordion-target="content">
-          <% shopping_recipe.recipe.ingredients.order(:created_at).each do |ingredient| %>
-            <li class="list-ingredient">
+    <% @recipes.each do |recipe_name, shopping_ingredients| %>
+    <p><%= recipe_name %></p>
+    <% shopping_ingredients.each do |shopping_ingredient| %>
+      <div class="list-item content-bx">
+
               <div class="d-flex check-item">
-                <%= form_for ingredient do |f| %>
+                <%= form_for shopping_ingredient do |f| %>
                   <%= f.check_box :bought, as: :boolean, onclick: "this.form.submit()", class: "checkbox" %>
                 <% end %>
-                <span><%= ingredient.food.name.capitalize %>:
-                  <%= ingredient.quantity.round(2) %>
-                  <%= ingredient.measure if ingredient.measure != "<unit>" %></span>
+                <span>
+                  <%= shopping_ingredient.ingredient.food.name.capitalize %>:
+                  <%= shopping_ingredient.ingredient.quantity.round(2) %>
+                  <%= shopping_ingredient.ingredient.measure if shopping_ingredient.ingredient.measure != "<unit>" %>
+                </span>
               </div>
-            </li>
-          <% end %>
-        </ul>
+
       </div>
     <% end %>
+    <% end %>
   </div>
-  <%= render "shared/buttons/archive", current_list: @list if current_user.current_shopping_list.shopping_recipes[0] != nil %>
 
-  <% if @list.shopping_recipes.all.count == 0 %>
+  <%= render "shared/buttons/archive", current_list: @list if current_user.current_shopping_list.shopping_ingredients[0] != nil %>
+
+  <% if @list.shopping_ingredients.all.count == 0 %>
     <div class="d-flex mt-3">
       <%= render "shared/buttons/active_green", link: cookbook_path,
                  text: "Back to your Cookbook", class: "flex-grow-1" %>

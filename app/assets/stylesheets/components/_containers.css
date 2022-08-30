@@ -1,7 +1,6 @@
 .main-container {
     width: 90vw;
     margin: auto;
-    height: 99vw;
     display: grid;
     grid-template-rows: 85vh 15vh;
     justify-content: center;

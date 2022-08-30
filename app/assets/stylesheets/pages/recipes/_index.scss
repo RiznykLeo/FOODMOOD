@@ -17,8 +17,8 @@ ul.stack li:active {
   cursor: grabbing;
 }
 
-@media screen and (min-width: 640px) {
-  .card {
+@media screen and (min-width: 320px) {
+  .stack {
     transform: scale(0.9);
   }
 }

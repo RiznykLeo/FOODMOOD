@@ -20,5 +20,11 @@
       </div>
     </div>
   <% end %>
-  <%= link_to "Access your Cookbook", cookbook_path if @user_recipes.all.count == 0 %>
+
+  <% if @user_recipes.all.count == 0 %>
+    <div class="d-flex mt-3">
+      <%= render "shared/buttons/active_green", link: cookbook_path,
+                 text: "Access your Cookbook", class: "flex-grow-1" %>
+    </div>
+  <% end %>
 </div>

@@ -16,7 +16,7 @@ class ShoppingIngredientsController < ApplicationController
     @shopping_ingredient = ShoppingIngredient.find(params[:id])
     authorize @shopping_ingredient
     @shopping_ingredient.update(shopping_ingredient_params)
-
+    redirect_to list_path
   end
 
   private

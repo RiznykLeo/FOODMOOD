@@ -6,7 +6,12 @@ class UserRecipesController < ApplicationController
     @user_recipe = UserRecipe.new(recipe: recipe, user: current_user)
     authorize @user_recipe
     if @user_recipe.save
-      redirect_to recipes_path, notice: "Added to cart!"
+      flash[:notice] = "Added to your cart!"
+      respond_to do |format|
+        format.html { redirect_to recipes_path, notice: "Added to cart!" }
+        format.text { render partial: "shared/flashes", formats: [:html] }
+      end
+
     else
       render :recipes
     end

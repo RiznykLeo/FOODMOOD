@@ -1,7 +1,8 @@
-.parent {
+.stack {
   overflow-y: scroll;
   padding: 0;
   width: 90vw;
+  list-style: none;
 }
 
 .child {
@@ -9,11 +10,16 @@
   top: 1rem;
   left: 0;
   width: 100%;
+  cursor: grab;
 
 }
 
+ul.stack li:active {
+  cursor: grabbing;
+}
+
 @media screen and (min-width: 640px) {
-  .child {
+  .card {
     transform: scale(0.9);
   }
 }

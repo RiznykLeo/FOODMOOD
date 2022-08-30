@@ -5,8 +5,10 @@
 
 .alert-container {
   position: absolute;
-  bottom: 8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90vw;
+  top: 4rem;
+  right: 80%;
+  transform: translateX(50%);
+  width: 50vw;
+  z-index: 1000;
+  opacity: 80%;
 }

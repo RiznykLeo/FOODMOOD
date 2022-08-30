@@ -11,6 +11,10 @@
   text-decoration: none;
 }
 
+.cart-link:hover {
+  color: $black;
+}
+
 .cart-recipes-container {
   overflow-y: scroll;
   width: 90vw;

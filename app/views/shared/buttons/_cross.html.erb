@@ -1,6 +1,9 @@
 <div class="button button-small cross">
-  <button type="submit"
+  <%= link_to link, data: { "turbo-method": :delete } do %>
+    <span class="button-text"><i class="fa-solid fa-xmark"></i></span>
+  <% end %>
+  <%# <button type="submit"
           data-action="click->card-actions#submitDelete">
     <span class="button-text"><i class="fa-solid fa-cross"></i></span>
-  </button>
+  </button> %>
 </div>

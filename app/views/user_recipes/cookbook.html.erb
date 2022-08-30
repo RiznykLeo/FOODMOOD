@@ -2,12 +2,9 @@
   <div class="page-name">
     <p>Cookbook</p>
   </div>
-
   <div class="show-spacing accordion">
-
     <div class="active-cook content-bx"
          data-controller="accordion">
-
       <div class="list-item-name accordion-label"
            data-action="click->accordion#collapse">
         <p>
@@ -15,22 +12,28 @@
           <span>Active <%= "(#{@user_recipes.where(cooked_status: "active").count})" %></span>
         </p>
       </div>
-
       <div class="accordion-content" data-accordion-target="content">
         <% @user_recipes.where(cooked_status: "active").sort_by(&:updated_at).reverse.each do |user_recipe| %>
-          <div class="cookbook-recipe">
+          <div class="cookbook-recipe" data-controller="card-actions">
             <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
               <%= cl_image_tag user_recipe.recipe.photo.key, class: "cookbook-recipe-img" %>
             <% end %>
             <div class="cookbook-vertical">
-              <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
-                <div class="cookbook-info">
-                  <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
+              <div class="d-flex justify-content-between">
+                <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
+                  <div class="cookbook-info">
+                    <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
+                  </div>
+                <% end %>
+
+                <div class="cookbook-cross">
+                  <%= render "shared/buttons/cross",
+                             link: user_recipe_path(user_recipe),
+                             data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
                 </div>
-              <% end %>
+              </div>
               <div class="status-info">
-                <div class="cookbook-status"
-                     data-controller="card-actions">
+                <div class="cookbook-status">
                   <div class="status-block">
                     <%= simple_form_for user_recipe,
                                         html: { class: "d-flex",
@@ -38,13 +41,13 @@
                                                         action: "submit->card-actions#trigger" } } do |f| %>
                       <%= f.input :cooked_status, as: :hidden, input_html: { value: "not_cooked" } %>
                       <button type="submit" class="">
-                      <span data-card-actions-target="button">
-                        <% if user_recipe.cooked_status == "not_cooked" %>
-                          <i class="fa-solid fa-clipboard-list ckbk-icon-active"></i>
-                        <% else %>
-                          <i class="fa-solid fa-clipboard-list ckbk-icon"></i>
-                        <% end %>
-                      </span>
+                        <span data-card-actions-target="button">
+                          <% if user_recipe.cooked_status == "not_cooked" %>
+                            <i class="fa-solid fa-clipboard-list ckbk-icon-active"></i>
+                          <% else %>
+                            <i class="fa-solid fa-clipboard-list ckbk-icon"></i>
+                          <% end %>
+                        </span>
                       </button>
                     <% end %>
                     <span class="cookbook-status-labels">not cooked</span>
@@ -56,13 +59,13 @@
                                                         action: "submit->card-actions#trigger" } } do |f| %>
                       <%= f.input :cooked_status, as: :hidden, input_html: { value: "active" } %>
                       <button type="submit" class="">
-                      <span data-card-actions-target="button">
-                        <% if user_recipe.cooked_status == "active" %>
-                          <i class="fa-solid fa-fire-burner ckbk-icon-active"></i>
-                        <% else %>
-                          <i class="fa-solid fa-fire-burner ckbk-icon"></i>
-                        <% end %>
-                      </span>
+                        <span data-card-actions-target="button">
+                          <% if user_recipe.cooked_status == "active" %>
+                            <i class="fa-solid fa-fire-burner ckbk-icon-active"></i>
+                          <% else %>
+                            <i class="fa-solid fa-fire-burner ckbk-icon"></i>
+                          <% end %>
+                        </span>
                       </button>
                     <% end %>
                     <span class="cookbook-status-labels">cooking</span>
@@ -74,13 +77,13 @@
                                                         action: "submit->card-actions#trigger" } } do |f| %>
                       <%= f.input :cooked_status, as: :hidden, input_html: { value: "cooked" } %>
                       <button type="submit" class="">
-                      <span data-card-actions-target="button">
-                        <% if user_recipe.cooked_status == "cooked" %>
-                          <i class="fa-solid fa-bowl-rice ckbk-icon-active"></i>
-                        <% else %>
-                          <i class="fa-solid fa-bowl-rice ckbk-icon"></i>
-                        <% end %>
-                      </span>
+                        <span data-card-actions-target="button">
+                          <% if user_recipe.cooked_status == "cooked" %>
+                            <i class="fa-solid fa-bowl-rice ckbk-icon-active"></i>
+                          <% else %>
+                            <i class="fa-solid fa-bowl-rice ckbk-icon"></i>
+                          <% end %>
+                        </span>
                       </button>
                     <% end %>
                     <span class="cookbook-status-labels">cooked</span>
@@ -88,17 +91,13 @@
                 </div>
               </div>
             </div>
-              <%= render "shared/buttons/cross",
-                   link: user_recipe_path(user_recipe),
-                   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
           </div>
         <% end %>
       </div>
     </div>
-
     <div class="not-cooked content-bx"
          data-controller="accordion">
-
       <div class="list-item-name accordion-label"
            data-action="click->accordion#collapse">
         <p>
@@ -106,22 +105,28 @@
           <span>Not Cooked <%= "(#{@user_recipes.where(cooked_status: "not_cooked").count})" %></span>
         </p>
       </div>
-
       <div class="accordion-content" data-accordion-target="content">
         <% @user_recipes.where(cooked_status: "not_cooked").sort_by(&:updated_at).reverse.each do |user_recipe| %>
-          <div class="cookbook-recipe">
+          <div class="cookbook-recipe" data-controller="card-actions">
             <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
               <%= cl_image_tag user_recipe.recipe.photo.key, class: "cookbook-recipe-img" %>
             <% end %>
             <div class="cookbook-vertical">
-              <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
-                <div class="cookbook-info">
-                  <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
+
+              <div class="d-flex justify-content-between">
+                <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
+                  <div class="cookbook-info">
+                    <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
+                  </div>
+                <% end %>
+                <div class="cookbook-cross">
+                  <%= render "shared/buttons/cross",
+                             link: user_recipe_path(user_recipe),
+                             data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
                 </div>
-              <% end %>
+              </div>
               <div class="status-info">
-                <div class="cookbook-status"
-                     data-controller="card-actions">
+                <div class="cookbook-status">
                   <div class="status-block">
                     <%= simple_form_for user_recipe,
                                         html: { class: "d-flex",
@@ -129,13 +134,13 @@
                                                         action: "submit->card-actions#trigger" } } do |f| %>
                       <%= f.input :cooked_status, as: :hidden, input_html: { value: "not_cooked" } %>
                       <button type="submit" class="">
-                      <span data-card-actions-target="button">
-                        <% if user_recipe.cooked_status == "not_cooked" %>
-                          <i class="fa-solid fa-clipboard-list ckbk-icon-active"></i>
-                        <% else %>
-                          <i class="fa-solid fa-clipboard-list ckbk-icon"></i>
-                        <% end %>
-                      </span>
+                        <span data-card-actions-target="button">
+                          <% if user_recipe.cooked_status == "not_cooked" %>
+                            <i class="fa-solid fa-clipboard-list ckbk-icon-active"></i>
+                          <% else %>
+                            <i class="fa-solid fa-clipboard-list ckbk-icon"></i>
+                          <% end %>
+                        </span>
                       </button>
                     <% end %>
                     <span class="cookbook-status-labels">not cooked</span>
@@ -147,13 +152,13 @@
                                                         action: "submit->card-actions#trigger" } } do |f| %>
                       <%= f.input :cooked_status, as: :hidden, input_html: { value: "active" } %>
                       <button type="submit" class="">
-                      <span data-card-actions-target="button">
-                        <% if user_recipe.cooked_status == "active" %>
-                          <i class="fa-solid fa-fire-burner ckbk-icon-active"></i>
-                        <% else %>
-                          <i class="fa-solid fa-fire-burner ckbk-icon"></i>
-                        <% end %>
-                      </span>
+                        <span data-card-actions-target="button">
+                          <% if user_recipe.cooked_status == "active" %>
+                            <i class="fa-solid fa-fire-burner ckbk-icon-active"></i>
+                          <% else %>
+                            <i class="fa-solid fa-fire-burner ckbk-icon"></i>
+                          <% end %>
+                        </span>
                       </button>
                     <% end %>
                     <span class="cookbook-status-labels">cooking</span>
@@ -165,13 +170,13 @@
                                                         action: "submit->card-actions#trigger" } } do |f| %>
                       <%= f.input :cooked_status, as: :hidden, input_html: { value: "cooked" } %>
                       <button type="submit" class="">
-                      <span data-card-actions-target="button">
-                        <% if user_recipe.cooked_status == "cooked" %>
-                          <i class="fa-solid fa-bowl-rice ckbk-icon-active"></i>
-                        <% else %>
-                          <i class="fa-solid fa-bowl-rice ckbk-icon"></i>
-                        <% end %>
-                      </span>
+                        <span data-card-actions-target="button">
+                          <% if user_recipe.cooked_status == "cooked" %>
+                            <i class="fa-solid fa-bowl-rice ckbk-icon-active"></i>
+                          <% else %>
+                            <i class="fa-solid fa-bowl-rice ckbk-icon"></i>
+                          <% end %>
+                        </span>
                       </button>
                     <% end %>
                     <span class="cookbook-status-labels">cooked</span>
@@ -179,40 +184,41 @@
                 </div>
               </div>
             </div>
-            <%= render "shared/buttons/cross",
-                   link: user_recipe_path(user_recipe),
-                   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
           </div>
         <% end %>
       </div>
     </div>
-
     <div class="cooked content-bx"
          data-controller="accordion">
-
       <div class="list-item-name accordion-label"
            data-action="click->accordion#collapse">
         <p>
           <span><i class="fa-solid fa-chevron-right pe-2 arrow" data-accordion-target="arrow"></i></span>
-          <span>Cooked <%= "(#{@user_recipes.where(cooked_status: "cooked").count})" %></span>
+          <span>Cooked <%= "(#{@user_recipes.cooked.count})" %></span>
         </p>
       </div>
-
       <div class="accordion-content" data-accordion-target="content">
         <% @user_recipes.where(cooked_status: "cooked").sort_by(&:updated_at).reverse.each do |user_recipe| %>
-          <div class="cookbook-recipe">
+          <div class="cookbook-recipe" data-controller="card-actions">
             <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
               <%= cl_image_tag user_recipe.recipe.photo.key, class: "cookbook-recipe-img" %>
             <% end %>
             <div class="cookbook-vertical">
-              <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
-                <div class="cookbook-info">
-                  <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
+              <div class="d-flex justify-content-between">
+                <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
+                  <div class="cookbook-info">
+                    <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
+                  </div>
+                <% end %>
+                <div class="cookbook-cross">
+                  <%= render "shared/buttons/cross",
+                             link: user_recipe_path(user_recipe),
+                             data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
                 </div>
-              <% end %>
+              </div>
               <div class="status-info">
-                <div class="cookbook-status"
-                     data-controller="card-actions">
+                <div class="cookbook-status">
                   <div class="status-block">
                     <%= simple_form_for user_recipe,
                                         html: { class: "d-flex",
@@ -220,13 +226,13 @@
                                                         action: "submit->card-actions#trigger" } } do |f| %>
                       <%= f.input :cooked_status, as: :hidden, input_html: { value: "not_cooked" } %>
                       <button type="submit" class="">
-                    <span data-card-actions-target="button">
-                      <% if user_recipe.cooked_status == "not_cooked" %>
-                        <i class="fa-solid fa-clipboard-list ckbk-icon-active"></i>
-                      <% else %>
-                        <i class="fa-solid fa-clipboard-list ckbk-icon"></i>
-                      <% end %>
-                    </span>
+                        <span data-card-actions-target="button">
+                          <% if user_recipe.cooked_status == "not_cooked" %>
+                            <i class="fa-solid fa-clipboard-list ckbk-icon-active"></i>
+                          <% else %>
+                            <i class="fa-solid fa-clipboard-list ckbk-icon"></i>
+                          <% end %>
+                        </span>
                       </button>
                     <% end %>
                     <span class="cookbook-status-labels">not cooked</span>
@@ -238,13 +244,13 @@
                                                         action: "submit->card-actions#trigger" } } do |f| %>
                       <%= f.input :cooked_status, as: :hidden, input_html: { value: "active" } %>
                       <button type="submit" class="">
-                    <span data-card-actions-target="button">
-                      <% if user_recipe.cooked_status == "active" %>
-                        <i class="fa-solid fa-fire-burner ckbk-icon-active"></i>
-                      <% else %>
-                        <i class="fa-solid fa-fire-burner ckbk-icon"></i>
-                      <% end %>
-                    </span>
+                        <span data-card-actions-target="button">
+                          <% if user_recipe.cooked_status == "active" %>
+                            <i class="fa-solid fa-fire-burner ckbk-icon-active"></i>
+                          <% else %>
+                            <i class="fa-solid fa-fire-burner ckbk-icon"></i>
+                          <% end %>
+                        </span>
                       </button>
                     <% end %>
                     <span class="cookbook-status-labels">cooking</span>
@@ -256,13 +262,13 @@
                                                         action: "submit->card-actions#trigger" } } do |f| %>
                       <%= f.input :cooked_status, as: :hidden, input_html: { value: "cooked" } %>
                       <button type="submit" class="">
-                    <span data-card-actions-target="button">
-                      <% if user_recipe.cooked_status == "cooked" %>
-                        <i class="fa-solid fa-bowl-rice ckbk-icon-active"></i>
-                      <% else %>
-                        <i class="fa-solid fa-bowl-rice ckbk-icon"></i>
-                      <% end %>
-                    </span>
+                        <span data-card-actions-target="button">
+                          <% if user_recipe.cooked_status == "cooked" %>
+                            <i class="fa-solid fa-bowl-rice ckbk-icon-active"></i>
+                          <% else %>
+                            <i class="fa-solid fa-bowl-rice ckbk-icon"></i>
+                          <% end %>
+                        </span>
                       </button>
                     <% end %>
                     <span class="cookbook-status-labels">cooked</span>
@@ -270,9 +276,7 @@
                 </div>
               </div>
             </div>
-            <%= render "shared/buttons/cross",
-                   link: user_recipe_path(user_recipe),
-                   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
           </div>
         <% end %>
       </div>

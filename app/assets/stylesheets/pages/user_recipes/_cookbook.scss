@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+.cookbook-link:hover {
+  color: $black;
+}
+
 .cookbook-recipes-container {
   overflow-y: scroll;
   width: 90vw;
@@ -89,4 +93,11 @@
   font-size: 1.5rem;
   border-bottom: 3px solid $gray;
   margin-bottom: 0.5rem;
+}
+
+.cookbook-cross .button {
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
 }

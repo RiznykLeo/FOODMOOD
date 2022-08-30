@@ -45,6 +45,7 @@ export default class extends Controller {
 
   deleteForm() {
     const url = this.formTarget.action
+    console.log(this.formTarget)
     fetch(
       url,
       {

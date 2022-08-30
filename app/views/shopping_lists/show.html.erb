@@ -24,6 +24,13 @@
     <% end %>
     <% end %>
   </div>
+
   <%= render "shared/buttons/archive", current_list: @list if current_user.current_shopping_list.shopping_ingredients[0] != nil %>
-  <%= link_to "Back to your Cookbook", cookbook_path if @list.shopping_ingredients.all.count == 0 %>
+
+  <% if @list.shopping_ingredients.all.count == 0 %>
+    <div class="d-flex mt-3">
+      <%= render "shared/buttons/active_green", link: cookbook_path,
+                 text: "Back to your Cookbook", class: "flex-grow-1" %>
+    </div>
+  <% end %>
 </div>

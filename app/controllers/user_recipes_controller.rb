@@ -37,6 +37,7 @@ class UserRecipesController < ApplicationController
     flash[:notice] = "Deleted"
     respond_to do |format|
       format.text { render partial: "shared/flashes", formats: [:html] }
+    end
   end
 
   def cookbook

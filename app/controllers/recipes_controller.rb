@@ -14,6 +14,6 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.find(params[:id])
     authorize @recipe
-    @shopping_recipe = ShoppingRecipe.new
+    @shopping_ingredient = ShoppingIngredient.new
   end
 end

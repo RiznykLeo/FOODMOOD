@@ -2,6 +2,7 @@ class ShoppingListsController < ApplicationController
   def show
     @list = current_user.current_shopping_list
     authorize @list
+    @recipes = @list.shopping_ingredients.group_by { |si| si.ingredient.recipe.name}
   end
 
   def update

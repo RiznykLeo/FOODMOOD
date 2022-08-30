@@ -19,11 +19,19 @@
               <%= cl_image_tag user_recipe.recipe.photo.key, class: "cookbook-recipe-img" %>
             <% end %>
             <div class="cookbook-vertical">
-              <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
-                <div class="cookbook-info">
-                  <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
+              <div class="d-flex justify-content-between">
+                <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
+                  <div class="cookbook-info">
+                    <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
+                  </div>
+                <% end %>
+
+                <div class="cookbook-cross">
+                  <%= render "shared/buttons/cross",
+                             link: user_recipe_path(user_recipe),
+                             data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
                 </div>
-              <% end %>
+              </div>
               <div class="status-info">
                 <div class="cookbook-status">
                   <div class="status-block">
@@ -83,9 +91,7 @@
                 </div>
               </div>
             </div>
-            <%= render "shared/buttons/cross",
-                   link: user_recipe_path(user_recipe),
-                   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
           </div>
         <% end %>
       </div>
@@ -106,11 +112,19 @@
               <%= cl_image_tag user_recipe.recipe.photo.key, class: "cookbook-recipe-img" %>
             <% end %>
             <div class="cookbook-vertical">
-              <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
-                <div class="cookbook-info">
-                  <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
+
+              <div class="d-flex justify-content-between">
+                <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
+                  <div class="cookbook-info">
+                    <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
+                  </div>
+                <% end %>
+                <div class="cookbook-cross">
+                  <%= render "shared/buttons/cross",
+                             link: user_recipe_path(user_recipe),
+                             data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
                 </div>
-              <% end %>
+              </div>
               <div class="status-info">
                 <div class="cookbook-status">
                   <div class="status-block">
@@ -170,9 +184,7 @@
                 </div>
               </div>
             </div>
-            <%= render "shared/buttons/cross",
-                   link: user_recipe_path(user_recipe),
-                   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
           </div>
         <% end %>
       </div>
@@ -193,11 +205,18 @@
               <%= cl_image_tag user_recipe.recipe.photo.key, class: "cookbook-recipe-img" %>
             <% end %>
             <div class="cookbook-vertical">
-              <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
-                <div class="cookbook-info">
-                  <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
+              <div class="d-flex justify-content-between">
+                <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
+                  <div class="cookbook-info">
+                    <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
+                  </div>
+                <% end %>
+                <div class="cookbook-cross">
+                  <%= render "shared/buttons/cross",
+                             link: user_recipe_path(user_recipe),
+                             data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
                 </div>
-              <% end %>
+              </div>
               <div class="status-info">
                 <div class="cookbook-status">
                   <div class="status-block">
@@ -257,9 +276,7 @@
                 </div>
               </div>
             </div>
-            <%= render "shared/buttons/cross",
-                   link: user_recipe_path(user_recipe),
-                   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+
           </div>
         <% end %>
       </div>

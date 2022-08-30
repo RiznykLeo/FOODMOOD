@@ -7,7 +7,7 @@ export default class extends Controller {
     connect() {
         this.cards = [].slice.call(this.cardTargets)
 
-        const throwOutThreshold = 0.5;
+        const throwOutThreshold = 1;
         const config = {
             isThrowOut: function (xOffset, yOffset, element, throwOutConfidence) {
                 return throwOutConfidence >= throwOutThreshold;

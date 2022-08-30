@@ -1,11 +1,17 @@
 class UserRecipesController < ApplicationController
   protect_from_forgery with: :null_session
+
   def create
     recipe = Recipe.find(params[:recipe_id])
     @user_recipe = UserRecipe.new(recipe: recipe, user: current_user)
     authorize @user_recipe
     if @user_recipe.save
-      redirect_to recipes_path, notice: "Added to cart!"
+      flash[:notice] = "Added to your cart!"
+      respond_to do |format|
+        format.html { redirect_to recipes_path, notice: "Added to cart!" }
+        format.text { render partial: "shared/flashes", formats: [:html] }
+      end
+
     else
       render :recipes
     end
@@ -24,7 +30,7 @@ class UserRecipesController < ApplicationController
       flash[:notice] = "Added to your cookbook!"
       respond_to do |format|
         format.text { render partial: "shared/flashes", formats: [:html] }
-    end
+      end
     else
       render :edit
     end

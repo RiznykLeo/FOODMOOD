@@ -15,6 +15,3 @@ application.register("hello", HelloController)
 
 import SwingerController from "./swinger_controller"
 application.register("swinger", SwingerController)
-
-import SwipeController from "./swipe_controller"
-application.register("swipe", SwipeController)

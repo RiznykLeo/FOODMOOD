@@ -2,7 +2,7 @@
     width: 90vw;
     margin: auto;
     display: grid;
-    grid-template-rows: 85vh 15vh;
+    grid-template-rows: 80vh 20vh;
     justify-content: center;
 
     position: relative;

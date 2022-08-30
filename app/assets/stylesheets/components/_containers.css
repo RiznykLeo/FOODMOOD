@@ -1,9 +1,8 @@
 .main-container {
     width: 90vw;
     margin: auto;
-    height: 99vw;
     display: grid;
-    grid-template-rows: 85vh 15vh;
+    grid-template-rows: 80vh 20vh;
     justify-content: center;
 
     position: relative;

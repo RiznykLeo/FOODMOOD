@@ -7,7 +7,14 @@ export default class extends Controller {
     connect() {
         this.cards = [].slice.call(this.cardTargets)
 
-        const stack = Swing.Stack()
+        const throwOutThreshold = 0.33;
+        const config = {
+            isThrowOut: function (xOffset, yOffset, element, throwOutConfidence) {
+                return throwOutConfidence >= throwOutThreshold;
+            }
+        };
+
+        const stack = Swing.Stack(config)
 
         this.cards.forEach((targetElement) => {
             stack.createCard(targetElement)
@@ -35,7 +42,6 @@ export default class extends Controller {
     }
 
     isLiked(like, item) {
-        console.log(`This card ${item.class} was ${like ? 'liked' : 'noped'}`)
         if (like) {
             this.submitForm(item)
         }
@@ -45,7 +51,6 @@ export default class extends Controller {
     submitForm(item) {
         const form = item.querySelector("form")
         const url = form.action
-        console.log(form)
         fetch(
             url,
             {

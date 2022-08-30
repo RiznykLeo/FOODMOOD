@@ -42,7 +42,6 @@ export default class extends Controller {
     }
 
     isLiked(like, item) {
-        console.log(`This card ${item.class} was ${like ? 'liked' : 'noped'}`)
         if (like) {
             this.submitForm(item)
         }
@@ -52,7 +51,6 @@ export default class extends Controller {
     submitForm(item) {
         const form = item.querySelector("form")
         const url = form.action
-        console.log(form)
         fetch(
             url,
             {

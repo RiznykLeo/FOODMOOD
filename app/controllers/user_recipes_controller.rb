@@ -27,8 +27,9 @@ class UserRecipesController < ApplicationController
     authorize @user_recipe
     if @user_recipe.update(cart_params)
       # redirect_to cart_path
-      flash[:notice] = "Added to your cookbook!"
+      flash[:notice] = "Updated your cookbook!"
       respond_to do |format|
+        format.html { redirect_to request.referrer }
         format.text { render partial: "shared/flashes", formats: [:html] }
       end
     else

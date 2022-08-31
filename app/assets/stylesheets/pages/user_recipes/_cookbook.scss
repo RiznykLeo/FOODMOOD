@@ -48,6 +48,7 @@
 
 .cookbook-status-labels {
   font-size: 0.75rem;
+  padding: 0 0.5rem 0 0.5rem;
 }
 
 .cookbook-vertical {
@@ -78,11 +79,18 @@
 }
 
 .ckbk-icon {
-  color: black;
+  color: $gray;
+  border-radius: 0.25rem;
+  box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
 }
 
 .ckbk-icon-active {
   color: $food-mood;
+
+  border-radius: 0.25rem;
+  box-shadow: inset 4px 5px 4px rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
 }
 
 .show-spacing {

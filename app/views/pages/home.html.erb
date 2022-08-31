@@ -6,7 +6,38 @@
   <div class="home-text d-flex justify-content-center">
     <p>Food for your Mood<i class="fa-solid fa-bowl-rice accent"></i></p>
   </div>
-  <div class="home-button-container">
-    <%= render "shared/buttons/home_active_green", link: "/recipes", text: "Let's Begin" %>
-  </div>
+
+
+  <%= form_with url: recipes_path, method: :get do %>
+    <% meal_type = ["breakfast", "lunch", "dinner", "snack"] %>
+      <% index = 0 %>
+      <fieldset class="form-group check_boxes optional snippet_tags">
+        <% meal_type.each do |type| %>
+              <div class="tag-item">
+                <input class="form-check-input check_boxes optional tag-selector" type="checkbox" value="<%= type%>" name="meal_type[]" id='snippet_tag_ids_<%= type%>'>
+                <label class="form-check-label collection_check_boxes" for="snippet_tag_ids_<%=type %>"><%= type %></label>
+              </div>
+        <% end %>
+      </fieldset>
+
+
+      <p>
+        Up to
+        0
+	      <input type="range" id="time" name="time" max="50" min="2" step="2">
+        120 min
+	    </p>
+
+
+
+
+    <%= submit_tag "Let's Begin", class: "btn btn-primary" %>
+  <% end %>
+
+
+
+
+
+
+
 </div>

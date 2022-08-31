@@ -1,7 +1,8 @@
 @import "../../components/utilities/variables";
 
 .list-vertical {
-  width: 90vw;
+  width: 90%;
+  margin: 0 auto;
   overflow-y: scroll;
 }
 
@@ -64,4 +65,18 @@
 
 .rotated {
   transform: rotate(-0deg);
+}
+
+.no-info {
+  font-size: 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.no-info .text {
+  padding-bottom: 0.5rem;
 }

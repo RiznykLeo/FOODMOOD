@@ -11,7 +11,8 @@
 
 .cookbook-recipes-container {
   overflow-y: scroll;
-  width: 90vw;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .cookbook-recipe {
@@ -86,8 +87,7 @@
 }
 
 .ckbk-icon-active {
-  color: $food-mood;
-
+  color: $soft-green;
   border-radius: 0.25rem;
   box-shadow: inset 4px 5px 4px rgba(0, 0, 0, 0.2);
   padding: 0.5rem;

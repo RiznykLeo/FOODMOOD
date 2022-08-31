@@ -27,7 +27,6 @@ export default class extends Controller {
         })
 
         stack.on('throwin', (event) => {
-            console.log('Card snapped back to the stack.')
             const swingItem = event.target
             swingItem.classList.remove('d-none')
         })
@@ -64,7 +63,6 @@ export default class extends Controller {
                 this.counterTargets.forEach((counter) => {
                     counter.innerText = parseInt(counter.innerText, 10) + 1
                 })
-                console.log(data)
                 document.querySelector('#alerts').outerHTML = data;
             })
     }

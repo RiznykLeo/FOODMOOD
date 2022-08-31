@@ -34,7 +34,6 @@ export default class extends Controller {
             }
         ).then(response => response.text())
             .then(data => {
-                console.log(data)
                 document.querySelector('#alerts').outerHTML = data;
             })
     }
@@ -52,7 +51,6 @@ export default class extends Controller {
             }
         ).then(response => response.text())
             .then(data => {
-                console.log(data)
                 document.querySelector('#alerts').outerHTML = data;
             })
     }
@@ -64,7 +62,6 @@ export default class extends Controller {
             console.log(form.classList)
 
         })
-        console.log(event.currentTarget)
         event.currentTarget.classList.add("status-active")
         // this.submitForm()
     }

@@ -1,8 +1,6 @@
 <ul class="stack" data-controller="swinger">
-  <% counter = 0 %>
-  <% @recipes.each do |recipe| %>
-    <% counter += 1 %>
-    <li class="child" style="z-index: <%= counter %>"
+  <% @recipes.limit(4).each do |recipe| %>
+    <li class="child" style=""
         data-swinger-target="card">
       <%= render "shared/cards/dish",
                  name: recipe.name,

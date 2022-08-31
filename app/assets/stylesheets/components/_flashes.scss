@@ -1,6 +1,9 @@
 .alert {
   position: relative;
   z-index: 1000;
+  animation-name: alertDelete;
+  animation-delay: 800ms;
+  animation-duration: 1200ms;
 }
 
 .alert-container {
@@ -11,4 +14,13 @@
   width: 50vw;
   z-index: 1000;
   opacity: 80%;
+}
+
+@keyframes alertDelete {
+  from {
+    opacity: 1
+  }
+  to {
+    opacity: 0
+  }
 }

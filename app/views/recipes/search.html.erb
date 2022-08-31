@@ -1,22 +1,32 @@
 <div class="container">
-  <%= form_with url: search_path, method: :get, class: "d-flex" do %>
-    <%= text_field_tag :query,
+  <div class="search container mt-5">
+    <%= form_with url: search_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Find a recipe"
   %>
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-  <% end %>
-<% if params[:query].present? %>
-  <% if @user_recipes.blank? %>
-    No Results
-  <% else %>
-
-    <% @user_recipes.each do |recipe| %>
-      <%= recipe.name %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
-
-
-  <% end %>
-<% end %>
+  </div>
+  <div class="search results mt-4">
+    <% if params[:query].present? %>
+      <% if @user_recipes.blank? %>
+        No Results
+      <% else %>
+        <ul>
+          <% @user_recipes.each do |recipe| %>
+            <div data-controller="card-actions" class="cart-recipe">
+              <%= link_to "/recipes/#{recipe.name}", class: "cart-link" do %>
+                <%= cl_image_tag recipe.photo.key, class: "cart-recipe-img" %>
+              <% end %>
+              <div class="cart-info">
+                <p class="cart-recipe-name"><%= recipe.name %></p>
+              </div>
+            </div>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>
 </div>

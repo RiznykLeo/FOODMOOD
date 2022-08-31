@@ -1,28 +1,24 @@
 <div class="navbar-container">
-
   <div class="navbar-item">
     <%= link_to "/recipes", class: 'navbar-item-link' do %>
       <span class="navbar-item-icon"><i class="fa-solid fa-utensils"></i></span>
     <% end %>
     <p class="label">Recipes</p>
   </div>
-
   <div class="navbar-item">
     <%= link_to "/cookbook", class: 'navbar-item-link' do %>
       <span class="navbar-item-icon"><i class="fa-solid fa-book-bookmark"></i></span>
     <% end %>
     <p class="label">Cookbook</p>
   </div>
-
   <div class="navbar-item">
     <%= link_to "/list", class: 'navbar-item-link' do %>
       <span class="navbar-item-icon"><i class="fa-solid fa-clipboard-list"></i></span>
     <% end %>
     <p class="label">Shopping</p>
   </div>
-
   <div class="navbar-item">
-    <%= link_to "/", class: 'navbar-item-link' do %>
+    <%= link_to "/search", class: 'navbar-item-link' do %>
       <span class="navbar-item-icon"><i class="fa-solid fa-bars"></i></span>
     <% end %>
     <p class="label">Settings</p>

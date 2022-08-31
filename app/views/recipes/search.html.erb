@@ -9,19 +9,21 @@
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
-  <div class="cart-size mt-4">
+  <div class="search results cart-size mt-3">
     <% if params[:query].present? %>
       <% if @user_recipes.blank? %>
         No Results
       <% else %>
         <ul>
           <% @user_recipes.each do |recipe| %>
-            <div data-controller="card-actions" class="cart-recipe">
+            <div data-controller="card-actions" class="cart-search">
               <%= link_to "/recipes/#{recipe.name}", class: "cart-link" do %>
                 <%= cl_image_tag recipe.photo.key, class: "cart-recipe-img" %>
               <% end %>
-              <div class="cart-info">
+              <div>
                 <p class="cart-recipe-name"><%= recipe.name %></p>
+                <p><i class="fa-solid fa-clock"> </i>Cooking Time <%= recipe.cooking_time %></p>
+                <p><i class="fa-solid fa-earth-europe"> </i>Cuisine Type <%= recipe.cuisine_type.capitalize %></p>
               </div>
             </div>
           <% end %>

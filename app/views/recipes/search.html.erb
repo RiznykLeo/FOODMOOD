@@ -11,9 +11,12 @@
   <% if @user_recipes.blank? %>
     No Results
   <% else %>
+
     <% @user_recipes.each do |recipe| %>
       <%= recipe.name %>
     <% end %>
+
+
   <% end %>
 <% end %>
 </div>

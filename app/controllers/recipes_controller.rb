@@ -1,14 +1,12 @@
 class RecipesController < ApplicationController
-
   def index
     @user_recipe = UserRecipe.new
     @recipes = policy_scope(Recipe).where.not(id: current_user.recipes)
     if params[:recipe]
-      top_recipe = @recipes.find{|recipe| recipe.id == params[:recipe].to_i}
+      top_recipe = @recipes.find { |recipe| recipe.id == params[:recipe].to_i }
       @recipes.delete_at(@recipes.index(top_recipe))
       @recipes << top_recipe
     end
-
   end
 
   def show
@@ -21,7 +19,12 @@ class RecipesController < ApplicationController
     @user_recipes = Recipe.all
     authorize @user_recipes
     if params[:query].present?
-      @user_recipes = Recipe.where("name ILIKE ?", "%#{params[:query]}%")
+      sql_query = <<~SQL
+        recipes.name ILIKE :query
+        OR foods.name ILIKE :query
+      SQL
+      @user_recipes = Recipe.joins(:foods).distinct.where(sql_query, query: "%#{params[:query]}%")
+
     end
   end
 end

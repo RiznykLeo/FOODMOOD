@@ -1,4 +1,4 @@
-<div class="vertical">
+<div class="standard-container">
   <div class="auth-container">
     <h2 class="auth-header">Log in</h2>
 
@@ -15,13 +15,13 @@
       </div>
 
       <div class="form-actions auth-control">
-        <%= f.button :submit, "Log in", class:"auth-button auth-control-item" %>
+        <%= f.button :submit, "Log in", class: "auth-button auth-control-item" %>
       </div>
     <% end %>
 
     <div class="form-actions auth-control">
       <%= link_to "Sign up", new_registration_path(resource_name),
-                  class:"auth-button auth-control-item" %>
+                  class: "auth-button auth-control-item" %>
     </div>
 
 

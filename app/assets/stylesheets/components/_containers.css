@@ -14,12 +14,11 @@
     height: 8rem;
 }
 
-.vertical {
+.standard-container {
     width: 90%;
     margin: 0 auto;
 }
 
-.standard-container {
-    width: 90%;
-    margin: 0 auto;
+.standard-container ul {
+    padding: 0;
 }

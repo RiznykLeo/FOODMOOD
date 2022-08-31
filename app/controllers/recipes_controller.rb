@@ -16,4 +16,12 @@ class RecipesController < ApplicationController
     authorize @recipe
     @shopping_ingredient = ShoppingIngredient.new
   end
+
+  def search
+    @user_recipes = Recipe.all
+    authorize @user_recipes
+    if params[:query].present?
+      @user_recipes = Recipe.where("name ILIKE ?", "%#{params[:query]}%")
+    end
+  end
 end

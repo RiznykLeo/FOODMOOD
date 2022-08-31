@@ -1,4 +1,4 @@
-<div class="vertical">
+<div class="standard-container">
   <div class="auth-container">
     <h2 class="auth-header">Sign up</h2>
 
@@ -7,27 +7,27 @@
 
       <div class="form-inputs">
         <%= f.input :email,
-                      required: true,
-                      autofocus: true,
-                      input_html: { autocomplete: "email" }%>
+                    required: true,
+                    autofocus: true,
+                    input_html: { autocomplete: "email" } %>
         <%= f.input :password,
-                      required: true,
-                      hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                      input_html: { autocomplete: "new-password" } %>
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
         <%= f.input :password_confirmation,
-                      required: true,
-                      input_html: { autocomplete: "new-password" } %>
+                    required: true,
+                    input_html: { autocomplete: "new-password" } %>
       </div>
 
       <div class="form-actions auth-control">
         <%= f.button :submit, "Sign up",
-                       class:"auth-button auth-control-item" %>
+                     class: "auth-button auth-control-item" %>
       </div>
     <% end %>
 
     <div class="form-actions auth-control">
       <%= link_to "Log in", new_session_path(resource_name),
-                  class:"auth-button auth-control-item" %>
+                  class: "auth-button auth-control-item" %>
     </div>
 
   </div>

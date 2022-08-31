@@ -10,6 +10,9 @@ application.register("accordion", AccordionController)
 import CardActionsController from "./card_actions_controller"
 application.register("card-actions", CardActionsController)
 
+import FlashesController from "./flashes_controller"
+application.register("flashes", FlashesController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

@@ -38,9 +38,10 @@
   <%= render "shared/buttons/archive", current_list: @list if current_user.current_shopping_list.shopping_ingredients[0] != nil %>
 
   <% if @list.shopping_ingredients.all.count == 0 %>
+    <p>No ingredients on your Shopping List yet. Select a Recipe from your Cookbook to add some!</p>
     <div class="d-flex">
       <%= render "shared/buttons/active_green", link: cookbook_path,
-                 text: "Back to your Cookbook", class: "flex-grow-1" %>
+                 text: "To your Cookbook", class: "flex-grow-1" %>
     </div>
   <% end %>
 </div>

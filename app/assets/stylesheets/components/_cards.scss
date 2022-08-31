@@ -1,51 +1,61 @@
 @import "utilities/variables";
-$size:350px;
 
-.dish-container{
+$size: 350px;
+
+.dish-container {
   display: flex;
   justify-content: center;
   margin: auto;
-  width: $size;
+  width: 100%;
+  max-width: $size;
   overflow-y: scroll;
 }
-.dish-container a{
+
+.dish-container a {
   text-decoration: none;
   color: $black;
 }
-.dish{
+
+.dish {
   border-radius: 1rem;
   overflow: hidden;
   position: relative;
   background: $white;
 }
-.dish-image{
+
+.dish-image {
   width: $size;
   height: $size;
   object-fit: cover;
 }
-.dish-description{
+
+.dish-description {
   padding: 0.5rem 0.5rem 1rem;
 }
-.dish-name{
-    font-size: 2rem;
-    height: 6rem;
-    max-height: 6rem;
-    overflow: hidden;
-    font-size: 1.5rem;
+
+.dish-name {
+  font-size: 2rem;
+  height: 6rem;
+  max-height: 6rem;
+  overflow: hidden;
+  font-size: 1.5rem;
 }
-.dish-cuisine{
+
+.dish-cuisine {
   font-size: 1.25rem;
 }
-.dish-time{
+
+.dish-time {
   font-size: 1.25rem;
 }
-.cart-button{
+
+.cart-button {
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
 }
 
-.controls{
+.controls {
   padding-top: 2rem;
   display: flex;
   justify-content: space-between;

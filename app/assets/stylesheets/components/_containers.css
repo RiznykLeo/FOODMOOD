@@ -1,17 +1,25 @@
 .main-container {
-    width: 90vw;
-    margin: auto;
-    display: grid;
-    grid-template-rows: 80vh 20vh;
     justify-content: center;
-
+    overflow: scroll;
     position: relative;
+    margin-bottom: 8rem;
+    padding-bottom: 1rem;
+    height: calc(100vh - 70px);
 }
 
 .navbar-container {
     width: 100%;
+    position: fixed;
+    bottom: 0;
+    height: 8rem;
 }
 
 .vertical {
-    margin: auto;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.standard-container {
+    width: 90%;
+    margin: 0 auto;
 }

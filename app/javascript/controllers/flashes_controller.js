@@ -5,7 +5,6 @@ export default class extends Controller {
     static targets = ["alert"]
 
     connect() {
-
         const alert = this.alertTarget
         if (alert) {
             console.log(alert)

@@ -2,16 +2,15 @@
   position: relative;
   z-index: 1000;
   animation-name: alertDelete;
-  animation-delay: 800ms;
-  animation-duration: 1200ms;
+  animation-delay: 600ms;
+  animation-duration: 1400ms;
 }
 
 .alert-container {
   position: absolute;
-  top: 4rem;
-  right: 80%;
-  transform: translateX(50%);
-  width: 50vw;
+  top: 1vh;
+  left: 0;
+  width: 90vw;
   z-index: 1000;
   opacity: 80%;
 }
@@ -22,5 +21,10 @@
   }
   to {
     opacity: 0
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .alert-container {
   }
 }

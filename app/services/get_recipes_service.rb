@@ -3,12 +3,12 @@ require 'open-uri'
 class GetRecipesService
   attr_reader :ingredient, :app_id, :app_key, :base_url, :url
 
-  def initialize(ingredient)
+  def initialize(ingredient, dinner_type) #Breakfast, Lunch,  Dinner, Snack
     @ingredient = ingredient
     @app_id = ENV['EDAMAM_APP_ID']
     @app_key = ENV['EDAMAM_APP_KEY']
     @base_url = 'https://api.edamam.com/api/recipes/v2?type=public'
-    @url =  "#{@base_url}&app_id=#{app_id}&app_key=#{app_key}&q=#{ingredient}"
+    @url =  "#{@base_url}&app_id=#{app_id}&app_key=#{app_key}&q=#{ingredient}&mealType=#{dinner_type}"
   end
 
 

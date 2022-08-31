@@ -1,29 +1,32 @@
-<div class="container">
-  <div class="search container mt-5">
+<div class="standard-container">
+  <div class="standard-container mt-5 w-100">
     <%= form_with url: search_path, method: :get, class: "d-flex" do %>
       <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a recipe"
-  %>
+                         params[:query],
+                         class: "form-control",
+                         placeholder: "Find a recipe"
+      %>
       <%= submit_tag "Search", class: "btn btn-primary" %>
     <% end %>
   </div>
-  <div class="search results cart-size mt-3">
+  <div class="search results cart-size-extra mt-3">
     <% if params[:query].present? %>
       <% if @user_recipes.blank? %>
         No Results
       <% else %>
         <ul>
           <% @user_recipes.each do |recipe| %>
-            <div data-controller="card-actions" class="cart-search">
+            <div data-controller="card-actions" class="cart-search-extra">
               <%= link_to "/recipes/#{recipe.name}", class: "cart-link" do %>
                 <%= cl_image_tag recipe.photo.key, class: "cart-recipe-img" %>
               <% end %>
-              <div>
-                <p class="cart-recipe-name"><%= recipe.name %></p>
-                <p><i class="fa-solid fa-clock"> </i>Cooking Time <%= recipe.cooking_time %></p>
-                <p><i class="fa-solid fa-earth-europe"> </i>Cuisine Type <%= recipe.cuisine_type.capitalize %></p>
+              <div class="d-flex flex-column justify-content-between">
+                <p class="cart-recipe-name w-100 "><%= recipe.name %></p>
+                <div class="ps-2">
+                  <i class="fa-solid fa-clock"></i> Cooking Time <%= recipe.cooking_time %>
+                  <p><i class="fa-solid fa-earth-europe"></i> Cuisine <%= recipe.cuisine_type.capitalize %>
+                  </p>
+                </div>
               </div>
             </div>
           <% end %>

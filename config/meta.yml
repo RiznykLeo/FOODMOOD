@@ -1,0 +1,5 @@
+meta_product_name: "FoodMood"
+meta_title: "FoodMood - Food for your current Mood!"
+meta_description: "This App will make finding the right dinner recipe super easy, especially if cooking yourself is unknown territory for you!"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards

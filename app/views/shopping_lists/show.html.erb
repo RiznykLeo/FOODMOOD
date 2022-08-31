@@ -1,34 +1,44 @@
-<div class="list-vertical">
+<div class="list-vertical  accordion">
   <div class="page-name">
     <p>Shopping List</p>
   </div>
 
-  <div class="show-spacing accordion">
+  <div class="show-spacing content-bx">
     <% @recipes.each do |recipe_name, shopping_ingredients| %>
-    <p><%= recipe_name %></p>
-    <% shopping_ingredients.each do |shopping_ingredient| %>
-      <div class="list-item content-bx">
 
+      <div data-controller="accordion">
+        <div class="accordion-label" data-action="click->accordion#collapse">
+          <p class="list-item-name d-flex ">
+            <span class="pe-1"><i class="fa-solid fa-chevron-right pe-2 arrow" data-accordion-target="arrow"></i></span>
+            <span><%= recipe_name %></span>
+          </p>
+        </div>
+
+        <div class="accordion-content mb-3" data-accordion-target="content">
+          <% shopping_ingredients.each do |shopping_ingredient| %>
+            <div class="list-item accordion-content">
               <div class="d-flex check-item">
                 <%= form_for shopping_ingredient do |f| %>
                   <%= f.check_box :bought, as: :boolean, onclick: "this.form.submit()", class: "checkbox" %>
                 <% end %>
                 <span>
-                  <%= shopping_ingredient.ingredient.food.name.capitalize %>:
+                    <%= shopping_ingredient.ingredient.food.name.capitalize %>:
                   <%= shopping_ingredient.ingredient.quantity.round(2) %>
                   <%= shopping_ingredient.ingredient.measure if shopping_ingredient.ingredient.measure != "<unit>" %>
-                </span>
+              </span>
               </div>
-
+            </div>
+          <% end %>
+        </div>
       </div>
-    <% end %>
+
     <% end %>
   </div>
 
   <%= render "shared/buttons/archive", current_list: @list if current_user.current_shopping_list.shopping_ingredients[0] != nil %>
 
   <% if @list.shopping_ingredients.all.count == 0 %>
-    <div class="d-flex mt-3">
+    <div class="d-flex">
       <%= render "shared/buttons/active_green", link: cookbook_path,
                  text: "Back to your Cookbook", class: "flex-grow-1" %>
     </div>

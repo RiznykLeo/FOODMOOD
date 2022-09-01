@@ -6,7 +6,7 @@
       <% end %>
       <div class="dish-description">
         <div class="dish-name">
-          <%= link_to recipe.name, recipe_path(recipe) %>
+          <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
         </div>
         <div class="dish-items ">
           <div class="dish-item">
@@ -36,7 +36,6 @@
              data-action="click->swinger#choose" data-swinger-like-param="false">
           <span class="button-text"><i class="fa-solid fa-xmark"></i></span>
         </div>
-
         <div class="button-form neumorph-card-button" data-action="click->swinger#choose"
              data-swinger-like-param="true">
           <%= simple_form_for [recipe, @user_recipe], html: { data: { swinger_target: "form" } } do |f| %>

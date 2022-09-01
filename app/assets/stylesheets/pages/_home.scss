@@ -86,8 +86,9 @@
 .home-slide input[type=range] {
   height: 1rem;
   margin: 10px 0;
-  background: $soft-green;
+  accent-color: $soft-green;
 }
+
 
 //media
 @media screen and (min-width: 1000px) {

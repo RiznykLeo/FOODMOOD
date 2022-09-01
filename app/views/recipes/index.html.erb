@@ -1,6 +1,6 @@
 <ul class="stack standard-container" data-controller="swinger">
   <% @recipes.where("meal_type = ? AND cooking_time <= ?",
-                    params[:meal_type], params[:time]).limit(6).reverse.each do |recipe| %>
+                    params[:meal_type], params[:time]).limit(8).reverse.each do |recipe| %>
     <li class="child" data-swinger-target="card">
       <%= render "shared/cards/dish",
                  name: recipe.name,

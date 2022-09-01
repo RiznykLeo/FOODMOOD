@@ -22,8 +22,8 @@ input[type="checkbox"] {
   color: currentColor;
   width: 1.15em;
   height: 1.15em;
-  border: 1px solid currentColor;
-  border-radius: 0.15em;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
   transform: translateY(-0.075em);
   display: grid;
   place-content: center;

@@ -18,7 +18,7 @@
                 <%= form_for(shopping_ingredient, class: "form-control") do |f| %>
                   <%= f.check_box :bought, as: :boolean, onclick: "this.form.submit()", class: "checkbox" %>
                 <% end %>
-                <span class="ms-2">
+                <span class="ms-2 mb-1">
                   <%= shopping_ingredient.ingredient.food.name.capitalize %>:
                   <%= shopping_ingredient.ingredient.quantity.round(2) %>
                   <%= shopping_ingredient.ingredient.measure if shopping_ingredient.ingredient.measure != "<unit>" %>

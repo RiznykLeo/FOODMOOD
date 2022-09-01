@@ -1,4 +1,5 @@
 <ul class="stack standard-container" data-controller="swinger">
+
 <%# move the next line to the controller %>
 <%# where("meal_type = ? AND cooking_time <= ?", params[:meal_type], params[:time]). %>
   <% @recipes.limit(8).reverse.each do |recipe| %>

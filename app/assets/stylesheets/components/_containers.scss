@@ -1,29 +1,29 @@
 .main-container {
-    justify-content: center;
-    overflow: scroll;
-    position: relative;
-    margin-bottom: 8rem;
-    padding-bottom: 1rem;
-    height: calc(100vh - 50px);
+  justify-content: center;
+  overflow: scroll;
+  position: relative;
+  margin-bottom: 6.5rem;
+  padding-bottom: 1rem;
+  height: calc(100vh - 50px);
 }
 
 .navbar-container {
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    height: 6.5rem;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  height: 6.5rem;
 }
 
 .standard-container {
-    width: 90%;
-    margin: 0 auto;
+  width: 90%;
+  margin: 0 auto;
 
-    //questionable
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  //questionable
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .standard-container ul {
-    padding: 0;
+  padding: 0;
 }

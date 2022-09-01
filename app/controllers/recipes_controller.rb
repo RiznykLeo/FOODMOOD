@@ -29,16 +29,16 @@ class RecipesController < ApplicationController
     @shopping_ingredient = ShoppingIngredient.new
   end
 
-  # def search
-  #   @user_recipes = Recipe.all
-  #   authorize @user_recipes
-  #   if params[:query].present?
-  #     sql_query = <<~SQL
-  #       recipes.name ILIKE :query
-  #       OR foods.name ILIKE :query
-  #     SQL
-  #     @user_recipes = Recipe.joins(:foods).distinct.where(sql_query, query: "%#{params[:query]}%")
+  def search
+    @user_recipes = Recipe.all
+    authorize @user_recipes
+    if params[:query].present?
+      sql_query = <<~SQL
+        recipes.name ILIKE :query
+        OR foods.name ILIKE :query
+      SQL
+      @user_recipes = Recipe.joins(:foods).distinct.where(sql_query, query: "%#{params[:query]}%")
 
-  #   end
-  # end
+    end
+  end
 end

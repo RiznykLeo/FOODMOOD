@@ -17,10 +17,14 @@
 }
 
 .home-text {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   background-color: $white;
-  padding: 1rem;
+  padding: 0.75rem;
   border-radius: 1rem;
+  margin-bottom: 2rem;
+
+  box-shadow: $offset $offset $blur #d9d9d9,
+  $offset-neg $offset-neg $blur #ffffff;
 }
 
 .accent {
@@ -33,50 +37,74 @@
 .home-inputs {
   margin-top: 1rem;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .tag-selector {
   position: absolute;
   transform: scale(0);
+
+}
+
+.tag-item input[type=checkbox] {
+  opacity: 0;
 }
 
 .tag-selector + label {
   cursor: pointer;
   display: inline-block;
+
   font-size: 1rem;
   border-radius: 0.5rem;
   padding: 0.25rem 0.75rem;
-  background-color: #B1CF66;
-  border: 1px solid #B1CF66;
-  color: white;
+  color: $soft-green;
   margin-bottom: 1rem;
+
+  //neu
+  background-color: $white;
+  box-shadow: $offset $offset $blur #d9d9d9,
+  $offset-neg $offset-neg $blur #ffffff;
 }
 
 .tag-selector:checked + label {
-  background-color: white;
-  color: #B1CF66;
-  border: 1px solid #B1CF66;
+  box-shadow: inset $offset $offset $blur #96b057,
+  inset $offset-neg $offset-neg $blur #ccee75;
+  color: $white;
+  background-color: $soft-green;
 }
 
 .home-submit {
   border: none;
-  background: $soft-green;
+  color: $soft-green;
   padding: 1rem;
-  color: white;
-  margin-top: 1rem;
+  margin-top: 3rem;
   border-radius: 0.5rem;
   flex-grow: 1;
+
+  transition: 50ms;
+  //neu
+
+  background-color: $white;
+  box-shadow: $offset $offset $blur #d9d9d9,
+  $offset-neg $offset-neg $blur #ffffff;
 }
 
 .home-submit:hover {
-  background: #9dc33f;
+  box-shadow: inset $offset $offset $blur #96b057,
+  inset $offset-neg $offset-neg $blur #ccee75;
+  color: $white;
+  background-color: $soft-green;
 }
 
 .home-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: $white;
+  box-shadow: $offset $offset $blur #d9d9d9,
+  $offset-neg $offset-neg $blur #ffffff;
 }
 
 
@@ -90,6 +118,7 @@
 .home-slide-labels {
   display: flex;
   justify-content: space-between;
+  font-size: 0.85rem;
 }
 
 //media

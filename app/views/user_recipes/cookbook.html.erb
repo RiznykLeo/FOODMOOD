@@ -25,7 +25,6 @@
                     <p class="cookbook-recipe-name"><%= user_recipe.recipe.name %></p>
                   </div>
                 <% end %>
-
                 <div class="cookbook-cross">
                   <%= render "shared/buttons/cross",
                              link: user_recipe_path(user_recipe),
@@ -91,7 +90,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         <% end %>
       </div>
@@ -112,7 +110,6 @@
               <%= cl_image_tag user_recipe.recipe.photo.key, class: "cookbook-recipe-img" %>
             <% end %>
             <div class="cookbook-vertical">
-
               <div class="d-flex justify-content-between">
                 <%= link_to recipe_path(user_recipe.recipe.id, showbutton: "show"), class: "cookbook-link" do %>
                   <div class="cookbook-info">
@@ -161,7 +158,7 @@
                         </span>
                       </button>
                     <% end %>
-                    <span class="cookbook-status-labels">active</span>
+                    <span class="cookbook-status-labels">cooking</span>
                   </div>
                   <div class="status-block">
                     <%= simple_form_for user_recipe,
@@ -184,7 +181,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         <% end %>
       </div>
@@ -253,7 +249,7 @@
                         </span>
                       </button>
                     <% end %>
-                    <span class="cookbook-status-labels">active</span>
+                    <span class="cookbook-status-labels">cooking</span>
                   </div>
                   <div class="status-block">
                     <%= simple_form_for user_recipe,
@@ -276,7 +272,6 @@
                 </div>
               </div>
             </div>
-
           </div>
         <% end %>
       </div>

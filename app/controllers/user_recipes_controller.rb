@@ -18,7 +18,7 @@ class UserRecipesController < ApplicationController
   end
 
   def cart
-    @user_recipes = UserRecipe.where(saved: false, user: current_user)
+    @user_recipes = UserRecipe.where(user: current_user, saved: false).or(UserRecipe.where(user: current_user, saved: true ).where("updated_at >= ?", Time.now-5.minutes))
     authorize @user_recipes
   end
 

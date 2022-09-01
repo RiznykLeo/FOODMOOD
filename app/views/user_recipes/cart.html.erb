@@ -11,12 +11,22 @@
         <div class="cart-info">
           <p class="cart-recipe-name"><%= user_recipe.recipe.name %></p>
         </div>
+        <%# This is for the health tags LEO %>
+        <% user_recipe.recipe.health.split("\"").join[1..-2].split(", ")[0..5].each do |health_label| %>
+            <h6><%= health_label %></h6>
+        <% end %>
       <% end %>
       <div class="cart-controls">
-        <%= render "shared/buttons/check", user_recipe: user_recipe %>
-        <%= render "shared/buttons/cross",
+        <% if user_recipe.saved %>
+          <%# This shows up when you saved something LEO %>
+          saved
+        <% else %>
+          <%= render "shared/buttons/check", user_recipe: user_recipe %>
+
+          <%= render "shared/buttons/cross",
                    link: user_recipe_path(user_recipe),
                    data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+        <% end %>
       </div>
     </div>
   <% end %>

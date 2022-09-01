@@ -16,7 +16,7 @@
             <div class="list-item accordion-content">
               <div class="d-flex align-items-center check-item">
                 <%= form_for(shopping_ingredient, class: "form-control") do |f| %>
-                  <%= f.check_box :bought, as: :boolean, onclick: "this.form.submit()", class: "checkbox" %>
+                  <%= f.check_box :bought, as: :boolean, onclick: "this.form.submit()", class: "list" %>
                 <% end %>
                 <span class="ms-2 mb-1">
                   <%= shopping_ingredient.ingredient.food.name.capitalize %>:

@@ -11,12 +11,17 @@
 }
 
 input[type="checkbox"] {
+opacity: 0;
+}
+
+input[type="checkbox"].list {
   /* Add if not using autoprefixer */
   -webkit-appearance: none;
   appearance: none;
   /* For iOS < 15 to remove gradient background */
   background-color: #fff;
   /* Not removed via appearance */
+  opacity: 1;
   margin: 0;
   font: inherit;
   color: currentColor;

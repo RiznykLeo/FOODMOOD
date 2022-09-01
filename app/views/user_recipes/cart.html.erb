@@ -13,7 +13,7 @@
         </div>
         <%# This is for the health tags LEO %>
         <% user_recipe.recipe.health.split("\"").join[1..-2].split(", ")[0..5].each do |health_label| %>
-            <h6><%= health_label %></h6>
+          <p class="health"><%= health_label %></p>
         <% end %>
       <% end %>
       <div class="cart-controls">
@@ -24,8 +24,8 @@
           <%= render "shared/buttons/check", user_recipe: user_recipe %>
 
           <%= render "shared/buttons/cross",
-                   link: user_recipe_path(user_recipe),
-                   data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
+                     link: user_recipe_path(user_recipe),
+                     data: { turbo_method: :delete, turbo_confirm: "Are you sure?" } %>
         <% end %>
       </div>
     </div>

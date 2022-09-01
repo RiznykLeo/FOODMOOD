@@ -1,7 +1,21 @@
 class RecipesController < ApplicationController
   def index
     @user_recipe = UserRecipe.new
-    @recipes = policy_scope(Recipe).where.not(id: current_user.recipes).where(meal_type: params[:meal_type]).where("cooking_time <= ?", params[:time])
+
+    if params[:meal_type].present?
+      @recipes = policy_scope(Recipe).where.not(id: current_user.recipes).where(meal_type: params[:meal_type]).where("cooking_time <= ?", params[:time])
+    elsif params[:query].present?
+      @user_recipes = Recipe.all
+      authorize @user_recipes
+      sql_query = <<~SQL
+        recipes.name ILIKE :query
+        OR foods.name ILIKE :query
+      SQL
+      @recipes = policy_scope(Recipe).joins(:foods).distinct.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @recipes = policy_scope(Recipe).where.not(id: current_user.recipes).where(meal_type: "dinner")
+    end
+
     if params[:recipe]
       top_recipe = @recipes.find { |recipe| recipe.id == params[:recipe].to_i }
       @recipes.delete_at(@recipes.index(top_recipe))

@@ -19,6 +19,8 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
+  // background: linear-gradient(145deg, $light-green 20%, $dark-green 80%);
+  background: $light-green;
 }
 
 html, body {

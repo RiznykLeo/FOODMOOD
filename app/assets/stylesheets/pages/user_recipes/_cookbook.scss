@@ -12,7 +12,7 @@
 .cookbook-recipe {
   display: flex;
   margin: 1rem 0 1rem 0;
-  background: $white;
+  background: white;
   border-radius: 0.5rem;
   overflow: hidden;
   width: 100%;
@@ -38,7 +38,7 @@
   display: flex;
   justify-content: space-around;
   font-size: 1.25rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .cookbook-status-labels {
@@ -74,16 +74,22 @@
 }
 
 .ckbk-icon {
-  color: $gray;
+  color: $soft-green;
   border-radius: 0.25rem;
-  box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.2);
+  background-color: $white;
+  box-shadow: $offset $offset $blur #d9d9d9,
+  $offset-neg $offset-neg $blur #ffffff;
   padding: 0.5rem;
 }
 
 .ckbk-icon-active {
-  color: $soft-green;
+  color: white;
   border-radius: 0.25rem;
-  box-shadow: inset 4px 5px 4px rgba(0, 0, 0, 0.2);
+
+  background-color: $soft-green;
+  box-shadow: inset $offset $offset $blur #96b057,
+  inset $offset-neg $offset-neg $blur #ccee75;
+
   padding: 0.5rem;
 }
 

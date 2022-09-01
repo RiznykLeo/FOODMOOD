@@ -4,19 +4,24 @@
     position: relative;
     margin-bottom: 8rem;
     padding-bottom: 1rem;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 50px);
 }
 
 .navbar-container {
     width: 100%;
     position: fixed;
     bottom: 0;
-    height: 8rem;
+    height: 6.5rem;
 }
 
 .standard-container {
     width: 90%;
     margin: 0 auto;
+
+    //questionable
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .standard-container ul {

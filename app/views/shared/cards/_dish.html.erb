@@ -8,27 +8,40 @@
         <div class="dish-name">
           <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
         </div>
-        <div class="dish-cuisine">
-          <i class="fa-solid fa-earth-europe"> </i>
-          <span>Cuisine: <%= cuisine.capitalize %></span>
+        <div class="dish-items ">
+          <div class="dish-item">
+            <i class="fa-solid fa-bowl-rice"></i>
+            <span><%= "#{recipe.yield} portions" %></span>
+          </div>
+          <div class="dish-item">
+            <i class="fa-solid fa-clock"> </i>
+            <span><%= time %> mins</span>
+          </div>
+          <div class="dish-item">
+            <i class="fa-solid fa-fire"></i>
+            <span><%= "#{recipe.calories.to_i} cals" %></span>
+          </div>
         </div>
-        <div class="dish-time">
-          <i class="fa-solid fa-clock"> </i>
-          <span>Cooking Time: <%= time %> mins</span>
-        </div>
+
+
       </div>
       <div class="cart-button">
         <%= render "shared/buttons/cart", link: "/cart",
                    counter: UserRecipe.where(user: current_user, saved: false).count %>
       </div>
-      <div class="d-flex justify-content-between px-2 mb-2">
-        <div class="button active-red"
+
+
+      <div class="d-flex justify-content-around px-2 mb-3">
+        <div class="button pass neumorph-card-button"
              data-action="click->swinger#choose" data-swinger-like-param="false">
-          <span class="button-text">Don't like</span>
+          <span class="button-text"><i class="fa-solid fa-xmark"></i></span>
         </div>
-        <div class="button-form" data-action="click->swinger#choose" data-swinger-like-param="true">
+        <div class="button-form neumorph-card-button" data-action="click->swinger#choose"
+             data-swinger-like-param="true">
           <%= simple_form_for [recipe, @user_recipe], html: { data: { swinger_target: "form" } } do |f| %>
-            <%= f.submit "Like", class: "like" %>
+            <button type="submit" class="like">
+              <i class="fa-solid fa-heart"></i>
+            </button>
           <% end %>
         </div>
       </div>

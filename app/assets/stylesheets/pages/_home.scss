@@ -36,9 +36,6 @@
   justify-content: space-around;
 }
 
-.tag-item {
-}
-
 .tag-selector {
   position: absolute;
   transform: scale(0);
@@ -79,16 +76,21 @@
 .home-slide {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 
 .home-slide input[type=range] {
   height: 1rem;
   margin: 10px 0;
+  width: 100%;
   accent-color: $soft-green;
 }
 
+.home-slide-labels {
+  display: flex;
+  justify-content: space-between;
+}
 
 //media
 @media screen and (min-width: 1000px) {

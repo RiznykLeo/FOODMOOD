@@ -1,5 +1,4 @@
 .stack {
-  transform: scale(0.9);
   padding: 0;
   list-style: none;
   position: relative;
@@ -17,8 +16,15 @@ ul.stack li:active {
   cursor: grabbing;
 }
 
-@media only screen and (max-width: 380px) {
-  //.stack {
-  //  transform: scale(0.8);
-  //}
+@media screen and (max-width: 380px) {
+  .stack {
+    transform: scale(0.8);
+  }
 }
+
+@media screen and (min-width: 1200px) {
+  .stack {
+    transform: scale(0.9);
+  }
+}
+

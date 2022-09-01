@@ -12,6 +12,12 @@
     <p class="label">Cookbook</p>
   </div>
   <div class="navbar-item">
+    <%= link_to "/cart", class: 'navbar-item-link' do %>
+      <span class="navbar-item-icon"><i class="fa-solid fa-lightbulb"></i></span>
+    <% end %>
+    <p class="label">Ideas</p>
+  </div>
+  <div class="navbar-item">
     <%= link_to "/list", class: 'navbar-item-link' do %>
       <span class="navbar-item-icon"><i class="fa-solid fa-clipboard-list"></i></span>
     <% end %>
@@ -21,6 +27,6 @@
     <%= link_to "/search", class: 'navbar-item-link' do %>
       <span class="navbar-item-icon"><i class="fa-solid fa-bars"></i></span>
     <% end %>
-    <p class="label">Settings</p>
+    <p class="label">Menu</p>
   </div>
 </div>

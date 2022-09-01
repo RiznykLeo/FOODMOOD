@@ -1,6 +1,6 @@
 <div class="standard-container recipe-container">
   <div class="flex-container">
-    <div class="recipe-img-container">
+    <div class="recipe-img-container d-flex justify-content-center">
       <%= cl_image_tag @recipe.photo.key, class: "recipe-img" %>
       <div class="back-link">
         <%= link_to "javascript:history.back()" do %>

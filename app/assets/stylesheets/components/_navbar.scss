@@ -2,25 +2,43 @@
 
 .navbar-container {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   border-top: 3px solid $gray;
   margin-top: 0.5rem;
+  justify-content: space-between;
+  background-color: $soft-green;
 }
 
 .navbar-item {
   margin: 0 auto;
-  font-size: 4rem;
+  font-size: 2.25rem;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
 .navbar-item-link {
-  color: rgba(0, 0, 0, 0.6);
+  color: white;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  transition: 50ms;
+  min-width: 3.25rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  //neumorphism
+  border-radius: 0.5rem;
+  background: $soft-green;
+  box-shadow: $offset $offset $blur #96b057,
+  $offset-neg $offset-neg $blur #ccee75;
 }
 
 .navbar-item-link:hover {
+  box-shadow: inset $offset $offset $blur #d9d9d9,
+  inset $offset-neg $offset-neg $blur #ffffff;
   color: $soft-green;
+  background-color: white;
 }
 
 .navbar-item-icon {
@@ -28,5 +46,6 @@
 }
 
 .navbar-item .label {
-  font-size: 1rem;
+  font-size: 0.75rem;
+  color: white;
 }

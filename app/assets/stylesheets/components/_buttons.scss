@@ -2,6 +2,7 @@
 
 $width: 40%;
 $height: 0.5rem;
+
 .button {
   width: $width;
   padding: $height 0.5rem $height 0.5rem;
@@ -9,11 +10,11 @@ $height: 0.5rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 150ms;
+  transition: 100ms;
 }
 
 .button:hover {
-  filter: brightness(90%);
+  //filter: brightness(90%);
 }
 
 .button a {
@@ -43,7 +44,6 @@ $height: 0.5rem;
 }
 
 .button-form {
-  width: 40%;
 }
 
 .archive-button {
@@ -52,20 +52,67 @@ $height: 0.5rem;
   flex-grow: 1;
 }
 
+//card
 .like {
-  background: $soft-green;
-  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
-  font-size: 1rem;
+  background: $white;
+  color: $soft-green;
+  font-size: 1.5rem;
   padding: 1rem;
-  border-radius: 0.5rem;
-  width: 100%;
+  border-radius: 50%;
+  height: 3.5rem;
+  width: 3.5rem;
   transition: 150ms;
+
+  //neumorphism
+
+  background-color: $white;
+  box-shadow: $offset $offset $blur #d9d9d9,
+  $offset-neg $offset-neg $blur #ffffff;
 }
 
 .like:hover {
-  filter: brightness(90%);
+  box-shadow: inset $offset $offset $blur #96b057,
+  inset $offset-neg $offset-neg $blur #ccee75;
+  color: $white;
+  background-color: $soft-green;
 }
+
+.pass {
+  padding: 1rem;
+  border-radius: 50%;
+  height: 3.5rem;
+  width: 3.5rem;
+  transition: 150ms;
+
+  //neumorphism
+
+  background-color: $white;
+  box-shadow: $offset $offset $blur #d9d9d9,
+  $offset-neg $offset-neg $blur #ffffff;
+}
+
+.pass .button-text {
+  font-size: 1.5rem;
+  color: $red;
+}
+
+.pass:hover {
+  box-shadow: inset $offset $offset $blur #c93636,
+  inset $offset-neg $offset-neg $blur #ff4a4a;
+  color: $white;
+  background-color: $red;
+}
+
+.pass:hover .button-text {
+  color: white;
+}
+
+//
+
 
 .active-green {
   background: $soft-green;
@@ -137,4 +184,9 @@ $height: 0.5rem;
 .recipe-source a {
   text-decoration: none;
   color: $black;
+}
+
+.button-bulb-text {
+  font-size: 1.25rem;
+  color: #FFFFFF;
 }

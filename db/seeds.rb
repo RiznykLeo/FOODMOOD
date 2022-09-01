@@ -13,7 +13,7 @@ require "open-uri"
 puts "Creating breakfast Recipes..."
 
 dinner_recipes_meta = GetRecipesService.new('breakfast', "Breakfast").call
-10.times do
+4.times do
   dinner_recipes = dinner_recipes_meta["hits"]
   dinner_recipes.each do |recipe|
     if recipe["recipe"]["totalTime"] != 0 && recipe["recipe"]["calories"] != 0 && recipe["recipe"]["yield"] != 0
@@ -26,7 +26,7 @@ dinner_recipes_meta = GetRecipesService.new('breakfast', "Breakfast").call
         yield: recipe["recipe"]["yield"],
         cuisine_type: recipe["recipe"]["cuisineType"].first,
         meal_type: "breakfast",
-        health: recipe["healthLabels"]
+        health: recipe["recipe"]["healthLabels"]
         # dish_type: recipe["recipe"]["dishType"].first
       )
 
@@ -66,7 +66,7 @@ puts "Done!"
 puts "Creating lunch Recipes..."
 
 dinner_recipes_meta = GetRecipesService.new('lunch', "Lunch").call
-10.times do
+4.times do
   dinner_recipes = dinner_recipes_meta["hits"]
   dinner_recipes.each do |recipe|
     if recipe["recipe"]["totalTime"] != 0 && recipe["recipe"]["calories"] != 0 && recipe["recipe"]["yield"] != 0
@@ -79,7 +79,7 @@ dinner_recipes_meta = GetRecipesService.new('lunch', "Lunch").call
         yield: recipe["recipe"]["yield"],
         cuisine_type: recipe["recipe"]["cuisineType"].first,
         meal_type: "lunch",
-        health: recipe["healthLabels"]
+        health: recipe["recipe"]["healthLabels"]
         # dish_type: recipe["recipe"]["dishType"].first
       )
 
@@ -119,7 +119,7 @@ puts "Done!"
 puts "Creating dinner Recipes..."
 
 dinner_recipes_meta = GetRecipesService.new('dinner', "Dinner").call
-10.times do
+4.times do
   dinner_recipes = dinner_recipes_meta["hits"]
   dinner_recipes.each do |recipe|
     if recipe["recipe"]["totalTime"] != 0 && recipe["recipe"]["calories"] != 0 && recipe["recipe"]["yield"] != 0
@@ -132,7 +132,7 @@ dinner_recipes_meta = GetRecipesService.new('dinner', "Dinner").call
         yield: recipe["recipe"]["yield"],
         cuisine_type: recipe["recipe"]["cuisineType"].first,
         meal_type: "dinner",
-        health: recipe["healthLabels"]
+        health: recipe["recipe"]["healthLabels"]
         # dish_type: recipe["recipe"]["dishType"].first
       )
 
@@ -172,7 +172,7 @@ puts "Done!"
 puts "Creating snack Recipes..."
 
 dinner_recipes_meta = GetRecipesService.new('snack', "Snack").call
-10.times do
+4.times do
   dinner_recipes = dinner_recipes_meta["hits"]
   dinner_recipes.each do |recipe|
     if recipe["recipe"]["totalTime"] != 0 && recipe["recipe"]["calories"] != 0 && recipe["recipe"]["yield"] != 0
@@ -185,7 +185,7 @@ dinner_recipes_meta = GetRecipesService.new('snack', "Snack").call
         yield: recipe["recipe"]["yield"],
         cuisine_type: recipe["recipe"]["cuisineType"].first,
         meal_type: "snack",
-        health: recipe["healthLabels"]
+        health: recipe["recipe"]["healthLabels"]
         # dish_type: recipe["recipe"]["dishType"].first
       )
 

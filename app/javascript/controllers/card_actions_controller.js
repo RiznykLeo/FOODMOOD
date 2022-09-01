@@ -13,7 +13,7 @@ export default class extends Controller {
 
     submitRemove() {
         this.submitForm()
-        this.removeCard()
+
     }
 
     submitDelete() {

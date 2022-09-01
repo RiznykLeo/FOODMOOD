@@ -203,23 +203,52 @@ $height: 0.5rem;
 }
 
 .add-ingredients {
-  border: none;
-  border-radius: 0.5rem;
-  background-color: $soft-green;
-  color: $white;
   flex-grow: 1;
+
+  font-size: 0.85rem;
+  color: $black;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  background-color: #f4f4f4;
+  box-shadow: $offset-sm $offset-sm $blur-sm #d9d9d9,
+  $offset-sm-neg $offset-sm-neg $blur-sm #ffffff;
+}
+
+.add-ingredients:hover {
+  background-color: $soft-green;
+  box-shadow: inset $offset-sm $offset-sm $blur-sm #96b057,
+  inset $offset-sm-neg $offset-sm-neg $blur-sm #ccee75;
+  color: white;
 }
 
 .recipe-source {
   display: flex;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+
+  font-size: 1rem;
+  color: $black;
+
+  justify-content: center;
+  padding: 0.5rem;
+
+  border-radius: 0.5rem;
+  background-color: #F4F4F4;
+  box-shadow: $offset-sm $offset-sm $blur-sm #d9d9d9,
+  $offset-sm-neg $offset-sm-neg $blur-sm #ffffff;
 }
 
-.recipe-source a {
+a {
   text-decoration: none;
   color: $black;
 }
+
+.recipe-source:hover {
+  box-shadow: inset $offset $offset-sm $blur-sm #96b057,
+  inset $offset-sm-neg $offset-sm-neg $blur-sm #ccee75;
+  color: white;
+  background-color: $soft-green;
+}
+
 
 .button-bulb-text {
   font-size: 1.25rem;

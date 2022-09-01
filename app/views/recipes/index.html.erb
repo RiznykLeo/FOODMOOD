@@ -2,9 +2,9 @@
 <div class="standard-container mt-4 w-100 p-1 bg-light rounded rounded-pill shadow-sm mb-4">
   <%= form_with url: recipes_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
-                         params[:query],
-                         class: "form-control border-0 bg-light font-size",
-                         placeholder: "Search by recipe or ingredient..."%>
+                       params[:query],
+                       class: "form-control border-0 bg-light font-size",
+                       placeholder: "Search by recipe or ingredient..." %>
     <button type="submit" class="btn btn-link text-primary">
       <i class="fa fa-search font-color"></i>
     </button>
@@ -13,7 +13,7 @@
 <ul class="stack standard-container" data-controller="swinger">
   <%# move the next line to the controller %>
   <%# where("meal_type = ? AND cooking_time <= ?", params[:meal_type], params[:time]). %>
-  <% @recipes.each do |recipe| %>
+  <% @recipes.limit(20).each do |recipe| %>
     <li class="child" data-swinger-target="card">
       <%= render "shared/cards/dish",
                  name: recipe.name,

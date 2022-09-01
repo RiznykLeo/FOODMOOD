@@ -17,7 +17,7 @@
         </p>
         <p>
           <span><i class="fa-solid fa-fire"></i></span>
-          <%= "#{@recipe.calories.to_i/@recipe.yield} cal/portion" %>
+          <%= "#{@recipe.calories.to_i / @recipe.yield} cals" %>
         </p>
         <p>
           <span><i class="fa-solid fa-bowl-rice"></i></span>
@@ -25,7 +25,7 @@
         </p>
       </div>
       <div class="ingredients">
-        <div class="ingredients-title d-flex justify-content-between pt-1">
+        <div class="ingredients-title d-flex justify-content-between align-items-center pt-1">
           <h2>Ingredients</h2>
           <%= render "shared/buttons/add_recipe_button" if params[:showbutton] == "show" %>
         </div>
@@ -50,9 +50,10 @@
         </div>
       </div>
     </div>
-    <div class="recipe-source">
-      <%= render "shared/buttons/active_green",
-                 link: @recipe.url, text: Recipe %>
-    </div>
+    <%= link_to "#{@recipe.url}", class: '' do %>
+      <div class="recipe-source">
+        <span>Recipe</span>
+      </div>
+    <% end %>
   </div>
 </div>

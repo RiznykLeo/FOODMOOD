@@ -59,6 +59,20 @@
   font-size: 1.25rem;
 }
 
+.ingredients-title {
+  padding: 0.5rem 0 0.5rem 0;
+}
+
+.recipe-categories p {
+  font-size: 0.85rem;
+  color: $black;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #f4f4f4;
+  box-shadow: $offset-sm $offset-sm $blur-sm #d9d9d9,
+  $offset-sm-neg $offset-sm-neg $blur-sm #ffffff;
+}
+
 @media screen and (min-width: 800px) {
   .recipe-img {
     width: 16rem;

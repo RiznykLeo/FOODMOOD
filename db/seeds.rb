@@ -8,7 +8,14 @@
 require "open-uri"
 
 # puts "Destroying all the Recipes..."
-# Recipe.destroy_all
+ShoppingIngredient.destroy_all
+ShoppingList.destroy_all
+Ingredient.destroy_all
+User.destroy_all
+UserRecipe.destroy_all
+Food.destroy_all
+Recipe.destroy_all
+
 
 puts "Creating breakfast Recipes..."
 

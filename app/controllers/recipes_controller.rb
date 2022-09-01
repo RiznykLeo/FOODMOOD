@@ -1,7 +1,7 @@
 class RecipesController < ApplicationController
   def index
     @user_recipe = UserRecipe.new
-    @recipes = policy_scope(Recipe).where.not(id: current_user.recipes)
+    @recipes = policy_scope(Recipe).where.not(id: current_user.recipes).order(created_at: :asc)
     if params[:recipe]
       top_recipe = @recipes.find { |recipe| recipe.id == params[:recipe].to_i }
       @recipes.delete_at(@recipes.index(top_recipe))

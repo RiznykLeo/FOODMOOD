@@ -1,5 +1,5 @@
 <!--put searchbar here-->
-<div class="standard-container mt-5 w-100 p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+<div class="standard-container mt-4 w-100 p-1 bg-light rounded rounded-pill shadow-sm mb-4">
   <%= form_with url: recipes_path, method: :get, class: "d-flex" do %>
     <%= text_field_tag :query,
                          params[:query],

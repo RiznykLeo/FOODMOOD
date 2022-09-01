@@ -2,10 +2,8 @@
   <div class="page-name">
     <p>Shopping List</p>
   </div>
-
   <div class="show-spacing content-bx">
     <% @recipes.each do |recipe_name, shopping_ingredients| %>
-
       <div data-controller="accordion">
         <div class="accordion-label" data-action="click->accordion#collapse">
           <p class="list-item-name d-flex ">
@@ -13,7 +11,6 @@
             <span><%= recipe_name %></span>
           </p>
         </div>
-
         <div class="accordion-content mb-3" data-accordion-target="content">
           <% shopping_ingredients.each do |shopping_ingredient| %>
             <div class="list-item accordion-content">
@@ -22,21 +19,18 @@
                   <%= f.check_box :bought, as: :boolean, onclick: "this.form.submit()", class: "checkbox" %>
                 <% end %>
                 <span>
-                    <%= shopping_ingredient.ingredient.food.name.capitalize %>:
+                  <%= shopping_ingredient.ingredient.food.name.capitalize %>:
                   <%= shopping_ingredient.ingredient.quantity.round(2) %>
                   <%= shopping_ingredient.ingredient.measure if shopping_ingredient.ingredient.measure != "<unit>" %>
-              </span>
+                </span>
               </div>
             </div>
           <% end %>
         </div>
       </div>
-
     <% end %>
   </div>
-
   <%= render "shared/buttons/archive", current_list: @list if current_user.current_shopping_list.shopping_ingredients[0] != nil %>
-
   <% if @list.shopping_ingredients.all.count == 0 %>
     <div class="no-info">
       <p class="text">No ingredients on your Shopping List yet.</p>

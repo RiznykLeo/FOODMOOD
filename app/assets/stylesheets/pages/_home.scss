@@ -19,13 +19,16 @@
 
 .home-text {
   font-size: 1.25rem;
-  background-color: $white;
+  //background-color: $white;
   padding: 0.75rem;
   border-radius: 1rem;
   margin-bottom: 2rem;
 
-  box-shadow: $offset $offset $blur #d9d9d9,
-  $offset-neg $offset-neg $blur #ffffff;
+  border: 0.25rem solid #E7F7CB;
+  color: $black;
+  background: white;
+  box-shadow: 5px 5px 12px #d2e1b9,
+  -5px -5px 12px #fcffdd;
 }
 
 .accent {
@@ -62,12 +65,14 @@
   margin-bottom: 1rem;
 
   //neu
-  background-color: $white;
-  box-shadow: $offset $offset $blur #d9d9d9,
-  $offset-neg $offset-neg $blur #ffffff;
+  border: 2px solid #E7F7CB;
+  background: white;
+  box-shadow: 5px 5px 12px #d2e1b9,
+  -5px -5px 12px #fcffdd;
 }
 
 .tag-selector:checked + label {
+
   box-shadow: inset $offset $offset $blur #96b057,
   inset $offset-neg $offset-neg $blur #ccee75;
   color: $white;
@@ -75,7 +80,7 @@
 }
 
 .home-submit {
-  border: none;
+  //border: none;
   color: $soft-green;
   padding: 1rem;
   margin-top: 3rem;
@@ -85,9 +90,10 @@
   transition: 50ms;
   //neu
 
-  background-color: $white;
-  box-shadow: $offset $offset $blur #d9d9d9,
-  $offset-neg $offset-neg $blur #ffffff;
+  border: 0.25rem solid #E7F7CB;
+  background: white;
+  box-shadow: 5px 5px 12px #d2e1b9,
+  -5px -5px 12px #fcffdd;
 }
 
 .home-submit:hover {
@@ -103,9 +109,13 @@
   //justify-content: center;
   padding: 1rem;
   border-radius: 0.5rem;
-  background-color: $white;
-  box-shadow: $offset $offset $blur #d9d9d9,
-  $offset-neg $offset-neg $blur #ffffff;
+
+
+  border: 0.25rem solid #E7F7CB;
+  color: $black;
+  background: white;
+  box-shadow: 5px 5px 12px #d2e1b9,
+  -5px -5px 12px #fcffdd;
 }
 
 

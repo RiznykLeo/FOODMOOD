@@ -1,6 +1,6 @@
 <div class="standard-container">
   <div class="page-name">
-    <p>Add to Cookbook</p>
+    <p>Ideas for Cookbook</p>
   </div>
   <% @user_recipes.order(created_at: :asc).each do |user_recipe| %>
     <div data-controller="card-actions" class="cart-recipe">

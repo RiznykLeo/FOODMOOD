@@ -36,9 +36,12 @@
       <p class="text">No ingredients on your Shopping List yet.</p>
       <p class="text">Select one from your Cookbook to add it!</p>
     </div>
-    <div class="d-flex">
-      <%= render "shared/buttons/active_green", link: cookbook_path,
-                 text: "To your Cookbook", class: "flex-grow-1" %>
+    <div class=" pt-3">
+      <%= link_to "#{cookbook_path}", class: 'button-link' do %>
+        <div class="archive-button archive-button-green d-flex justify-content-center">
+          <span class="">To Cookbook</span>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>

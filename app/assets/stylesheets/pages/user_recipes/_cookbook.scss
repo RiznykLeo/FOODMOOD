@@ -16,10 +16,8 @@
   overflow: hidden;
   width: 100%;
 
-  border: 0.25rem solid #E7F7CB;
-  background: white;
-  box-shadow: 5px 5px 12px #d2e1b9,
-  -5px -5px 12px #fcffdd;
+  //neu
+  @include neu-wt;
 }
 
 .cookbook-recipe-img {
@@ -82,8 +80,8 @@
   border-radius: 0.25rem;
 
   background-color: $white;
-  box-shadow: $offset-sm $offset-sm $blur-sm #d9d9d9,
-  $offset-sm-neg $offset-sm-neg $blur-sm #ffffff;
+  box-shadow: $offset-sm $offset-sm 3px #d9d9d9,
+  $offset-sm-neg $offset-sm-neg 3px #ffffff;
   padding: 0.5rem;
 }
 

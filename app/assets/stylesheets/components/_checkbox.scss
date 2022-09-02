@@ -32,9 +32,8 @@ input[type="checkbox"].list {
   place-content: center;
 
 
-  background: #E7F7CB;
-  box-shadow: 5px 5px 7px #d2e1b9,
-  -5px -5px 7px #fcffdd;
+  //neu
+  @include neu
 }
 
 input[type="checkbox"]::before {

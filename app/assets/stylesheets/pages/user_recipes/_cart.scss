@@ -25,10 +25,8 @@
   margin: 0.5rem 0 0.5rem 0;
 
 
-  border: 0.25rem solid #E7F7CB;
-  background: white;
-  box-shadow: 5px 5px 12px #d2e1b9,
-  -5px -5px 12px #fcffdd;
+  //neu
+  @include neu-wt
 }
 
 .cart-recipe-img {

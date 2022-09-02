@@ -12,7 +12,7 @@
           </p>
         </div>
         <div class="accordion-content mb-3" data-accordion-target="content">
-          <% shopping_ingredients.each do |shopping_ingredient| %>
+          <% shopping_ingredients.sort_by(&:created_at).each do |shopping_ingredient| %>
             <div class="list-item accordion-content">
               <div class="d-flex align-items-center check-item ingredient-line">
                 <%= form_for(shopping_ingredient, class: "form-control") do |f| %>

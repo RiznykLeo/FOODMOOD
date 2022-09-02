@@ -50,6 +50,26 @@ $height: 0.5rem;
   border: none;
   border-radius: 0.5rem;
   flex-grow: 1;
+  padding: 1rem;
+
+  color: $red;
+  background-color: #f4f4f4;
+  box-shadow: $offset-sm $offset-sm $blur-sm #d9d9d9,
+  $offset-sm-neg $offset-sm-neg $blur-sm #ffffff;
+  transition: 50ms;
+}
+
+
+.archive-button:hover {
+  border: none;
+  border-radius: 0.5rem;
+  flex-grow: 1;
+  padding: 1rem;
+
+  color: white;
+  box-shadow: inset $offset $offset $blur #c93636,
+  inset $offset-neg $offset-neg $blur #ff4a4a;
+  background-color: $red;
 }
 
 //card

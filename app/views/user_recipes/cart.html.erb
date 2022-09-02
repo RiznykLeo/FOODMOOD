@@ -9,7 +9,7 @@
           <%= cl_image_tag user_recipe.recipe.photo.key, class: "cart-recipe-img" %>
         <% end %>
       </div>
-      <div class="w-100 d-flex flex-column justify-content-between py-2">
+      <div class="w-100 d-flex flex-column justify-content-between pt-2">
         <%= link_to "/recipes/#{user_recipe.recipe.id}", class: "cart-link" do %>
           <div class="cart-info">
             <p class="cart-recipe-name"><%= user_recipe.recipe.name %></p>

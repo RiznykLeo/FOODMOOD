@@ -18,13 +18,13 @@ ul.stack li:active {
 
 @media screen and (max-width: 380px) {
   .stack {
-    transform: scale(0.8);
+    transform: scale(0.9);
   }
 }
 
 @media screen and (min-width: 1200px) {
   .stack {
-    transform: scale(0.9);
+    transform: scale(0.85);
   }
 }
 

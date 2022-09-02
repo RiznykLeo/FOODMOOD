@@ -60,7 +60,7 @@
 }
 
 .ingredients-title {
-  padding: 0.5rem 0 0.5rem 0;
+  padding: 1rem 0 0.5rem 0;
 }
 
 .recipe-categories p {
@@ -68,9 +68,9 @@
   color: $black;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  background-color: #f4f4f4;
-  box-shadow: $offset-sm $offset-sm $blur-sm #d9d9d9,
-  $offset-sm-neg $offset-sm-neg $blur-sm #ffffff;
+
+  //neu
+  @include neu-wt
 }
 
 @media screen and (min-width: 800px) {

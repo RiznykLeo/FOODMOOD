@@ -10,14 +10,35 @@ $background: #F4F4F4;
 
 //neu
 $dark-green: #d9fa8d;
-$light-green: #faffee;
 
-//sizes
+//mixin variables
+$neu-bg: #F4F8E9;
+$neu-border: 2px solid $neu-bg;
+$prim: #e5e9db;
+$second: #fffff7;
+$off: 5px;
+$bl: 8px;
+//
+
+@mixin neu {
+  border: $neu-border;
+  background: $neu-bg;
+  box-shadow: $off $off $bl $prim,
+          (-$off) (-$off) $bl $second;
+}
+
+@mixin neu-wt {
+  border: $neu-border;
+  background: white;
+  box-shadow: $off $off $bl $prim,
+          (-$off) (-$off) $bl $second;
+}
+
 
 $offset: 6px;
 $offset-neg: 6px;
 $blur: 12px;
-
 $offset-sm: 4px;
 $offset-sm-neg: 4px;
-$blur-sm: 8px
+$blur-sm: 8px;
+

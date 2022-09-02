@@ -47,29 +47,30 @@ $height: 0.5rem;
 }
 
 .archive-button {
-  border: none;
+  //border: none;
   border-radius: 0.5rem;
   flex-grow: 1;
   padding: 1rem;
 
   color: $red;
-  background-color: #f4f4f4;
-  box-shadow: $offset-sm $offset-sm $blur-sm #d9d9d9,
-  $offset-sm-neg $offset-sm-neg $blur-sm #ffffff;
-  transition: 50ms;
+  border: 0.25rem solid #E7F7CB;
+  background: white;
+  box-shadow: 5px 5px 12px #d2e1b9,
+  -5px -5px 12px #fcffdd;
 }
 
 
 .archive-button:hover {
-  border: none;
+  border: 0.25rem solid #E7F7CB;
+  //border: none;
   border-radius: 0.5rem;
   flex-grow: 1;
   padding: 1rem;
 
   color: white;
-  box-shadow: inset $offset $offset $blur #c93636,
-  inset $offset-neg $offset-neg $blur #ff4a4a;
-  background-color: $red;
+  box-shadow: inset $offset $offset $blur #96b057,
+  inset $offset-neg $offset-neg $blur #ccee75;
+  background-color: $soft-green;
 }
 
 //card
@@ -229,10 +230,11 @@ $height: 0.5rem;
   color: $black;
   padding: 0.5rem;
   border-radius: 0.5rem;
+
   border: none;
-  background-color: #f4f4f4;
-  box-shadow: $offset-sm $offset-sm $blur-sm #d9d9d9,
-  $offset-sm-neg $offset-sm-neg $blur-sm #ffffff;
+  background: #E7F7CB;
+  box-shadow: 5px 5px 12px #d2e1b9,
+  -5px -5px 12px #fcffdd;
 }
 
 .add-ingredients:hover {
@@ -252,9 +254,11 @@ $height: 0.5rem;
   padding: 0.5rem;
 
   border-radius: 0.5rem;
-  background-color: #F4F4F4;
-  box-shadow: $offset-sm $offset-sm $blur-sm #d9d9d9,
-  $offset-sm-neg $offset-sm-neg $blur-sm #ffffff;
+  transition: 50ms;
+  border: none;
+  background: #E7F7CB;
+  box-shadow: 5px 5px 12px #d2e1b9,
+  -5px -5px 12px #fcffdd;
 }
 
 a {
@@ -278,14 +282,16 @@ a {
 .archive-button-green {
   color: $black;
   padding: 0.5rem;
+  transition: 50ms;
 }
 
 .archive-button-green:hover {
-  border: none;
+  //border: none;
   border-radius: 0.5rem;
   flex-grow: 1;
   padding: 0.5rem;
 
+  border: 0.25rem solid #E7F7CB;
   color: white;
   box-shadow: inset $offset $offset $blur #96b057,
   inset $offset-neg $offset-neg $blur #ccee75;

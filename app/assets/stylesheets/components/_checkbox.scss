@@ -32,9 +32,9 @@ input[type="checkbox"].list {
   place-content: center;
 
 
-  background-color: #f4f4f4;
-  box-shadow: $offset-sm $offset-sm $blur-sm #d9d9d9,
-  $offset-sm-neg $offset-sm-neg $blur-sm #ffffff;
+  background: #E7F7CB;
+  box-shadow: 5px 5px 7px #d2e1b9,
+  -5px -5px 7px #fcffdd;
 }
 
 input[type="checkbox"]::before {

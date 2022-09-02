@@ -4,6 +4,7 @@
   margin-top: 1rem;
   font-size: 2rem;
   border-bottom: 3px solid $gray;
+
 }
 
 .cart-link {
@@ -22,6 +23,12 @@
   border-radius: 0.5rem;
   overflow: hidden;
   margin: 0.5rem 0 0.5rem 0;
+
+
+  border: 0.25rem solid #E7F7CB;
+  background: white;
+  box-shadow: 5px 5px 12px #d2e1b9,
+  -5px -5px 12px #fcffdd;
 }
 
 .cart-recipe-img {
@@ -89,7 +96,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   color: white;
   border-radius: 0.35rem;
   width: 75%;

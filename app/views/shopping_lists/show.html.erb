@@ -14,11 +14,11 @@
         <div class="accordion-content mb-3" data-accordion-target="content">
           <% shopping_ingredients.each do |shopping_ingredient| %>
             <div class="list-item accordion-content">
-              <div class="d-flex align-items-center check-item">
+              <div class="d-flex align-items-center check-item ingredient-line">
                 <%= form_for(shopping_ingredient, class: "form-control") do |f| %>
                   <%= f.check_box :bought, as: :boolean, onclick: "this.form.submit()", class: "list" %>
                 <% end %>
-                <span class="ms-2 mb-1">
+                <span class="ms-3 mb-2 ll-text">
                   <%= shopping_ingredient.ingredient.food.name.capitalize %>:
                   <%= shopping_ingredient.ingredient.quantity.round(2) %>
                   <%= shopping_ingredient.ingredient.measure if shopping_ingredient.ingredient.measure != "<unit>" %>

@@ -24,8 +24,8 @@ $size: 350px;
 }
 
 .dish-image {
-  width: $size;
-  height: $size;
+  width: 100%;
+  height: 50%;
   object-fit: cover;
 }
 
@@ -52,7 +52,7 @@ $size: 350px;
   flex-direction: column;
   align-items: center;
   padding: 0.5rem;
-  font-size: 1rem;
+  font-size: 0.85rem;
   border-radius: 0.5rem;
 
   //neumorphism

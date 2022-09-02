@@ -19,7 +19,7 @@
           </div>
           <div class="dish-item">
             <i class="fa-solid fa-fire"></i>
-            <span><%= "#{recipe.calories.to_i} cals" %></span>
+            <span><%= "#{recipe.calories.to_i / recipe.yield.to_i} cals" %></span>
           </div>
         </div>
 

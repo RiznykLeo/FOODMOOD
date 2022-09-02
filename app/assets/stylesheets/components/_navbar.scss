@@ -29,9 +29,10 @@
   align-items: center;
   //neumorphism
   border-radius: 0.5rem;
+
   background: $soft-green;
-  box-shadow: $offset $offset $blur #96b057,
-  $offset-neg $offset-neg $blur #ccee75;
+  box-shadow: 5px 5px 11px #a2be5d,
+  -5px -5px 11px #bede6d;
 }
 
 .navbar-item-link:hover {

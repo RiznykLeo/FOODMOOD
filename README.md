@@ -1,4 +1,4 @@
-## Food Mood s a mobile-first web application which helps you to find new recipes to cook
+## Food Mood is a mobile-first web application which helps you to find new recipes to cook
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/65514388/188539324-32591e8e-3728-4394-b96e-2222b27ab1b1.png" width="195" height="422"/>

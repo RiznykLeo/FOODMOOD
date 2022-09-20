@@ -34,9 +34,8 @@ dinner_recipes_meta = GetRecipesService.new('breakfast', "Breakfast").call
         cuisine_type: recipe["recipe"]["cuisineType"].first,
         meal_type: "breakfast",
         health: recipe["recipe"]["healthLabels"]
-        # dish_type: recipe["recipe"]["dishType"].first
+      # dish_type: recipe["recipe"]["dishType"].first
       )
-
       delete = 0
 
       recipe["recipe"]["ingredients"].each do |ingredient|
@@ -87,7 +86,7 @@ dinner_recipes_meta = GetRecipesService.new('lunch', "Lunch").call
         cuisine_type: recipe["recipe"]["cuisineType"].first,
         meal_type: "lunch",
         health: recipe["recipe"]["healthLabels"]
-        # dish_type: recipe["recipe"]["dishType"].first
+      # dish_type: recipe["recipe"]["dishType"].first
       )
 
       delete = 0
@@ -140,7 +139,7 @@ dinner_recipes_meta = GetRecipesService.new('dinner', "Dinner").call
         cuisine_type: recipe["recipe"]["cuisineType"].first,
         meal_type: "dinner",
         health: recipe["recipe"]["healthLabels"]
-        # dish_type: recipe["recipe"]["dishType"].first
+      # dish_type: recipe["recipe"]["dishType"].first
       )
 
       delete = 0
@@ -193,7 +192,7 @@ dinner_recipes_meta = GetRecipesService.new('snack', "Snack").call
         cuisine_type: recipe["recipe"]["cuisineType"].first,
         meal_type: "snack",
         health: recipe["recipe"]["healthLabels"]
-        # dish_type: recipe["recipe"]["dishType"].first
+      # dish_type: recipe["recipe"]["dishType"].first
       )
 
       delete = 0
@@ -246,7 +245,7 @@ dinner_recipes_meta = GetRecipesPlainService.new('chocolate').call
         cuisine_type: recipe["recipe"]["cuisineType"].first,
         meal_type: "breakfast",
         health: recipe["recipe"]["healthLabels"]
-        # dish_type: recipe["recipe"]["dishType"].first
+      # dish_type: recipe["recipe"]["dishType"].first
       )
 
       delete = 0
